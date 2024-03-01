@@ -1,0 +1,28 @@
+.home-container {
+  margin: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .header {
+    .title {
+      font-size: 4rem;
+      font-weight: 600;
+    }
+    .subtitle {
+      font-size: 20px;
+    }
+  }
+  .profile-pic-container {
+    .profile-pic {
+      height: 350px;
+      width: 350px;
+      border-radius: 50%;
+      user-select: none;
+    }
+  }
+  .social-icons{
+    display: flex;
+    margin-top: 20px;
+    gap: 30px;
+  }
+}
