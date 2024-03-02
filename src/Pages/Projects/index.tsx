@@ -12,7 +12,6 @@ const Projects = () => {
       )
         .then((d) => d.json())
         .then((data) => {
-          console.log(data);
           setProjects(data);
         });
     } catch (e: any) {
