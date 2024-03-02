@@ -3,10 +3,27 @@
 
 $landing-font-color: #a0a0a0;
 @mixin mobiles {
-  @media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
+  // iPhone 5/SE
+  @media only screen and (max-device-width: 320px) {
+    @content;
+  }
+
+  // iPhone 6/7/8, X/XS/11 Pro
+  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
+    @content;
+  }
+
+  // iPhone 6+/7+/8+, XR/11/11 Pro Max
+  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {
+    @content;
+  }
+
+  // Common Android devices (e.g., Galaxy S8, S9, S10, Pixel 2, 3)
+  @media only screen and (min-device-width: 360px) and (max-device-width: 740px) {
     @content;
   }
 }
+
 
 * {
   padding: 0;
@@ -46,14 +63,9 @@ code {
 }
 .cover-image {
   z-index: 0;
-  background: radial-gradient(
-    circle,
-    rgb(228, 228, 228) 0%,
-    rgba(234, 234, 232, 1) 62%
-  );
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
+  // background-size: cover;
+  // background-position: center;
+  // height: 100%;
 }
 
 @include mobiles {

@@ -1,0 +1,9 @@
+.projects-container {
+  margin: 1rem;
+  .card-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+}
