@@ -9,7 +9,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [activeItemIndex, setActiveItemIndex] = useState(null as any);
-  const [open, setOpen] = useState(window.innerWidth <= 768);
+  const [open, setOpen] = useState(window.innerWidth > 390);
   useEffect(() => {
     const { pathname } = location;
 
