@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+
+$landing-font-color: #a0a0a0;
 
 * {
   padding: 0;
@@ -15,7 +17,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   // font-family: "Varela Round", sans-serif;
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-  monospace;
+    monospace;
   font-weight: 400;
   font-style: normal;
 }
@@ -24,14 +26,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
 // typing effect cursor
 .cursor {
   animation: blink 1s infinite;
-  color: lightgray;
+  color: $landing-font-color;
 }
 @keyframes blink {
   50% {
     opacity: 0;
   }
+}
+.typing-effect-text {
+  text-shadow: 4px 2px 3px $landing-font-color;
+}
+.cover-image {
+  z-index: 0;
+  background: radial-gradient(
+    circle,
+    rgb(228, 228, 228) 0%,
+    rgba(234, 234, 232, 1) 62%
+  );
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
 }

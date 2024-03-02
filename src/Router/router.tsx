@@ -1,11 +1,11 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { navItems } from "../Shared/contants";
+import { NavItems } from "../Shared/contants";
 
 const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        {navItems.map(({ label, route, Component }) => {
+        {NavItems.map(({ label, route, Component }) => {
           return <Route path={route} key={label} element={<Component />} />;
         })}
       </Routes>

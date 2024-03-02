@@ -34,7 +34,7 @@ const TypingEffect = ({ text }: { text: string }) => {
     return () => clearInterval(interval);
   }, []);
   return (
-    <span>
+    <span className="typing-effect-text">
       {currentText}
       {showCursor && <span className="cursor">|</span>}
     </span>

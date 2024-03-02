@@ -1,31 +1,14 @@
 import Layout from "../../Layout/layout";
 import TypingEffect from "../../Shared/Services/TypingEffect";
-import { SVGs } from "../../Shared/icons";
+import { SocialIcons } from "../../Shared/contants";
 import "./style.scss";
 
 const Home = () => {
-  const socialIcons = [
-    {
-      label: "facebook",
-      SvgElement: SVGs().Facebook,
-    },
-    {
-      label: "github",
-      SvgElement: SVGs().Github,
-    },
-    {
-      label: "linkedin",
-      SvgElement: SVGs().LinkedIn,
-    },
-    {
-      label: "instagram",
-      SvgElement: SVGs().Instagram,
-    },
-    {
-      label: "twitter",
-      SvgElement: SVGs().Twitter,
-    },
-  ];
+ 
+
+  const handleRedirection = () => {
+    console.log("called");
+  };
   return (
     <Layout>
       <div className="home-container">
@@ -35,9 +18,10 @@ const Home = () => {
           </div>
           <div className="subtitle">I build web apps</div>
           <div className="social-icons">
-            {socialIcons.map(({ label, SvgElement }) => {
+            {SocialIcons.map(({ label, SvgElement }) => {
               return (
                 <div
+                  onClick={handleRedirection}
                   style={{
                     height: "50px",
                     width: "50px",

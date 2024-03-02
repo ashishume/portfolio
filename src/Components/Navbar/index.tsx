@@ -1,6 +1,6 @@
 import style from "./style.module.scss";
 import { useNavigate } from "react-router-dom";
-import { INavbar, navItems } from "../../Shared/contants";
+import { INavbar, NavItems } from "../../Shared/contants";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
@@ -11,7 +11,7 @@ const Navbar = () => {
   useEffect(() => {
     const { pathname } = location;
 
-    navItems.map(({ label }: INavbar, index) => {
+    NavItems.map(({ label }: INavbar, index) => {
       const newLabel = label.toLocaleLowerCase();
       if (pathname !== "/") {
         const cleanPathname = pathname.split("/")[1];
@@ -34,7 +34,7 @@ const Navbar = () => {
   return (
     <div className={style["container"]}>
       <ul className={style["nav-items"]}>
-        {navItems.map((item, index) => {
+        {NavItems.map((item, index) => {
           return (
             <li
               key={item.label}
