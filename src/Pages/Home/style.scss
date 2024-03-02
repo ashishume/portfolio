@@ -37,3 +37,41 @@
     }
   }
 }
+
+@media only screen and (min-device-width: 414px) and (max-device-width: 896px) and (-webkit-device-pixel-ratio: 3) {
+  .home-container {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+    .header {
+      .title {
+        font-size: 2rem;
+        width: 100%;
+        padding-left: 10px;
+        height: 80px;
+      }
+      .subtitle {
+        padding-left: 10px;
+        font-size: 20px;
+      }
+    }
+    .profile-pic-container {
+      .profile-pic {
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        user-select: none;
+      }
+    }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      .icon {
+        height: 40px;
+        width: 40px;
+      }
+    }
+  }
+}
