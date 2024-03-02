@@ -9,7 +9,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [activeItemIndex, setActiveItemIndex] = useState(null as any);
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(window.innerWidth > 768 ? true : false);
   useEffect(() => {
     const { pathname } = location;
 
@@ -38,20 +38,18 @@ const Navbar = () => {
 
   return (
     <div className={style["container"]}>
-      <ul className={style["nav-items"]}>
+      <ul className={`${style["nav-items"]}`}>
         <div className={style["navbar-resp"]}>
           {open ? (
             <div className={style["close-icon"]} onClick={toggleNavbar}>
               {SVGs().CloseIcon}
             </div>
-          ):
+          ) : (
             <div className={style["menu-icon"]} onClick={toggleNavbar}>
               {SVGs().MenuIcon}
             </div>
-          
-          }
+          )}
         </div>
-
         {open &&
           NavItems.map((item, index) => {
             return (

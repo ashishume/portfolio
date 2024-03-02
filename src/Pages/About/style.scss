@@ -6,3 +6,17 @@
     margin: 43px 295px;
   }
 }
+
+@media only screen and (min-device-width: 414px) and (max-device-width: 896px) and (-webkit-device-pixel-ratio: 3) {
+  .about-container {
+    .content {
+      width: 100%;
+      margin: 0;
+      text-align: center;
+      padding: 81px 30px;
+      font-size: 17px;
+      text-align: justify;
+      max-width: 86%;
+    }
+  }
+}
