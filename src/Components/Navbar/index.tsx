@@ -1,4 +1,4 @@
-import style from "./style.module.scss";
+import "./style.scss";
 import { useNavigate } from "react-router-dom";
 import { INavbar, NavItems } from "../../Shared/contants";
 import { useLocation } from "react-router-dom";
@@ -37,15 +37,15 @@ const Navbar = () => {
   };
 
   return (
-    <div className={style["container"]}>
-      <ul className={`${style["nav-items"]}`}>
-        <div className={style["navbar-resp"]}>
+    <div className={"navbar-container"}>
+      <ul className={`${"nav-items"}`}>
+        <div className={"navbar-resp"}>
           {open ? (
-            <div className={style["close-icon"]} onClick={toggleNavbar}>
+            <div className={"close-icon"} onClick={toggleNavbar}>
               {SVGs().CloseIcon}
             </div>
           ) : (
-            <div className={style["menu-icon"]} onClick={toggleNavbar}>
+            <div className={"menu-icon"} onClick={toggleNavbar}>
               {SVGs().MenuIcon}
             </div>
           )}
@@ -57,7 +57,7 @@ const Navbar = () => {
                 key={item.label}
                 className={
                   activeItemIndex !== null && index == activeItemIndex
-                    ? style["active"]
+                    ? "active"
                     : ""
                 }
                 onClick={() => handleNavItem(item?.route)}

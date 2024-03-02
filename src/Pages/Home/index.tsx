@@ -1,10 +1,11 @@
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import Layout from "../../Layout/layout";
 import TypingEffect from "../../Shared/Services/TypingEffect";
 import { ISocialIcons, SocialIcons } from "../../Shared/contants";
 import "./style.scss";
 
 const Home = () => {
+  const navigate = useNavigate();
   const handleRedirection = (uri: string) => {
     window.open(uri, "_blank");
   };
@@ -29,6 +30,9 @@ const Home = () => {
               );
             })}
           </div>
+          <button className="explore-btn" onClick={() => navigate('/projects')}>
+            Explore Projects
+          </button>
         </div>
         <div className="profile-pic-container">
           <img

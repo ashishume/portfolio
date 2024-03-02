@@ -1,3 +1,4 @@
+@import "src/index.scss";
 .home-container {
   margin: 5rem;
   display: flex;
@@ -36,12 +37,12 @@
       }
     }
   }
+  .explore-btn {
+    margin-top: 50px;
+  }
 }
 
-@media only screen 
-  and (device-width: 390px) 
-  and (device-height: 844px) 
-  and (-webkit-device-pixel-ratio: 3)  {
+@include mobiles {
   .home-container {
     display: flex;
     flex-direction: column-reverse;
@@ -49,13 +50,16 @@
     align-items: center;
     padding-top: 100px;
     .header {
+      text-align: center;
       .title {
+        text-align: left;
         font-size: 2rem;
         width: 100%;
         padding-left: 10px;
         height: 80px;
       }
       .subtitle {
+        text-align: left;
         padding-left: 10px;
         font-size: 20px;
       }

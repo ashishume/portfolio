@@ -1,5 +1,6 @@
+@import 'src/index.scss';
 $nav-bg: #111111;
-.container {
+.navbar-container {
   background-color: $nav-bg;
   z-index: 99;
   .nav-items {
@@ -10,7 +11,7 @@ $nav-bg: #111111;
     .menu-icon {
       display: none;
     }
-    .close-icon{
+    .close-icon {
       display: none;
     }
     & > li {
@@ -30,13 +31,10 @@ $nav-bg: #111111;
   }
 }
 
-@media only screen 
-  and (device-width: 390px) 
-  and (device-height: 844px) 
-  and (-webkit-device-pixel-ratio: 3)  {
-  .container {
+@include mobiles {
+  .navbar-container {
     width: 100%;
-   
+
     .nav-items {
       display: flex;
       flex-direction: column;

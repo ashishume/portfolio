@@ -2,6 +2,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
 
 $landing-font-color: #a0a0a0;
+@mixin mobiles {
+  @media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
+    @content;
+  }
+}
 
 * {
   padding: 0;
@@ -51,10 +56,7 @@ code {
   height: 100vh;
 }
 
-@media only screen 
-  and (device-width: 390px) 
-  and (device-height: 844px) 
-  and (-webkit-device-pixel-ratio: 3)  {
+@include mobiles {
   * {
     margin: 0;
     padding: 0;
@@ -64,5 +66,21 @@ code {
     background-position: center;
     height: 100vh;
     width: 100vw;
+  }
+}
+
+button {
+  height: 39px;
+  border: none;
+  background: black;
+  color: #fff;
+  padding: 5px;
+  border-radius: 4px;
+  font-family: inherit;
+  box-shadow: 0px 1px 5px 0px #6b6b6b;
+  font-weight: 600;
+  transition: box-shadow 0.3s ease;
+  &:hover {
+    box-shadow: 0px 0px 12px 0px #000000;
   }
 }

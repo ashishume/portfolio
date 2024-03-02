@@ -1,3 +1,4 @@
+@import "src/index.scss";
 .about-container {
   .content {
     font-size: 1.5rem;
@@ -7,10 +8,7 @@
   }
 }
 
-@media only screen 
-  and (device-width: 390px) 
-  and (device-height: 844px) 
-  and (-webkit-device-pixel-ratio: 3)  {
+@include mobiles {
   .about-container {
     .content {
       width: 100%;
