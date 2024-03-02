@@ -1,13 +1,12 @@
+import { Navigate } from "react-router-dom";
 import Layout from "../../Layout/layout";
 import TypingEffect from "../../Shared/Services/TypingEffect";
-import { SocialIcons } from "../../Shared/contants";
+import { ISocialIcons, SocialIcons } from "../../Shared/contants";
 import "./style.scss";
 
 const Home = () => {
- 
-
-  const handleRedirection = () => {
-    console.log("called");
+  const handleRedirection = (uri: string) => {
+    window.open(uri, "_blank");
   };
   return (
     <Layout>
@@ -18,16 +17,12 @@ const Home = () => {
           </div>
           <div className="subtitle">I build web apps</div>
           <div className="social-icons">
-            {SocialIcons.map(({ label, SvgElement }) => {
+            {SocialIcons.map(({ label, SvgElement, uri }) => {
               return (
                 <div
-                  onClick={handleRedirection}
-                  style={{
-                    height: "50px",
-                    width: "50px",
-                    display: "flex",
-                    flexDirection: "row",
-                  }}
+                  onClick={() => handleRedirection(uri)}
+                  key={label}
+                  className="icon"
                 >
                   {SvgElement}
                 </div>

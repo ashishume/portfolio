@@ -20,9 +20,20 @@
       user-select: none;
     }
   }
-  .social-icons{
+  .social-icons {
     display: flex;
     margin-top: 20px;
     gap: 30px;
+    .icon {
+      height: 50px;
+      width: 50px;
+      display: flex;
+      flex-direction: row;
+      cursor: pointer;
+      transition: scale 0.5s ease;
+      &:hover {
+        scale: (1.5);
+      }
+    }
   }
 }

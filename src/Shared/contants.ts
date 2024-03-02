@@ -13,7 +13,11 @@ export interface INavbar {
   Component: ComponentType;
   active?: boolean;
 }
-
+export interface ISocialIcons {
+  label: string;
+  SvgElement: JSX.Element;
+  uri: string;
+}
 export const NavItems: INavbar[] = [
   { label: "Home", route: "/", Component: Home },
   { label: "Projects", route: "/projects", Component: Projects },
@@ -22,25 +26,35 @@ export const NavItems: INavbar[] = [
   { label: "Skills", route: "/skills", Component: Skills },
 ];
 
-export const SocialIcons = [
+export const SocialIcons: ISocialIcons[] = [
   {
     label: "facebook",
     SvgElement: SVGs().Facebook,
+    uri: "https://www.facebook.com/ashishdevume",
   },
   {
     label: "github",
     SvgElement: SVGs().Github,
+    uri: "https://github.com/ashishume",
   },
   {
     label: "linkedin",
     SvgElement: SVGs().LinkedIn,
+    uri: "https://www.linkedin.com/in/ashishume",
   },
   {
     label: "instagram",
     SvgElement: SVGs().Instagram,
+    uri: "https://www.instagram.com/aaashishdev",
   },
   {
     label: "twitter",
     SvgElement: SVGs().Twitter,
+    uri: "https://twitter.com/ashishume",
+  },
+  {
+    label: "Stackoverflow",
+    SvgElement: SVGs().StackOverflow,
+    uri: "https://stackoverflow.com/users/8175628/ashish-dev",
   },
 ];
