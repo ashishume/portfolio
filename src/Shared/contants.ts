@@ -125,7 +125,7 @@ export const NavItems: INavbar[] = [
   { label: "Projects", route: "/projects", Component: Projects },
   // { label: "Contact", route: "/contact", Component: Contact },
   { label: "About", route: "/about", Component: About },
-  { label: "Skills", route: "/skills", Component: Skills },
+  // { label: "Skills", route: "/skills", Component: Skills },
 ];
 
 export const SocialIcons: ISocialIcons[] = [

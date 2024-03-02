@@ -18,13 +18,6 @@ This is the landing page of the portfolio website.
 
 The about page provides information about me and my background.
 
-## Contact
-
-You can contact me through the contact page.
-
-## Skills
-
-The skills page lists my skills and areas of expertise.
 
 ## Projects
 
