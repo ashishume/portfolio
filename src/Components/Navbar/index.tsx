@@ -4,7 +4,7 @@ import { INavbar, NavItems } from "../../Shared/contants";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { SVGs } from "../../Shared/icons";
-
+import portfolioPic from "../../Assets/portfolio-logo.png";
 const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -38,7 +38,8 @@ const Navbar = () => {
 
   return (
     <div className={"navbar-container"}>
-      <ul className={`${"nav-items"}`}>
+      <img className="portfolio-pic" src={portfolioPic} />
+      <ul className={"nav-items"}>
         <div className={"navbar-resp"}>
           {open ? (
             <div className={"close-icon"} onClick={toggleNavbar}>

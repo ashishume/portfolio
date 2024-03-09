@@ -3,7 +3,7 @@ import Layout from "../../Layout/layout";
 import TypingEffect from "../../Shared/Services/TypingEffect";
 import { ISocialIcons, SocialIcons } from "../../Shared/contants";
 import "./style.scss";
-
+import profile from "../../Assets/profile.png";
 const Home = () => {
   const navigate = useNavigate();
   const handleRedirection = (uri: string) => {
@@ -30,13 +30,13 @@ const Home = () => {
               );
             })}
           </div>
-          <button className="explore-btn" onClick={() => navigate('/projects')}>
+          <button className="explore-btn" onClick={() => navigate("/projects")}>
             Explore Projects
           </button>
         </div>
         <div className="profile-pic-container">
           <img
-            src={require("../../Assets/profile.png")}
+            src={profile}
             className="profile-pic"
           />
         </div>
