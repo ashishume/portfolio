@@ -3,6 +3,7 @@ import Layout from "../../Layout/layout";
 import { IRepository } from "../../Shared/contants";
 import RepoCard from "../../Components/RepoCard";
 import "./style.scss";
+import Spinner from "../../Components/Spinner";
 const Projects = () => {
   const [projects, setProjects] = useState([] as IRepository[]);
   useEffect(() => {
@@ -23,6 +24,7 @@ const Projects = () => {
       <div className="projects-container">
         <h2>Projects</h2>
         <div className="card-container">
+          {!projects?.length ? <Spinner /> : null}
           {projects.map((repo) => {
             return <RepoCard key={repo.id} repository={repo} />;
           })}
