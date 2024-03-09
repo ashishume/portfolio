@@ -1,13 +1,15 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { NavItems } from "../Shared/contants";
+import Home from "../Pages/Home";
+import Projects from "../Pages/Projects";
+import About from "../Pages/About";
 
 const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        {NavItems.map(({ label, route, Component }) => {
-          return <Route path={route} key={label} element={<Component />} />;
-        })}
+        <Route path="/" element={<Home />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Layout from "../../Layout/layout";
 import TypingEffect from "../../Shared/Services/TypingEffect";
-import { SocialIcons } from "../../Shared/contants";
+import { SocialIcons } from "../../Shared/constant";
 import "./style.scss";
 import profile from "../../Assets/profile.png";
 const Home = () => {

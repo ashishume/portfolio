@@ -1,10 +1,11 @@
 import "./style.scss";
 import { useNavigate } from "react-router-dom";
-import { INavbar, NavItems } from "../../Shared/contants";
+import { NavItems } from "../../Shared/constant";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { SVGs } from "../../Shared/icons";
 import portfolioPic from "../../Assets/portfolio-logo.png";
+import { INavbar } from "../../Shared/models";
 const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();

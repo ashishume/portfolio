@@ -1,4 +1,4 @@
-import { IRepository } from "../../Shared/contants";
+import { IRepository } from "../../Shared/models";
 import "./style.scss";
 const RepoCard = ({ repository }: { repository: IRepository }) => {
   const { name, full_name, html_url, description, owner } = repository;

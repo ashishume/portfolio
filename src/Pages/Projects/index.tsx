@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import Layout from "../../Layout/layout";
-import { IRepository } from "../../Shared/contants";
 import RepoCard from "../../Components/RepoCard";
 import "./style.scss";
 import Spinner from "../../Components/Spinner";
+import { IRepository } from "../../Shared/models";
 const Projects = () => {
   const [projects, setProjects] = useState([] as IRepository[]);
   useEffect(() => {
