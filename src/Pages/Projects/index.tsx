@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Layout from "../../Layout/layout";
 import { IRepository } from "../../Shared/contants";
 import RepoCard from "../../Components/RepoCard";

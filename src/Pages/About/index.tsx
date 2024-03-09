@@ -1,4 +1,3 @@
-import React from "react";
 import Layout from "../../Layout/layout";
 import "./style.scss";
 const About = () => {

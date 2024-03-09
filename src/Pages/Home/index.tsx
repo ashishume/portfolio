@@ -1,7 +1,7 @@
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Layout from "../../Layout/layout";
 import TypingEffect from "../../Shared/Services/TypingEffect";
-import { ISocialIcons, SocialIcons } from "../../Shared/contants";
+import { SocialIcons } from "../../Shared/contants";
 import "./style.scss";
 import profile from "../../Assets/profile.png";
 const Home = () => {
@@ -35,10 +35,7 @@ const Home = () => {
           </button>
         </div>
         <div className="profile-pic-container">
-          <img
-            src={profile}
-            className="profile-pic"
-          />
+          <img src={profile} className="profile-pic" />
         </div>
       </div>
     </Layout>
