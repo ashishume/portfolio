@@ -9,7 +9,7 @@ export const ProjectData: IProjectCard[] = [
   {
     key: 1,
     title: "Axpo shop ecommerce",
-    techStack: "React Native, Nodejs, MongoDB",
+    techStack: "ReactJs, Nodejs, MongoDB",
     description:
       "This project is an e-commerce website that aims to provide a seamless online shopping experience. Users can browse products, view product details, add items to their cart, and make purchases securely.",
     image: ecommerce,
@@ -18,7 +18,7 @@ export const ProjectData: IProjectCard[] = [
   {
     key: 2,
     title: "Interview Questions (VanillaJS + React)",
-    techStack: "React Native, Nodejs, MongoDB",
+    techStack: "VanillaJS",
     description:
       "This repo contains the questions related to all frontend questions required for interview, from basic to advanced",
     image: interview,
@@ -27,7 +27,7 @@ export const ProjectData: IProjectCard[] = [
   {
     key: 3,
     title: "Reality check",
-    techStack: "React Native, Nodejs, MongoDB",
+    techStack: "Angular, Nodejs, Firebase",
     description:
       "This project is an online mock exam portal for IELTS students thos who are pursuing for international colleges.",
     image: ielts,
@@ -36,7 +36,7 @@ export const ProjectData: IProjectCard[] = [
   {
     key: 4,
     title: "Ninemiles",
-    techStack: "React Native, Nodejs, MongoDB",
+    techStack: "Angular, Nodejs, Firebase",
     description:
       "This project is an landing page for exam portal contains MCQ based questions with fill in the blanks",
     image: ninemiles,
@@ -65,7 +65,7 @@ export const ProjectData: IProjectCard[] = [
   {
     key: 7,
     title: "Conference room booking app",
-    techStack: "React Native, Nodejs, MongoDB",
+    techStack: "Angular, Nodejs, MongoDB",
     description:
       "This is a react native app for students who are preparing for govt exams",
     image: conference,
