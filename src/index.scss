@@ -2,6 +2,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
 
 $landing-font-color: #a0a0a0;
+$primary-text-color: #fff;
+$secondary-text-color: #000;
 @mixin mobiles {
   // iPhone 5/SE
   @media only screen and (max-device-width: 320px) {
@@ -24,7 +26,6 @@ $landing-font-color: #a0a0a0;
   }
 }
 
-
 * {
   padding: 0;
   margin: 0;
@@ -42,6 +43,7 @@ body {
     monospace;
   font-weight: 400;
   font-style: normal;
+  color: $primary-text-color;
 }
 
 code {
@@ -84,15 +86,34 @@ code {
 button {
   height: 39px;
   border: none;
-  background: black;
-  color: #fff;
-  padding: 5px;
+  background: #fff;
+  color: $secondary-text-color;
+  padding: 10px;
   border-radius: 4px;
   font-family: inherit;
-  box-shadow: 0px 1px 5px 0px #6b6b6b;
   font-weight: 600;
+  cursor: pointer;
   transition: box-shadow 0.3s ease;
   &:hover {
-    box-shadow: 0px 0px 12px 0px #000000;
+    box-shadow: 0px 0px 12px 0px #fff;
   }
+}
+
+/* Width, color and background of the scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 5px;
+}
+
+/* Hover effect on the scrollbar thumb */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
 }

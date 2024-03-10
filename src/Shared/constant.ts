@@ -1,5 +1,5 @@
 import { SVGs } from "./icons";
-import { INavbar, ISocialIcons } from "./models";
+import { INavbar, ISkills, ISocialIcons } from "./models";
 
 export const NavItems: INavbar[] = [
   { label: "Home", route: "/" },
@@ -56,59 +56,76 @@ export const LANGUAGES = [
     label: "C++",
   },
 ];
-export const DATABASES = [
-  {
-    key: 1,
-    label: "MongoDB (NoSQL)",
-  },
-];
-export const FRONTEND_TECH = [
-  {
-    key: 1,
-    label: "VanillaJS",
-  },
-  {
-    key: 2,
-    label: "Angular2+",
-  },
-  {
-    key: 3,
-    label: "ReactJS",
-  },
-  {
-    key: 4,
-    label: "React Native",
-  },
-];
-export const STATE_MANAGEMENT = [
-  {
-    key: 1,
-    label: "Redux",
-  },
-  {
-    key: 2,
-    label: "ContextAPI",
-  },
-  {
-    key: 3,
-    label: "RxJS",
-  },
-];
-export const TOOLS = [
-  {
-    key: 1,
-    label: "Figma",
-  },
-  {
-    key: 2,
-    label: "Git",
-  },
-  {
-    key: 3,
-    label: "Azure",
-  },
-  {
-    key: 4,
-    label: "Postman",
-  },
-];
+
+export const SKILLS: ISkills = {
+  Databases: [
+    {
+      key: 1,
+      label: "MongoDB (NoSQL)",
+    },
+  ],
+  FrontendTech: [
+    {
+      key: 1,
+      label: "VanillaJS",
+    },
+    {
+      key: 2,
+      label: "Angular2+",
+    },
+    {
+      key: 3,
+      label: "ReactJS",
+    },
+    {
+      key: 4,
+      label: "React Native",
+    },
+  ],
+  StateManagement: [
+    {
+      key: 1,
+      label: "Redux",
+    },
+    {
+      key: 2,
+      label: "ContextAPI",
+    },
+    {
+      key: 3,
+      label: "RxJS",
+    },
+  ],
+  Tools: [
+    {
+      key: 1,
+      label: "Figma",
+    },
+    {
+      key: 2,
+      label: "Git",
+    },
+    {
+      key: 3,
+      label: "Azure",
+    },
+    {
+      key: 4,
+      label: "Postman",
+    },
+  ],
+  Languages: [
+    {
+      key: 1,
+      label: "Javascript",
+    },
+    {
+      key: 2,
+      label: "Typescript",
+    },
+    {
+      key: 3,
+      label: "C++",
+    },
+  ],
+};

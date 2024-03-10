@@ -1,33 +1,35 @@
-import { useEffect, useState } from "react";
 import Layout from "../../Layout/layout";
-import RepoCard from "../../Components/RepoCard";
 import "./style.scss";
-import Spinner from "../../Components/Spinner";
-import { IRepository } from "../../Shared/models";
+import { IProjectCard } from "../../Shared/models";
+import ProjectCard from "../../Components/ProjectCard";
+import { ProjectData } from "../../Shared/projectData";
 const Projects = () => {
-  const [projects, setProjects] = useState([] as IRepository[]);
-  useEffect(() => {
-    try {
-      fetch(
-        "https://api.github.com/users/ashishume/repos?sort=updated&direction=desc"
-      )
-        .then((d) => d.json())
-        .then((data) => {
-          setProjects(data);
-        });
-    } catch (e: any) {
-      console.error(e.message);
-    }
-  }, []);
   return (
     <Layout>
       <div className="projects-container">
         <h2>Projects</h2>
         <div className="card-container">
-          {!projects?.length ? <Spinner /> : null}
-          {projects.map((repo) => {
-            return <RepoCard key={repo.id} repository={repo} />;
-          })}
+          {ProjectData.map(
+            ({
+              title,
+              description,
+              uri,
+              image,
+              key,
+              techStack,
+            }: IProjectCard) => {
+              return (
+                <ProjectCard
+                  key={key}
+                  techStack={techStack}
+                  title={title}
+                  description={description}
+                  uri={uri}
+                  image={image}
+                />
+              );
+            }
+          )}
         </div>
       </div>
     </Layout>

@@ -1,9 +1,12 @@
 .projects-container {
-  margin: 1rem;
-  .card-container{
+  padding: 1rem;
+  background: url('/public/background.jpg');
+  background-size: cover;
+  .card-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    gap: 10px;
+    gap: 30px 40px;
+    margin-top: 20px;
   }
 }

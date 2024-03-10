@@ -1,5 +1,5 @@
 import "./style.scss";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { NavItems } from "../../Shared/constant";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -39,7 +39,9 @@ const Navbar = () => {
 
   return (
     <div className={"navbar-container"}>
-      <img className="portfolio-pic" src={portfolioPic} />
+      <Link to="/">
+        <img className="portfolio-pic" src={portfolioPic} />
+      </Link>
       <ul className={"nav-items"}>
         <div className={"navbar-resp"}>
           {open ? (

@@ -1,0 +1,60 @@
+@import "src/index.scss";
+.project-card-container {
+  width: 284px;
+  height: 320px;
+  overflow: hidden;
+  margin: 5px 0;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.8px);
+  -webkit-backdrop-filter: blur(8.8px);
+  border: 1px solid rgba(255, 255, 255, 0.47);
+  color: $primary-text-color;
+  cursor: pointer;
+  .thumbnail {
+    .image {
+      height: 150px;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  .content {
+    padding: 10px;
+    color: $primary-text-color;
+
+    .title {
+      font-size: 20px;
+      font-weight: 600;
+      padding-bottom: 8px;
+      color: $primary-text-color;
+    }
+    .description {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      color: #444444;
+      font-weight: 200;
+      font-size: 14px;
+      padding-top: 10px;
+      color: $primary-text-color;
+    }
+    .tech-stack {
+      font-size: 13px;
+      font-weight: 200;
+      display: inline-block;
+      border-radius: 4px;
+      border: solid 1px #80808070;
+      padding: 3px;
+      margin-right: 5px;
+      color: $primary-text-color;
+    }
+  }
+
+  &:hover {
+    scale: 1.06;
+    box-shadow: 0px 0px 16px 1px #ffffff;
+    transition: scale 0.2s ease;
+  }
+}

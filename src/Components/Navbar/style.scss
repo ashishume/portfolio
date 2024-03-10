@@ -1,5 +1,5 @@
 @import "src/index.scss";
-$nav-bg: #0c1224;
+$nav-bg: #000519;
 .navbar-container {
   background-color: $nav-bg;
   z-index: 99;
@@ -10,7 +10,7 @@ $nav-bg: #0c1224;
     display: flex;
     justify-content: flex-end;
     list-style: none;
-    color: #fff;
+    color: $primary-text-color;
     .menu-icon {
       display: none;
     }

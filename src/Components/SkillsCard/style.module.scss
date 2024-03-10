@@ -3,24 +3,26 @@
   height: 200px;
   width: 200px;
   overflow: auto;
-  border: solid 1px #80808078;
+  border: solid 1px #ffffff78;
   border-radius: 10px;
   font-size: 20px;
   box-shadow: 1px 0px 8px 0px #00000054;
   padding: 10px;
+  background-color: #ffffff47;
+  backdrop-filter: blur(6px);
   h2 {
-    font-size: 18px;
+    font-size: 20px;
     padding-bottom: 5px;
   }
   .content {
     display: flex;
     flex-wrap: wrap;
     .item {
-      border: solid 1px #00000047;
+      border: solid 1px #ffffff47;
       padding: 5px;
       border-radius: 4px;
       margin: 5px 1px;
-      font-size: 16px;
+      font-size: 15px;
     }
   }
 }
