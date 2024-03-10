@@ -12,6 +12,15 @@ export const ProjectData: IProjectCard[] = [
   },
   {
     key: 2,
+    title: "Interview Questions (VanillaJS + React)",
+    techStack: "React Native, Nodejs, MongoDB",
+    description:
+      "This repo contains the questions related to all frontend questions required for interview, from basic to advanced",
+    image: "/public/interview.webp",
+    uri: "https://github.com/ashishume/Front-end-Javascript-Interview-Topics",
+  },
+  {
+    key: 3,
     title: "Reality check",
     techStack: "React Native, Nodejs, MongoDB",
     description:
@@ -20,7 +29,7 @@ export const ProjectData: IProjectCard[] = [
     uri: "https://github.com/ashishume/reality-check-frontend",
   },
   {
-    key: 3,
+    key: 4,
     title: "Ninemiles",
     techStack: "React Native, Nodejs, MongoDB",
     description:
@@ -29,7 +38,7 @@ export const ProjectData: IProjectCard[] = [
     uri: "https://github.com/ashishume/Ninemiles-Angular-app",
   },
   {
-    key: 4,
+    key: 5,
     title: "Wally",
     techStack: "React Native, Nodejs, MongoDB",
     description:
@@ -39,7 +48,7 @@ export const ProjectData: IProjectCard[] = [
     uri: "https://play.google.com/store/apps/details?id=com.wallypix",
   },
   {
-    key: 5,
+    key: 6,
     title: "MCG Education",
     techStack: "React Native, Nodejs, MongoDB",
     description:
@@ -49,7 +58,7 @@ export const ProjectData: IProjectCard[] = [
     uri: "https://play.google.com/store/apps/details?id=com.mcgeducation",
   },
   {
-    key: 6,
+    key: 7,
     title: "Conference room booking app",
     techStack: "React Native, Nodejs, MongoDB",
     description:

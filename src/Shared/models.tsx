@@ -27,9 +27,5 @@ export interface ISkill {
 }
 
 export interface ISkills {
-  Databases: ISkill[];
-  FrontendTech: ISkill[];
-  StateManagement: ISkill[];
-  Tools: ISkill[];
-  Languages: ISkill[];
+  [key: string]: ISkill[];
 }

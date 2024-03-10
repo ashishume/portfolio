@@ -1,7 +1,7 @@
 @import "src/index.scss";
 .project-card-container {
   width: 284px;
-  height: 320px;
+  height: 350px;
   overflow: hidden;
   margin: 5px 0;
   background: rgba(255, 255, 255, 0.25);
@@ -31,7 +31,7 @@
     }
     .description {
       display: -webkit-box;
-      -webkit-line-clamp: 3;
+      -webkit-line-clamp: 5;
       -webkit-box-orient: vertical;
       overflow: hidden;
       color: #444444;

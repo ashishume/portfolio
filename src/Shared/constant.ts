@@ -7,7 +7,6 @@ const Projects = lazy(() => import("../Pages/Projects"));
 const About = lazy(() => import("../Pages/About"));
 const Skills = lazy(() => import("../Pages/Skills"));
 
-
 export const NavItems: INavbar[] = [
   { label: "Home", route: "/", Element: Home },
   { label: "Skills", route: "/skills", Element: Skills },
@@ -54,6 +53,10 @@ export const SKILLS: ISkills = {
       key: 1,
       label: "MongoDB (NoSQL)",
     },
+    {
+      key: 2,
+      label: "PostgreSQL",
+    },
   ],
   FrontendTech: [
     {
@@ -87,7 +90,31 @@ export const SKILLS: ISkills = {
       label: "RxJS",
     },
   ],
-  Tools: [
+  Languages: [
+    {
+      key: 1,
+      label: "Javascript",
+    },
+    {
+      key: 2,
+      label: "Typescript",
+    },
+    {
+      key: 3,
+      label: "C++",
+    },
+  ],
+  Cloud: [
+    {
+      key: 1,
+      label: "Firebase",
+    },
+    {
+      key: 2,
+      label: "AWS",
+    },
+  ],
+  ToolsUsed: [
     {
       key: 1,
       label: "Figma",
@@ -104,19 +131,9 @@ export const SKILLS: ISkills = {
       key: 4,
       label: "Postman",
     },
-  ],
-  Languages: [
     {
-      key: 1,
-      label: "Javascript",
-    },
-    {
-      key: 2,
-      label: "Typescript",
-    },
-    {
-      key: 3,
-      label: "C++",
+      key: 5,
+      label: "Vs Code",
     },
   ],
 };
