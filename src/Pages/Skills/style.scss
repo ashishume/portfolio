@@ -1,3 +1,5 @@
+@import "src/index.scss";
+
 .skills-container {
   margin: 1rem;
   .skills-card-container {
@@ -5,5 +7,15 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     gap: 30px;
+  }
+}
+
+@include mobiles {
+  .skills-container {
+    .skills-card-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }

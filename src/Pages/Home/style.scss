@@ -49,7 +49,6 @@
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
-    padding-top: 100px;
     .header {
       text-align: center;
       .title {
@@ -75,7 +74,7 @@
     }
     .social-icons {
       display: flex;
-      justify-content: center;
+      justify-content: space-evenly;
       .icon {
         height: 40px;
         width: 40px;
