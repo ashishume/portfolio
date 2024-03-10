@@ -43,6 +43,17 @@
   }
 }
 
+[data-tooltip]:hover::after {
+  display: block;
+  position: absolute;
+  content: attr(data-tooltip);
+  background: rgba(255, 255, 255, 0.281);
+  border-radius: 4px;
+  padding: 0.25em;
+  top: 55px;
+  left: 50%;
+  transform: translateX(-50%);
+}
 @include mobiles {
   .home-container {
     display: flex;

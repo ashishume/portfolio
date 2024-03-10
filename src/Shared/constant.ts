@@ -45,6 +45,11 @@ export const SocialIcons: ISocialIcons[] = [
     SvgElement: SVGs().StackOverflow,
     uri: "https://stackoverflow.com/users/8175628/ashish-dev",
   },
+  {
+    label: "LeetCode",
+    SvgElement: SVGs().LeetCode,
+    uri: "https://leetcode.com/ashishume/",
+  },
 ];
 
 export const SKILLS: ISkills = {

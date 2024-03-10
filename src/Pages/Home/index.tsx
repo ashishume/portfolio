@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import Layout from "../../Layout/layout";
 import TypingEffect from "../../Shared/Services/TypingEffect";
 import { SocialIcons } from "../../Shared/constant";
-import profile from '../../../public/profile.webp'
+import profile from "../../../public/profile.webp";
 import "./style.scss";
 const Home = () => {
   const navigate = useNavigate();
@@ -24,6 +24,7 @@ const Home = () => {
                   onClick={() => handleRedirection(uri)}
                   key={label}
                   className="icon"
+                  data-tooltip={label}
                 >
                   {SvgElement}
                 </div>
