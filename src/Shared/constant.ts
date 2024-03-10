@@ -1,12 +1,18 @@
+import { lazy } from "react";
 import { SVGs } from "./icons";
 import { INavbar, ISkills, ISocialIcons } from "./models";
 
+const Home = lazy(() => import("../Pages/Home"));
+const Projects = lazy(() => import("../Pages/Projects"));
+const About = lazy(() => import("../Pages/About"));
+const Skills = lazy(() => import("../Pages/Skills"));
+
+
 export const NavItems: INavbar[] = [
-  { label: "Home", route: "/" },
-  { label: "Projects", route: "/projects" },
-  // { label: "Contact", route: "/contact" },
-  { label: "About", route: "/about" },
-  { label: "Skills", route: "/skills" },
+  { label: "Home", route: "/", Element: Home },
+  { label: "Projects", route: "/projects", Element: Projects },
+  { label: "About", route: "/about", Element: About },
+  { label: "Skills", route: "/skills", Element: Skills },
 ];
 
 export const SocialIcons: ISocialIcons[] = [
@@ -39,21 +45,6 @@ export const SocialIcons: ISocialIcons[] = [
     label: "Stackoverflow",
     SvgElement: SVGs().StackOverflow,
     uri: "https://stackoverflow.com/users/8175628/ashish-dev",
-  },
-];
-
-export const LANGUAGES = [
-  {
-    key: 1,
-    label: "Javascript",
-  },
-  {
-    key: 2,
-    label: "Typescript",
-  },
-  {
-    key: 3,
-    label: "C++",
   },
 ];
 

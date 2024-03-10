@@ -1,7 +1,10 @@
+type ComponentType = React.ComponentType<any>;
+
 export interface INavbar {
   label: string;
   route: string;
   active?: boolean;
+  Element: ComponentType;
 }
 export interface ISocialIcons {
   label: string;

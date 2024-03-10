@@ -1,17 +1,25 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "../Pages/Home";
-import Projects from "../Pages/Projects";
-import About from "../Pages/About";
-import Skills from "../Pages/Skills";
+import { Suspense } from "react";
+import Spinner from "../Components/Spinner";
+import { NavItems } from "../Shared/constant";
 
 const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/skills" element={<Skills />} />
+        {NavItems.map(({ label, route, Element }) => {
+          return (
+            <Route
+              key={label}
+              path={route}
+              element={
+                <Suspense fallback={<Spinner />}>
+                  <Element />
+                </Suspense>
+              }
+            />
+          );
+        })}
       </Routes>
     </BrowserRouter>
   );

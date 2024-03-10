@@ -22,7 +22,7 @@ const ProjectCard = ({
           .replace(" ", "")
           .split(",")
           .map((value) => {
-            return <div className="tech-stack">{value}</div>;
+            return <div key={value} className="tech-stack">{value}</div>;
           })}
         <div className="description">{description}</div>
       </div>
