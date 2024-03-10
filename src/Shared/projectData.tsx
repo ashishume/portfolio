@@ -1,4 +1,9 @@
 import { IProjectCard } from "./models";
+import ecommerce from "../../public/ecommerce.webp";
+import interview from "../../public/interview.webp";
+import ielts from "../../public/ielts.webp";
+import ninemiles from "../../public/ninemiles.webp";
+import conference from "../../public/conference.webp";
 
 export const ProjectData: IProjectCard[] = [
   {
@@ -7,7 +12,7 @@ export const ProjectData: IProjectCard[] = [
     techStack: "React Native, Nodejs, MongoDB",
     description:
       "This project is an e-commerce website that aims to provide a seamless online shopping experience. Users can browse products, view product details, add items to their cart, and make purchases securely.",
-    image: "/public/ecommerce.webp",
+    image: ecommerce,
     uri: "https://github.com/ashishume/Axpo-shop-ecommerce",
   },
   {
@@ -16,7 +21,7 @@ export const ProjectData: IProjectCard[] = [
     techStack: "React Native, Nodejs, MongoDB",
     description:
       "This repo contains the questions related to all frontend questions required for interview, from basic to advanced",
-    image: "/public/interview.webp",
+    image: interview,
     uri: "https://github.com/ashishume/Front-end-Javascript-Interview-Topics",
   },
   {
@@ -25,7 +30,7 @@ export const ProjectData: IProjectCard[] = [
     techStack: "React Native, Nodejs, MongoDB",
     description:
       "This project is an online mock exam portal for IELTS students thos who are pursuing for international colleges.",
-    image: "/public/ielts.webp",
+    image: ielts,
     uri: "https://github.com/ashishume/reality-check-frontend",
   },
   {
@@ -34,7 +39,7 @@ export const ProjectData: IProjectCard[] = [
     techStack: "React Native, Nodejs, MongoDB",
     description:
       "This project is an landing page for exam portal contains MCQ based questions with fill in the blanks",
-    image: "/public/ninemiles.webp",
+    image: ninemiles,
     uri: "https://github.com/ashishume/Ninemiles-Angular-app",
   },
   {
@@ -63,7 +68,7 @@ export const ProjectData: IProjectCard[] = [
     techStack: "React Native, Nodejs, MongoDB",
     description:
       "This is a react native app for students who are preparing for govt exams",
-    image: "/public/conference.webp",
+    image: conference,
     uri: "https://github.com/ashishume/conference-room-app",
   },
 ];

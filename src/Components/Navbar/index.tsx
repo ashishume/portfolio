@@ -5,6 +5,7 @@ import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { SVGs } from "../../Shared/icons";
 import { INavbar } from "../../Shared/models";
+import portfolio from "../../../public/portfolio-logo.webp";
 const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -39,7 +40,7 @@ const Navbar = () => {
   return (
     <div className={"navbar-container"}>
       <Link to="/">
-        <img className="portfolio-pic" src="/public/portfolio-logo.webp" />
+        <img className="portfolio-pic" src={portfolio} />
       </Link>
       <ul className={"nav-items"}>
         <div className={"navbar-resp"}>

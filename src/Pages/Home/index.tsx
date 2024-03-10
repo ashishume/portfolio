@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import Layout from "../../Layout/layout";
 import TypingEffect from "../../Shared/Services/TypingEffect";
 import { SocialIcons } from "../../Shared/constant";
+import profile from '../../../public/profile.webp'
 import "./style.scss";
 const Home = () => {
   const navigate = useNavigate();
@@ -34,7 +35,7 @@ const Home = () => {
           </button>
         </div>
         <div className="profile-pic-container">
-          <img src="/public/profile.webp" className="profile-pic" />
+          <img src={profile} className="profile-pic" />
         </div>
       </div>
     </Layout>
