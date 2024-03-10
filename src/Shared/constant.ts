@@ -10,9 +10,9 @@ const Skills = lazy(() => import("../Pages/Skills"));
 
 export const NavItems: INavbar[] = [
   { label: "Home", route: "/", Element: Home },
+  { label: "Skills", route: "/skills", Element: Skills },
   { label: "Projects", route: "/projects", Element: Projects },
   { label: "About", route: "/about", Element: About },
-  { label: "Skills", route: "/skills", Element: Skills },
 ];
 
 export const SocialIcons: ISocialIcons[] = [

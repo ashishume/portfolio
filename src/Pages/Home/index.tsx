@@ -3,7 +3,6 @@ import Layout from "../../Layout/layout";
 import TypingEffect from "../../Shared/Services/TypingEffect";
 import { SocialIcons } from "../../Shared/constant";
 import "./style.scss";
-import profile from "../../Assets/profile.png";
 const Home = () => {
   const navigate = useNavigate();
   const handleRedirection = (uri: string) => {
@@ -16,7 +15,7 @@ const Home = () => {
           <div className="title">
             <TypingEffect text="Hi There, I'm Ashish Debnath" />
           </div>
-          <div className="subtitle">I build web apps</div>
+          <div className="subtitle">I build web and mobile apps</div>
           <div className="social-icons">
             {SocialIcons.map(({ label, SvgElement, uri }) => {
               return (
@@ -35,7 +34,7 @@ const Home = () => {
           </button>
         </div>
         <div className="profile-pic-container">
-          <img src={profile} className="profile-pic" />
+          <img src="/public/profile.webp" className="profile-pic" />
         </div>
       </div>
     </Layout>
