@@ -4,10 +4,20 @@ import interview from "../../public/interview.webp";
 import ielts from "../../public/ielts.webp";
 import ninemiles from "../../public/ninemiles.webp";
 import conference from "../../public/conference.webp";
+import chatApp from "../../public/chat-app-logo.png";
 
 export const ProjectData: IProjectCard[] = [
   {
     key: 1,
+    title: "Axpo chat (Realtime chat application)",
+    techStack: "React, Nodejs, PostgresSQL, Socket.io (web hooks)",
+    description:
+      "This is a react app for realtime chat using express server and socket for hooks",
+    image: chatApp,
+    uri: "https://github.com/ashishume/axpo-chat-app",
+  },
+  {
+    key: 2,
     title: "Axpo shop ecommerce",
     techStack: "ReactJs, Nodejs, MongoDB",
     description:
@@ -16,7 +26,7 @@ export const ProjectData: IProjectCard[] = [
     uri: "https://github.com/ashishume/Axpo-shop-ecommerce",
   },
   {
-    key: 2,
+    key: 3,
     title: "Interview Questions (VanillaJS + React)",
     techStack: "VanillaJS",
     description:
@@ -25,7 +35,7 @@ export const ProjectData: IProjectCard[] = [
     uri: "https://github.com/ashishume/Front-end-Javascript-Interview-Topics",
   },
   {
-    key: 3,
+    key: 4,
     title: "Reality check",
     techStack: "Angular, Nodejs, Firebase",
     description:
@@ -34,7 +44,7 @@ export const ProjectData: IProjectCard[] = [
     uri: "https://github.com/ashishume/reality-check-frontend",
   },
   {
-    key: 4,
+    key: 5,
     title: "Ninemiles",
     techStack: "Angular, Nodejs, Firebase",
     description:
@@ -43,7 +53,7 @@ export const ProjectData: IProjectCard[] = [
     uri: "https://github.com/ashishume/Ninemiles-Angular-app",
   },
   {
-    key: 5,
+    key: 6,
     title: "Wally",
     techStack: "React Native, Nodejs, MongoDB",
     description:
@@ -53,7 +63,7 @@ export const ProjectData: IProjectCard[] = [
     uri: "https://play.google.com/store/apps/details?id=com.wallypix",
   },
   {
-    key: 6,
+    key: 7,
     title: "MCG Education",
     techStack: "React Native, Nodejs, MongoDB",
     description:
@@ -63,7 +73,7 @@ export const ProjectData: IProjectCard[] = [
     uri: "https://play.google.com/store/apps/details?id=com.mcgeducation",
   },
   {
-    key: 7,
+    key: 8,
     title: "Conference room booking app",
     techStack: "Angular, Nodejs, MongoDB",
     description:
@@ -71,4 +81,5 @@ export const ProjectData: IProjectCard[] = [
     image: conference,
     uri: "https://github.com/ashishume/conference-room-app",
   },
+
 ];
