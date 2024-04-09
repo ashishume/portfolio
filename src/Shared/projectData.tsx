@@ -8,6 +8,15 @@ import chatApp from "../../public/chat-app-logo.png";
 
 export const ProjectData: IProjectCard[] = [
   {
+    key: 9,
+    title: "Axpo board (trello board clone)",
+    techStack: "React, Localstorage as db",
+    description:
+      "This is a react app to create tasks similar to trello board.",
+    image: "https://www.vectorlogo.zone/logos/trello/trello-ar21.png",
+    uri: "https://front-end-javascript-interview-topics.vercel.app/trello-board",
+  },
+  {
     key: 1,
     title: "Axpo chat (Realtime chat application)",
     techStack: "React, Nodejs, PostgresSQL, Socket.io (web hooks)",
@@ -32,7 +41,7 @@ export const ProjectData: IProjectCard[] = [
     description:
       "This repo contains the questions related to all frontend questions required for interview, from basic to advanced",
     image: interview,
-    uri: "https://github.com/ashishume/Front-end-Javascript-Interview-Topics",
+    uri: "https://front-end-javascript-interview-topics.vercel.app",
   },
   {
     key: 4,
@@ -81,5 +90,6 @@ export const ProjectData: IProjectCard[] = [
     image: conference,
     uri: "https://github.com/ashishume/conference-room-app",
   },
+  
 
 ];
