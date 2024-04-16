@@ -30,11 +30,11 @@ export const SocialIcons: ISocialIcons[] = [
     SvgElement: SVGs().LinkedIn,
     uri: "https://www.linkedin.com/in/ashishume",
   },
-  {
-    label: "instagram",
-    SvgElement: SVGs().Instagram,
-    uri: "https://www.instagram.com/aaashishdev",
-  },
+  // {
+  //   label: "instagram",
+  //   SvgElement: SVGs().Instagram,
+  //   uri: "https://www.instagram.com/aaashishdev",
+  // },
   {
     label: "twitter",
     SvgElement: SVGs().Twitter,
