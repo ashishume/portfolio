@@ -5,15 +5,26 @@ import ielts from "../../public/ielts.webp";
 import ninemiles from "../../public/ninemiles.webp";
 import conference from "../../public/conference.webp";
 import chatApp from "../../public/chat-app-logo.png";
+import trello from "../../public/trello.png";
+import auction from "../../public/auctions.png";
 
 export const ProjectData: IProjectCard[] = [
+  {
+    key: 10,
+    title: "Axpo Auctions",
+    techStack: "Nextjs, Nodejs express, PostgresSQL (supabase)",
+    description:
+      "This is a nextjs app to where user can login and bid of various listed projects",
+    image: auction,
+    uri: "https://github.com/ashishume/Axpo-Auction",
+  },
   {
     key: 9,
     title: "Axpo board (trello board clone)",
     techStack: "React, Localstorage as db",
     description:
       "This is a react app to create tasks similar to trello board.",
-    image: "https://www.vectorlogo.zone/logos/trello/trello-ar21.png",
+    image: trello,
     uri: "https://front-end-javascript-interview-topics.vercel.app/trello-board",
   },
   {
