@@ -78,6 +78,10 @@ export const SKILLS: ISkills = {
     },
     {
       key: 4,
+      label: "NextJS",
+    },
+    {
+      key: 5,
       label: "React Native",
     },
   ],
