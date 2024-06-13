@@ -66,10 +66,10 @@ code {
 }
 .cover-image {
   z-index: 0;
-  background: url("/public/background.webp");
+  // background: url("/public/background.webp");
   background-size: cover;
   height: 100vh;
-  width: 100vw;
+  // width: 100vw;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
