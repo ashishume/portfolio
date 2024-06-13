@@ -15,11 +15,11 @@ export const NavItems: INavbar[] = [
 ];
 
 export const SocialIcons: ISocialIcons[] = [
-  {
-    label: "facebook",
-    SvgElement: SVGs().Facebook,
-    uri: "https://www.facebook.com/ashishdevume",
-  },
+  // {
+  //   label: "facebook",
+  //   SvgElement: SVGs().Facebook,
+  //   uri: "https://www.facebook.com/ashishdevume",
+  // },
   {
     label: "github",
     SvgElement: SVGs().Github,
