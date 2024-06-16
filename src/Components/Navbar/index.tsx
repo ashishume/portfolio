@@ -1,24 +1,28 @@
-import "./style.scss";
-import { Link, useNavigate } from "react-router-dom";
-import { NavItems } from "../../Shared/constant";
-import { useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { SVGs } from "../../Shared/icons";
+import { NavItems } from "../../Shared/constant";
 import { INavbar } from "../../Shared/models";
-import portfolio from "../../../public/portfolio-logo.webp";
-const Navbar = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
-  const [activeItemIndex, setActiveItemIndex] = useState(null as any);
-  const [open, setOpen] = useState(window.innerWidth > 450);
-  useEffect(() => {
-    const { pathname } = location;
+import { useNavigate } from "react-router-dom";
 
+const Navbar: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeItemIndex, setActiveItemIndex] = useState(null as any);
+  const navigate = useNavigate();
+  const { pathname } = location;
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  useEffect(() => {
     NavItems.map(({ label }: INavbar, index) => {
       const newLabel = label.toLocaleLowerCase();
       if (pathname !== "/") {
         const cleanPathname = pathname.split("/")[1];
+
         if (newLabel.includes(cleanPathname)) {
+          console.log(index);
+
           setActiveItemIndex(index);
           return;
         }
@@ -29,49 +33,50 @@ const Navbar = () => {
         }
       }
     });
-  }, [location.pathname]);
+  }, []);
+
   const handleNavItem = (route: string) => {
     navigate(route);
   };
-  const toggleNavbar = () => {
-    setOpen(!open);
+
+  const createNavListItem = () => {
+    return NavItems.map(({ label, route }, index) => {
+      return (
+        <li key={label}>
+          <a
+            onClick={() => handleNavItem(route)}
+            className={`${
+              activeItemIndex !== null && index == activeItemIndex
+                ? "py-1 text-white font-bold"
+                : "text-gray-400"
+            } hover:text-gray-400 mx-2 cursor-pointer`}
+          >
+            {label.toUpperCase()}
+          </a>
+        </li>
+      );
+    });
   };
 
   return (
-    <div className={"navbar-container"}>
-      <Link to="/">
-        <img className="portfolio-pic" src={portfolio} />
-      </Link>
-      <ul className={"nav-items"}>
-        <div className={"navbar-resp"}>
-          {open ? (
-            <div className={"close-icon"} onClick={toggleNavbar}>
-              {SVGs().CloseIcon}
-            </div>
-          ) : (
-            <div className={"menu-icon"} onClick={toggleNavbar}>
-              {SVGs().MenuIcon}
-            </div>
-          )}
+    <nav className="bg-gray-900 text-white p-4">
+      <div className="container mx-auto flex justify-between items-center">
+        <div className="text-lg font-bold">Logo</div>
+        <ul className="hidden md:flex space-x-4">{createNavListItem()}</ul>
+        <div className="md:hidden">
+          <button onClick={toggleMenu} className="focus:outline-none">
+            {SVGs().Menu}
+          </button>
         </div>
-        {open &&
-          NavItems.map((item, index) => {
-            return (
-              <li
-                key={item.label}
-                className={
-                  activeItemIndex !== null && index == activeItemIndex
-                    ? "active"
-                    : ""
-                }
-                onClick={() => handleNavItem(item?.route)}
-              >
-                {item.label}
-              </li>
-            );
-          })}
-      </ul>
-    </div>
+      </div>
+      {isMenuOpen && (
+        <div className="md:hidden">
+          <ul className="flex flex-col space-y-4 mt-4">
+            {createNavListItem()}
+          </ul>
+        </div>
+      )}
+    </nav>
   );
 };
 

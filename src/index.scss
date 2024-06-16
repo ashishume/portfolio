@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 $landing-font-color: #a0a0a0;
 $primary-text-color: #fff;
@@ -66,6 +69,7 @@ code {
 }
 .cover-image {
   z-index: 0;
+  background-color: #08070b;
   // background: url("/public/background.webp");
   background-size: cover;
   height: 100vh;
@@ -81,7 +85,7 @@ code {
     padding: 0;
   }
   .cover-image {
-    background: url("/public/background.webp");
+    // background: url("/public/background.webp");
     background-size: cover;
     width: 100vw;
     height: 100%;
