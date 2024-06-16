@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import Layout from "../../Layout/layout";
+import Snackbar from "../../Components/Snackbar";
 import emailjs from "@emailjs/browser";
 
 const ContactMe: React.FC = () => {
@@ -8,6 +9,8 @@ const ContactMe: React.FC = () => {
     email: "",
     message: "",
   };
+
+  const [isSnackbarOpen, openSnackbar] = useState(false);
 
   const serviceId = "service_d5cjsva";
   const templateId = "template_fviwbek";
@@ -34,8 +37,8 @@ const ContactMe: React.FC = () => {
         })
         .then(
           () => {
+            openSnackbar(true);
             setFormData(INITIAL_STATE);
-            console.log("SUCCESS!");
           },
           (error) => {
             console.log("FAILED...", error);
@@ -52,7 +55,7 @@ const ContactMe: React.FC = () => {
           onSubmit={handleSubmit}
           className="bg-gray-800 text-white p-8 rounded-lg shadow-lg w-full max-w-md transition-transform transform"
         >
-          <h2 className="text-2xl font-bold mb-6 text-center">Contact Us</h2>
+          <h2 className="text-2xl font-bold mb-6 text-center">Contact Me</h2>
           <div className="mb-4">
             <label
               className="block mb-2 text-sm font-medium text-gray-400"
@@ -111,6 +114,9 @@ const ContactMe: React.FC = () => {
           </button>
         </form>
       </div>
+      {isSnackbarOpen ? (
+        <Snackbar message="Message sent successfully!" />
+      ) : null}
     </Layout>
   );
 };
