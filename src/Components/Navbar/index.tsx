@@ -3,7 +3,6 @@ import { SVGs } from "../../Shared/icons";
 import { NavItems } from "../../Shared/constant";
 import { INavbar } from "../../Shared/models";
 import { useNavigate } from "react-router-dom";
-
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeItemIndex, setActiveItemIndex] = useState(null as any);
@@ -59,9 +58,11 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="bg-gray-900 text-white p-4">
+    <nav className="bg-dark-black text-white p-4">
       <div className="container mx-auto flex justify-between items-center">
-        <div className="text-lg font-bold">Logo</div>
+        <div className="text-lg font-bold">
+          <div className="bg-gray-900 text-4xl bg-gray-700 px-3 rounded-md">A</div>
+        </div>
         <ul className="hidden md:flex space-x-4">{createNavListItem()}</ul>
         <div className="md:hidden">
           <button onClick={toggleMenu} className="focus:outline-none">
