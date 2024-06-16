@@ -7,7 +7,7 @@ const Projects = () => {
   return (
     <Layout>
       <div className="projects-container">
-        <h2>Projects</h2>
+        <div className="text-center text-3xl">{"Projects".toUpperCase()}</div>
         <div className="card-container">
           {ProjectData.map(
             ({

@@ -24,7 +24,7 @@ const Skills = () => {
   return (
     <Layout>
       <div className="skills-container">
-        <h2>Skills</h2>
+        <div className="text-center text-3xl">{"Skills".toUpperCase()}</div>
         <div className="skills-card-container">
           {skillData ? (
             Object.entries(skillData).map((value, index) => {
