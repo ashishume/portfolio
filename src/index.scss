@@ -42,7 +42,7 @@ body {
   font-weight: 400;
   font-style: normal;
   color: $primary-text-color;
-  background-color: #000D22;   // default background color to hide the white areas
+  background-color: #08070b;
 }
 
 code {
@@ -62,30 +62,14 @@ code {
 .typing-effect-text {
   text-shadow: 4px 2px 3px $landing-font-color;
 }
-.cover-image {
-  z-index: 0;
-  background-color: #08070b;
-  background-size: cover;
-  height: 100vh;
-  // width: 100vw;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-}
+
 
 @include mobiles {
   * {
     margin: 0;
     padding: 0;
   }
-  .cover-image {
-    background-size: cover;
-    width: 100vw;
-    height: 100%;
-    padding-bottom: 50px;
-    background-position: center center;
-    background-attachment: fixed;
-  }
+
 }
 
 button {

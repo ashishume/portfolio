@@ -12,7 +12,7 @@ export const ProjectData: IProjectCard[] = [
   {
     key: 10,
     title: "Axpo Auctions",
-    techStack: "Nextjs, Nodejs express, PostgresSQL (supabase)",
+    techStack: "Nextjs, Redux + Redux saga, Nodejs express, PostgresSQL (supabase)",
     description:
       "This is a nextjs app to where user can login and bid of various listed projects",
     image: auction,
