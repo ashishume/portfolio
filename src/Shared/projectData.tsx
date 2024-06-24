@@ -30,7 +30,7 @@ export const ProjectData: IProjectCard[] = [
   {
     key: 1,
     title: "Axpo chat (Realtime chat application)",
-    techStack: "React, Nodejs, PostgresSQL, Socket.io (web hooks)",
+    techStack: "React, Nodejs, PostgresSQL, Socket.io (web socket), Tailwind CSS",
     description:
       "This is a react app for realtime chat using express server and socket for hooks",
     image: chatApp,
