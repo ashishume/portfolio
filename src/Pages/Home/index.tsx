@@ -86,7 +86,7 @@ const Home = () => {
             <div className="w-full lg:w-2/5 flex justify-center lg:justify-end">
               <div className="relative">
                 {/* Main profile image with animation */}
-                <div className="relative z-10 rounded-full w-64 h-64 md:w-80 md:h-80 overflow-hidden border-4 border-blue-600 shadow-2xl shadow-blue-500/20 animate-pulse-slow">
+                <div className="relative z-10 rounded-full w-64 h-64 md:w-80 md:h-80 overflow-hidden border-4 border-blue-600 shadow-2xl shadow-blue-500/20">
                   <img
                     src={profile}
                     alt="Ashish Debnath"
