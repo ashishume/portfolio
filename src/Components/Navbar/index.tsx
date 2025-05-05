@@ -20,8 +20,6 @@ const Navbar: React.FC = () => {
         const cleanPathname = pathname.split("/")[1];
 
         if (newLabel.includes(cleanPathname)) {
-          console.log(index);
-
           setActiveItemIndex(index);
           return;
         }
@@ -61,7 +59,9 @@ const Navbar: React.FC = () => {
     <nav className="bg-dark-black text-white p-4">
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-lg font-bold">
-          <div className="bg-gray-900 text-4xl bg-gray-700 px-3 rounded-md">A</div>
+          <div className="bg-gray-900 text-4xl bg-gray-700 px-3 rounded-md">
+            A
+          </div>
         </div>
         <ul className="hidden md:flex space-x-4">{createNavListItem()}</ul>
         <div className="md:hidden">
