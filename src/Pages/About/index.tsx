@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import Layout from "../../Layout/layout";
-import TimelineView from "./TimelineView";
-import { workExperience } from "../../Shared/constant";
 
 const AboutMe = () => {
   const [isVisible, setIsVisible] = useState(false);
