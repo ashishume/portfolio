@@ -2,8 +2,9 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Layout from "../../Layout/layout";
 import TypingEffect from "../../Shared/Services/TypingEffect";
-import { SocialIcons } from "../../Shared/constant";
+import { SocialIcons, workExperience } from "../../Shared/constant";
 import profile from "../../../public/profile.jpg";
+import TimelineView from "../About/TimelineView";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -101,29 +102,21 @@ const Home = () => {
             </div>
           </div>
 
-          {/* Tech Stack Icons Preview (Optional) */}
-          <div className="mt-24 border-t border-gray-800 pt-16">
-            <div className="text-center mb-8">
-              <h3 className="text-xl text-gray-400 font-medium">Tech Stack</h3>
+          <div className="mt-20">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-white">
+                Professional Journey
+              </h2>
+              <div className="h-1 w-16 bg-blue-500 mx-auto mt-4"></div>
             </div>
-            <div className="flex justify-center flex-wrap gap-8 opacity-70 hover:opacity-100 transition-opacity duration-500">
-              {/* Example tech icons - replace with your actual tech stack */}
-              {[
-                "React",
-                "NodeJS",
-                "TypeScript",
-                "MongoDB",
-                "NestJS",
-                "Angular",
-              ].map((tech) => (
-                <div key={tech} className="text-center group">
-                  <div className="w-12 h-12 mx-auto mb-2 bg-gray-800 rounded-lg flex items-center justify-center group-hover:bg-blue-600/20 transition-colors duration-300">
-                    <span className="text-2xl text-gray-400 group-hover:text-blue-400">
-                      {tech.charAt(0)}
-                    </span>
-                  </div>
-                  <p className="text-xs text-gray-500">{tech}</p>
-                </div>
+
+            <div className="relative">
+              {/* Timeline Vertical Line */}
+              <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-blue-500/30"></div>
+
+              {/* Timeline Items */}
+              {workExperience.map((job, index) => (
+                <TimelineView key={job.id} job={job} index={index} />
               ))}
             </div>
           </div>
