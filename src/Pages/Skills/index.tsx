@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import SkillsCard from "../../Components/SkillsCard";
 import Layout from "../../Layout/layout";
 import { SKILLS } from "../../Shared/constant";
-import "./style.scss";
 import { ISkills } from "../../Shared/models";
 import Spinner from "../../Components/Spinner";
+
 const Skills = () => {
   const [skillData, setSkillData] = useState<ISkills | null>(null);
+
   useEffect(() => {
     setSkillData(SKILLS);
   }, []);
@@ -21,11 +22,12 @@ const Skills = () => {
         })
     );
   };
+
   return (
     <Layout>
-      <div className="skills-container">
-        <div className="text-center text-3xl">{"Skills".toUpperCase()}</div>
-        <div className="skills-card-container">
+      <div className="m-4">
+        <div className="text-center text-3xl uppercase">Skills</div>
+        <div className="flex flex-wrap justify-start gap-8 md:justify-start sm:justify-center sm:items-center">
           {skillData ? (
             Object.entries(skillData).map((value, index) => {
               return (
