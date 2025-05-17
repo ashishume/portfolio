@@ -17,11 +17,6 @@ export const NavItems: INavbar[] = [
 ];
 
 export const SocialIcons: ISocialIcons[] = [
-  // {
-  //   label: "facebook",
-  //   SvgElement: SVGs().Facebook,
-  //   uri: "https://www.facebook.com/ashishdevume",
-  // },
   {
     label: "github",
     SvgElement: SVGs().Github,
@@ -32,11 +27,7 @@ export const SocialIcons: ISocialIcons[] = [
     SvgElement: SVGs().LinkedIn,
     uri: "https://www.linkedin.com/in/ashishume",
   },
-  // {
-  //   label: "instagram",
-  //   SvgElement: SVGs().Instagram,
-  //   uri: "https://www.instagram.com/aaashishdev",
-  // },
+
   {
     label: "twitter",
     SvgElement: SVGs().Twitter,
@@ -55,16 +46,6 @@ export const SocialIcons: ISocialIcons[] = [
 ];
 
 export const SKILLS: ISkills = {
-  Databases: [
-    {
-      key: 1,
-      label: "MongoDB (NoSQL)",
-    },
-    {
-      key: 2,
-      label: "PostgreSQL",
-    },
-  ],
   FrontendTech: [
     {
       key: 1,
@@ -87,6 +68,17 @@ export const SKILLS: ISkills = {
       label: "React Native",
     },
   ],
+  Databases: [
+    {
+      key: 1,
+      label: "MongoDB (NoSQL)",
+    },
+    {
+      key: 2,
+      label: "PostgreSQL",
+    },
+  ],
+
   StateManagement: [
     {
       key: 1,
@@ -99,6 +91,10 @@ export const SKILLS: ISkills = {
     {
       key: 3,
       label: "RxJS",
+    },
+    {
+      key: 4,
+      label: "Zustand",
     },
   ],
   Languages: [
@@ -145,6 +141,20 @@ export const SKILLS: ISkills = {
     {
       key: 5,
       label: "Vs Code",
+    },
+  ],
+  BackendTech: [
+    {
+      key: 1,
+      label: "Node.js",
+    },
+    {
+      key: 2,
+      label: "Express.js",
+    },
+    {
+      key: 3,
+      label: "NestJS",
     },
   ],
 };
