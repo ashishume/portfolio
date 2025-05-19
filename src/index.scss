@@ -59,9 +59,6 @@ code {
     opacity: 0;
   }
 }
-.typing-effect-text {
-  text-shadow: 4px 2px 3px $landing-font-color;
-}
 
 @include mobiles {
   * {
