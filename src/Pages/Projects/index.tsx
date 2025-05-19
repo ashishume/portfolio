@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Layout from "../../Layout/layout";
 import { IProjectCard } from "../../Shared/models";
 import ProjectCard from "../../Components/ProjectCard";
-import { ProjectData } from "../../Shared/projectData";
+import { ProjectData } from "../../Shared/constant";
 
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
