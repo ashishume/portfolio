@@ -287,6 +287,15 @@ export const workExperience = [
 
 export const ProjectData: IProjectCard[] = [
   {
+    key: 11,
+    title: "Axpo expense splitter",
+    techStack: "React, Firebase, Typescript",
+    description: "This is a react app to split the expenses between friends",
+    image:
+      "https://github.com/ashishume/expense-splitter/blob/main/public/logo.jpg?raw=true",
+    uri: "https://axpo.ashishdebnath.com",
+  },
+  {
     key: 10,
     title: "Axpo Auctions",
     techStack:
