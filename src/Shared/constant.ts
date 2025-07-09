@@ -11,6 +11,7 @@ import conference from "../../public/conference.webp";
 import chatApp from "../../public/chat-app-logo.png";
 import trello from "../../public/trello.png";
 import auction from "../../public/auctions.png";
+import pairlyCode from "../../public/pairly-code.png";
 
 const Home = lazy(() => import("../Pages/Home"));
 const Projects = lazy(() => import("../Pages/Projects"));
@@ -286,6 +287,15 @@ export const workExperience = [
 ];
 
 export const ProjectData: IProjectCard[] = [
+  {
+    key: 12,
+    title: "Pairly Code",
+    techStack: "React, YJs, Websocket, NestJs, MongoDB",
+    description:
+      "This is a realtime collaborative coding platform for pair programming. It is a web app that allows users to code together in realtime.",
+    image: pairlyCode,
+    uri: "https://github.com/ashishume/PairlyCode/",
+  },
   {
     key: 11,
     title: "Axpo expense splitter",
