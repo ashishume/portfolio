@@ -30,11 +30,17 @@ const AboutMe = () => {
             </h1>
             <div className="h-1 w-20 bg-blue-500 mx-auto mt-6"></div>
             <p className="text-gray-300 mt-6 max-w-2xl mx-auto text-justify">
-              Hello! I'm Ashish Debnath, a {new Date().getFullYear() - 1997 - 1}{" "}
+              Hello! I'm Ashish Debnath, a{" "}
+              {
+                Math.floor(
+                  (new Date().getTime() - new Date("1997-10-11").getTime()) /
+                    (365.25 * 24 * 60 * 60 * 1000)
+                ) as number
+              }{" "}
               year old software engineer specializing in frontend development.{" "}
               <br />
-              With around {new Date().getFullYear() - 2019} years of experience
-              in the field, I've honed my skills in{" "}
+              With around {new Date().getFullYear() - 2019 + 1}+ years of
+              experience in the field, I've honed my skills in{" "}
               <u>
                 React, Angular, JavaScript, Node.js, TypeScript, and various
                 databases.
