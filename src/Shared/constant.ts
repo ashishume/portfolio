@@ -12,6 +12,7 @@ import chatApp from "../../public/chat-app-logo.png";
 import trello from "../../public/trello.png";
 import auction from "../../public/auctions.png";
 import pairlyCode from "../../public/pairly-code.png";
+import fastAPI from "../../public/fast_api.avif";
 
 const Home = lazy(() => import("../Pages/Home"));
 const Projects = lazy(() => import("../Pages/Projects"));
@@ -58,6 +59,10 @@ export const SocialIcons: ISocialIcons[] = [
 export const SKILLS: ISkills = {
   FrontendTech: [
     {
+      key: 3,
+      label: "ReactJS",
+    },
+    {
       key: 1,
       label: "VanillaJS",
     },
@@ -66,16 +71,34 @@ export const SKILLS: ISkills = {
       label: "Angular2+",
     },
     {
-      key: 3,
-      label: "ReactJS",
-    },
-    {
       key: 4,
       label: "NextJS",
     },
     {
       key: 5,
       label: "React Native",
+    },
+  ],
+  BackendTech: [
+    {
+      key: 1,
+      label: "Python",
+    },
+    {
+      key: 2,
+      label: "FastAPI",
+    },
+    {
+      key: 1,
+      label: "Node.js",
+    },
+    {
+      key: 2,
+      label: "Express.js",
+    },
+    {
+      key: 3,
+      label: "NestJS",
     },
   ],
   Databases: [
@@ -116,10 +139,6 @@ export const SKILLS: ISkills = {
       key: 2,
       label: "Typescript",
     },
-    {
-      key: 3,
-      label: "C++",
-    },
   ],
   Cloud: [
     {
@@ -151,20 +170,6 @@ export const SKILLS: ISkills = {
     {
       key: 5,
       label: "Vs Code",
-    },
-  ],
-  BackendTech: [
-    {
-      key: 1,
-      label: "Node.js",
-    },
-    {
-      key: 2,
-      label: "Express.js",
-    },
-    {
-      key: 3,
-      label: "NestJS",
     },
   ],
 };
@@ -287,6 +292,14 @@ export const workExperience = [
 ];
 
 export const ProjectData: IProjectCard[] = [
+  {
+    key: 13,
+    title: "Fast API backend system design",
+    techStack: "FastAPI, Python",
+    description: "This is a backend system design for a fast API application.",
+    image: fastAPI,
+    uri: "https://github.com/ashishume/fastapi-learning",
+  },
   {
     key: 12,
     title: "Pairly Code",
