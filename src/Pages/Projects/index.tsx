@@ -66,7 +66,7 @@ const Projects = () => {
               All Projects
             </button>
             {/* Add more filter buttons based on your common tech stack */}
-            {["React", "Node", "Mobile", "Web"].map((tech) => (
+            {["React", "Node", "Web", "Python"].map((tech) => (
               <button
                 key={tech}
                 onClick={() => setFilter(tech)}
