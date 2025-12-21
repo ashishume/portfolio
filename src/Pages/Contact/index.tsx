@@ -140,7 +140,7 @@ const ContactMe: React.FC = () => {
                         Work
                       </h4>
                       <p className="dark:text-white text-gray-900">
-                        Software Engineer
+                        Senior Software Engineer
                       </p>
                     </div>
                   </div>

@@ -37,13 +37,13 @@ const AboutMe = () => {
                     (365.25 * 24 * 60 * 60 * 1000)
                 ) as number
               }{" "}
-              year old software engineer specializing in frontend development.{" "}
-              <br />
+              year old senior software engineer specializing in full stack
+              development. <br />
               With around {new Date().getFullYear() - 2019 + 1}+ years of
               experience in the field, I've honed my skills in{" "}
               <u>
-                React, Angular, JavaScript, Node.js, TypeScript, and various
-                databases.
+                React, Angular, JavaScript, Node.js, TypeScript, FastAPI,
+                Python, and various databases.
               </u>
               <br />I have also worked extensively with{" "}
               <u>Docker containers, CI/CD pipelines, and Azure DevOps.</u>
