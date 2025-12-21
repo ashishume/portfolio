@@ -32,7 +32,7 @@ const Projects = () => {
 
   return (
     <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-800 to-slate-900 py-16 px-6 md:px-16 lg:px-24">
+      <div className="min-h-screen dark:bg-gradient-to-br dark:from-slate-900 dark:via-gray-800 dark:to-slate-900 bg-gradient-to-br from-gray-50 via-white to-gray-100 py-16 px-6 md:px-16 lg:px-24">
         <div
           className={`max-w-7xl mx-auto transition-all duration-1000 ${
             isVisible ? "opacity-100" : "opacity-0"
@@ -43,11 +43,11 @@ const Projects = () => {
             <div className="inline-block bg-blue-500/20 px-4 py-1 rounded-full text-blue-400 text-sm font-medium mb-4">
               My Portfolio
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white">
+            <h1 className="text-4xl md:text-5xl font-bold dark:text-white text-gray-900">
               PROJECTS
             </h1>
             <div className="h-1 w-20 bg-blue-500 mx-auto mt-6"></div>
-            <p className="text-gray-300 mt-6 max-w-2xl mx-auto">
+            <p className="dark:text-gray-300 text-gray-700 mt-6 max-w-2xl mx-auto">
               A showcase of my work, personal projects, and contributions that
               demonstrate my skills and passion for development.
             </p>
@@ -60,7 +60,7 @@ const Projects = () => {
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
                 filter === "all"
                   ? "bg-blue-600 text-white"
-                  : "bg-gray-800/70 text-gray-300 hover:bg-gray-700/70"
+                  : "dark:bg-gray-800/70 bg-gray-200/70 dark:text-gray-300 text-gray-700 dark:hover:bg-gray-700/70 hover:bg-gray-300/70"
               }`}
             >
               All Projects
@@ -73,7 +73,7 @@ const Projects = () => {
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
                   filter === tech
                     ? "bg-blue-600 text-white"
-                    : "bg-gray-800/70 text-gray-300 hover:bg-gray-700/70"
+                    : "dark:bg-gray-800/70 bg-gray-200/70 dark:text-gray-300 text-gray-700 dark:hover:bg-gray-700/70 hover:bg-gray-300/70"
                 }`}
               >
                 {tech}
@@ -123,10 +123,10 @@ const Projects = () => {
               <div className="inline-block p-4 rounded-full bg-blue-500/10 mb-4">
                 {SVGs().Lightbulb}
               </div>
-              <h3 className="text-2xl font-semibold text-white mb-2">
+              <h3 className="text-2xl font-semibold dark:text-white text-gray-900 mb-2">
                 No projects found
               </h3>
-              <p className="text-gray-400">
+              <p className="dark:text-gray-400 text-gray-600">
                 Try changing your filter or check back later for new projects.
               </p>
             </div>
@@ -134,11 +134,11 @@ const Projects = () => {
 
           {/* Contact CTA Section */}
           <div className="mt-24 text-center">
-            <div className="bg-gradient-to-r from-blue-900/30 to-purple-900/30 backdrop-blur-sm border border-blue-500/20 rounded-xl p-8 max-w-4xl mx-auto">
-              <h3 className="text-2xl font-semibold text-white mb-4">
+            <div className="dark:bg-gradient-to-r dark:from-blue-900/30 dark:to-purple-900/30 bg-gradient-to-r from-blue-100/50 to-purple-100/50 backdrop-blur-sm border dark:border-blue-500/20 border-blue-300/50 rounded-xl p-8 max-w-4xl mx-auto">
+              <h3 className="text-2xl font-semibold dark:text-white text-gray-900 mb-4">
                 Interested in working together?
               </h3>
-              <p className="text-gray-300 mb-6">
+              <p className="dark:text-gray-300 text-gray-700 mb-6">
                 I'm always open to discussing product design work or partnership
                 opportunities.
               </p>

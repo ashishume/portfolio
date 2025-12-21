@@ -3,6 +3,7 @@ import { SVGs } from "../../Shared/icons";
 import { NavItems } from "../../Shared/constant";
 import { INavbar } from "../../Shared/models";
 import { useNavigate } from "react-router-dom";
+import { useTheme } from "../../Context/ThemeContext";
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,6 +11,7 @@ const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
   const { pathname } = location;
+  const { theme, toggleTheme } = useTheme();
 
   // Handle scroll effect for transparent to solid navbar
   useEffect(() => {
@@ -57,7 +59,7 @@ const Navbar: React.FC = () => {
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-gray-900/95 backdrop-blur-md shadow-lg"
+          ? "dark:bg-gray-900/95 bg-white/95 backdrop-blur-md shadow-lg"
           : "bg-transparent"
       }`}
     >
@@ -70,7 +72,7 @@ const Navbar: React.FC = () => {
               className="group cursor-pointer flex items-center"
             >
               <div className="flex items-center justify-center h-10 w-10 bg-gradient-to-tr from-blue-600 to-blue-400 rounded-lg shadow-lg transform transition-all duration-300 group-hover:rotate-6 group-hover:scale-110">
-                <span className="text-white text-2xl font-bold">A</span>
+                <span className="text-white dark:text-white text-2xl font-bold">A</span>
               </div>
               {/* <span className="ml-3 text-white font-semibold text-lg hidden sm:block">
                 Ashish<span className="text-blue-400">.dev</span>
@@ -79,7 +81,7 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:block">
+          <div className="hidden md:flex items-center space-x-4">
             <ul className="flex space-x-1">
               {NavItems.map(({ label, route }, index) => (
                 <li key={label}>
@@ -87,8 +89,8 @@ const Navbar: React.FC = () => {
                     onClick={() => handleNavItem(route)}
                     className={`relative px-4 py-2 rounded-md font-medium cursor-pointer transition-all duration-300 inline-block text-sm ${
                       activeItemIndex === index
-                        ? "text-white"
-                        : "text-gray-400 hover:text-gray-200"
+                        ? "dark:text-white text-gray-900"
+                        : "dark:text-gray-400 dark:hover:text-gray-200 text-gray-600 hover:text-gray-900"
                     }`}
                   >
                     {label.toUpperCase()}
@@ -99,13 +101,33 @@ const Navbar: React.FC = () => {
                 </li>
               ))}
             </ul>
+            
+            {/* Theme Toggle Button */}
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-lg dark:bg-gray-800/70 bg-gray-200/70 hover:dark:bg-gray-700/70 hover:bg-gray-300/70 transition-colors duration-300 focus:outline-none"
+              aria-label="Toggle theme"
+            >
+              <div className="dark:text-yellow-400 text-gray-700">
+                {theme === "dark" ? SVGs().Sun : SVGs().Moon}
+              </div>
+            </button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          {/* Mobile Menu Button and Theme Toggle */}
+          <div className="md:hidden flex items-center space-x-2">
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-lg dark:bg-gray-800/70 bg-gray-200/70 hover:dark:bg-gray-700/70 hover:bg-gray-300/70 transition-colors duration-300 focus:outline-none"
+              aria-label="Toggle theme"
+            >
+              <div className="dark:text-yellow-400 text-gray-700">
+                {theme === "dark" ? SVGs().Sun : SVGs().Moon}
+              </div>
+            </button>
             <button
               onClick={toggleMenu}
-              className="p-2 rounded-lg bg-gray-800/70 hover:bg-gray-700/70 transition-colors duration-300 focus:outline-none"
+              className="p-2 rounded-lg dark:bg-gray-800/70 bg-gray-200/70 hover:dark:bg-gray-700/70 hover:bg-gray-300/70 transition-colors duration-300 focus:outline-none"
               aria-label="Toggle menu"
             >
               {isMenuOpen ? SVGs().Close : SVGs().Menu}
@@ -120,7 +142,7 @@ const Navbar: React.FC = () => {
           isMenuOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="bg-gray-900/95 backdrop-blur-md border-t border-gray-800 px-4 py-2 shadow-lg">
+        <div className="dark:bg-gray-900/95 bg-white/95 backdrop-blur-md border-t dark:border-gray-800 border-gray-200 px-4 py-2 shadow-lg">
           <ul className="space-y-2 pb-3 pt-2">
             {NavItems.map(({ label, route }, index) => (
               <li key={label}>
@@ -128,8 +150,8 @@ const Navbar: React.FC = () => {
                   onClick={() => handleNavItem(route)}
                   className={`block px-3 py-2 rounded-md transition-all duration-200 ${
                     activeItemIndex === index
-                      ? "bg-gray-800 text-white font-medium"
-                      : "text-gray-400 hover:text-white hover:bg-gray-800/40"
+                      ? "dark:bg-gray-800 bg-gray-200 dark:text-white text-gray-900 font-medium"
+                      : "dark:text-gray-400 dark:hover:text-white text-gray-600 hover:text-gray-900 dark:hover:bg-gray-800/40 hover:bg-gray-200/40"
                   }`}
                 >
                   <div className="flex items-center">

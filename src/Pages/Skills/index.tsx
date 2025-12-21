@@ -35,7 +35,7 @@ const Skills = () => {
 
   return (
     <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-800 to-slate-900 py-16 px-6 md:px-16 lg:px-24">
+      <div className="min-h-screen dark:bg-gradient-to-br dark:from-slate-900 dark:via-gray-800 dark:to-slate-900 bg-gradient-to-br from-gray-50 via-white to-gray-100 py-16 px-6 md:px-16 lg:px-24">
         <div
           className={`max-w-7xl mx-auto transition-all duration-1000 ${
             isVisible ? "opacity-100" : "opacity-0"
@@ -46,11 +46,11 @@ const Skills = () => {
             <div className="inline-block bg-blue-500/20 px-4 py-1 rounded-full text-blue-400 text-sm font-medium mb-4">
               My Technical Expertise
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white">
+            <h1 className="text-4xl md:text-5xl font-bold dark:text-white text-gray-900">
               SKILLS
             </h1>
             <div className="h-1 w-20 bg-blue-500 mx-auto mt-6"></div>
-            <p className="text-gray-300 mt-6 max-w-2xl mx-auto">
+            <p className="dark:text-gray-300 text-gray-700 mt-6 max-w-2xl mx-auto">
               Here's a comprehensive overview of my technical skills and areas
               of expertise that I've developed throughout my career.
             </p>
@@ -66,7 +66,7 @@ const Skills = () => {
                 return (
                   <div
                     key={index}
-                    className={`bg-gray-900/70 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg border border-gray-800 hover:border-blue-500/30 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-blue-500/10`}
+                    className={`dark:bg-gray-900/70 bg-white/70 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg border dark:border-gray-800 border-gray-200 hover:border-blue-500/30 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-blue-500/10`}
                     style={{
                       animationDelay: `${index * 0.1}s`,
                       animation: "fadeIn 0.5s ease-out forwards",
@@ -78,7 +78,7 @@ const Skills = () => {
                         <div className="bg-blue-500/20 rounded-lg p-2 mr-4">
                           {SVGs().Shield}
                         </div>
-                        <h3 className="text-xl font-semibold text-white">
+                        <h3 className="text-xl font-semibold dark:text-white text-gray-900">
                           {formattedCategory}
                         </h3>
                       </div>
@@ -101,11 +101,11 @@ const Skills = () => {
           {/* Bottom section with call to action */}
           {skillData && (
             <div className="mt-20 text-center">
-              <div className="bg-blue-500/10 backdrop-blur-sm border border-blue-500/20 rounded-xl p-8 max-w-3xl mx-auto">
-                <h3 className="text-2xl font-semibold text-white mb-4">
+              <div className="dark:bg-blue-500/10 bg-blue-100/50 backdrop-blur-sm border dark:border-blue-500/20 border-blue-300/50 rounded-xl p-8 max-w-3xl mx-auto">
+                <h3 className="text-2xl font-semibold dark:text-white text-gray-900 mb-4">
                   Want to see my skills in action?
                 </h3>
-                <p className="text-gray-300 mb-6">
+                <p className="dark:text-gray-300 text-gray-700 mb-6">
                   Check out my projects to see how I've applied these
                   technologies to solve real-world problems.
                 </p>

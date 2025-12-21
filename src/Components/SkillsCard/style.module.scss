@@ -13,16 +13,19 @@
   h2 {
     font-size: 20px;
     padding-bottom: 5px;
+    color: var(--text-primary);
   }
   .content {
     display: flex;
     flex-wrap: wrap;
     .item {
-      border: solid 1px #ffffff47;
+      border: solid 1px var(--border-color);
       padding: 5px;
       border-radius: 4px;
       margin: 5px 1px;
       font-size: 15px;
+      color: var(--text-primary);
+      background-color: var(--bg-secondary);
     }
   }
 }

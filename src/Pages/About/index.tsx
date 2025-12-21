@@ -14,7 +14,7 @@ const AboutMe = () => {
 
   return (
     <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-800 to-slate-900 py-16 px-6 md:px-16 lg:px-24">
+      <div className="min-h-screen dark:bg-gradient-to-br dark:from-slate-900 dark:via-gray-800 dark:to-slate-900 bg-gradient-to-br from-gray-50 via-white to-gray-100 py-16 px-6 md:px-16 lg:px-24">
         <div
           className={`max-w-7xl mx-auto transition-all duration-1000 ${
             isVisible ? "opacity-100" : "opacity-0"
@@ -25,11 +25,11 @@ const AboutMe = () => {
             <div className="inline-block bg-blue-500/20 px-4 py-1 rounded-full text-blue-400 text-sm font-medium mb-4">
               Know me
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white">
+            <h1 className="text-4xl md:text-5xl font-bold dark:text-white text-gray-900">
               ABOUT ME
             </h1>
             <div className="h-1 w-20 bg-blue-500 mx-auto mt-6"></div>
-            <p className="text-gray-300 mt-6 max-w-2xl mx-auto text-justify">
+            <p className="dark:text-gray-300 text-gray-700 mt-6 max-w-2xl mx-auto text-justify">
               Hello! I'm Ashish Debnath, a{" "}
               {
                 Math.floor(

@@ -69,7 +69,7 @@ const ContactMe: React.FC = () => {
 
   return (
     <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-800 to-slate-900 py-16 px-6 md:px-16 lg:px-24">
+      <div className="min-h-screen dark:bg-gradient-to-br dark:from-slate-900 dark:via-gray-800 dark:to-slate-900 bg-gradient-to-br from-gray-50 via-white to-gray-100 py-16 px-6 md:px-16 lg:px-24">
         <div
           className={`max-w-7xl mx-auto transition-all duration-1000 ${
             isVisible ? "opacity-100" : "opacity-0"
@@ -80,11 +80,11 @@ const ContactMe: React.FC = () => {
             <div className="inline-block bg-blue-500/20 px-4 py-1 rounded-full text-blue-400 text-sm font-medium mb-4">
               Get in touch
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white">
+            <h1 className="text-4xl md:text-5xl font-bold dark:text-white text-gray-900">
               CONTACT ME
             </h1>
             <div className="h-1 w-20 bg-blue-500 mx-auto mt-6"></div>
-            <p className="text-gray-300 mt-6 max-w-2xl mx-auto">
+            <p className="dark:text-gray-300 text-gray-700 mt-6 max-w-2xl mx-auto">
               Have a project in mind or just want to say hello? Fill out the
               form below, and I'll get back to you as soon as possible.
             </p>
@@ -94,8 +94,8 @@ const ContactMe: React.FC = () => {
           <div className="flex flex-col lg:flex-row justify-between gap-12 mt-10">
             {/* Left side - contact info */}
             <div className="w-full lg:w-2/5 space-y-8">
-              <div className="bg-slate-800/80 p-6 rounded-lg shadow-lg border-l-4 border-blue-500">
-                <h3 className="text-2xl font-bold text-white mb-6">
+              <div className="dark:bg-slate-800/80 bg-white/80 p-6 rounded-lg shadow-lg border-l-4 border-blue-500">
+                <h3 className="text-2xl font-bold dark:text-white text-gray-900 mb-6">
                   Contact Information
                 </h3>
 
@@ -105,7 +105,9 @@ const ContactMe: React.FC = () => {
                       {SVGs().Email}
                     </div>
                     <div>
-                      <h4 className="text-gray-300 font-medium">Email</h4>
+                      <h4 className="dark:text-gray-300 text-gray-700 font-medium">
+                        Email
+                      </h4>
                       <a
                         href="mailto:ashishume@gmail.com"
                         className="text-blue-400 hover:underline"
@@ -120,8 +122,12 @@ const ContactMe: React.FC = () => {
                       {SVGs().Location}
                     </div>
                     <div>
-                      <h4 className="text-gray-300 font-medium">Location</h4>
-                      <p className="text-white">Bengaluru, India</p>
+                      <h4 className="dark:text-gray-300 text-gray-700 font-medium">
+                        Location
+                      </h4>
+                      <p className="dark:text-white text-gray-900">
+                        Bengaluru, India
+                      </p>
                     </div>
                   </div>
 
@@ -130,27 +136,31 @@ const ContactMe: React.FC = () => {
                       {SVGs().Briefcase}
                     </div>
                     <div>
-                      <h4 className="text-gray-300 font-medium">Work</h4>
-                      <p className="text-white">Software Engineer</p>
+                      <h4 className="dark:text-gray-300 text-gray-700 font-medium">
+                        Work
+                      </h4>
+                      <p className="dark:text-white text-gray-900">
+                        Software Engineer
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Background elements similar to profile section */}
-              <div className="relative hidden lg:block h-64">
+              {/* <div className="relative hidden lg:block h-64">
                 <div className="absolute left-1/4 top-1/2 w-20 h-20 bg-blue-500/30 rounded-full blur-md"></div>
                 <div className="absolute right-1/4 bottom-0 w-16 h-16 bg-purple-500/20 rounded-full blur-md"></div>
-              </div>
+              </div> */}
             </div>
 
             {/* Right side - form */}
             <div className="w-full lg:w-3/5">
-              <div className="bg-slate-800/80 p-8 rounded-lg shadow-lg border-l-4 border-blue-500">
+              <div className="dark:bg-slate-800/80 bg-white/80 p-8 rounded-lg shadow-lg border-l-4 border-blue-500">
                 <form ref={formRef} onSubmit={handleSubmit}>
                   <div className="mb-6">
                     <label
-                      className="block mb-2 text-gray-300"
+                      className="block mb-2 dark:text-gray-300 text-gray-700"
                       htmlFor="from_name"
                     >
                       Name
@@ -161,13 +171,16 @@ const ContactMe: React.FC = () => {
                       name="from_name"
                       value={formData.from_name}
                       onChange={handleChange}
-                      className="w-full p-3 rounded-lg bg-slate-700/80 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                      className="w-full p-3 rounded-lg dark:bg-slate-700/80 bg-gray-100 dark:text-white text-gray-900 border dark:border-gray-700 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                       required
                     />
                   </div>
 
                   <div className="mb-6">
-                    <label className="block mb-2 text-gray-300" htmlFor="email">
+                    <label
+                      className="block mb-2 dark:text-gray-300 text-gray-700"
+                      htmlFor="email"
+                    >
                       Email
                     </label>
                     <input
@@ -176,14 +189,14 @@ const ContactMe: React.FC = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full p-3 rounded-lg bg-slate-700/80 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                      className="w-full p-3 rounded-lg dark:bg-slate-700/80 bg-gray-100 dark:text-white text-gray-900 border dark:border-gray-700 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                       required
                     />
                   </div>
 
                   <div className="mb-6">
                     <label
-                      className="block mb-2 text-gray-300"
+                      className="block mb-2 dark:text-gray-300 text-gray-700"
                       htmlFor="message"
                     >
                       Message
@@ -193,7 +206,7 @@ const ContactMe: React.FC = () => {
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      className="w-full p-3 h-40 rounded-lg bg-slate-700/80 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                      className="w-full p-3 h-40 rounded-lg dark:bg-slate-700/80 bg-gray-100 dark:text-white text-gray-900 border dark:border-gray-700 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                       required
                     ></textarea>
                   </div>

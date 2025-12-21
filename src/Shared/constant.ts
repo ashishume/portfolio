@@ -45,11 +45,6 @@ export const SocialIcons: ISocialIcons[] = [
     uri: "https://twitter.com/ashishume",
   },
   {
-    label: "Stackoverflow",
-    SvgElement: SVGs().StackOverflow,
-    uri: "https://stackoverflow.com/users/8175628/ashish-dev",
-  },
-  {
     label: "LeetCode",
     SvgElement: SVGs().LeetCode,
     uri: "https://leetcode.com/ashishume/",

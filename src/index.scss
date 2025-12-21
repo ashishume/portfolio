@@ -7,6 +7,33 @@
 $landing-font-color: #a0a0a0;
 $primary-text-color: #fff;
 $secondary-text-color: #000;
+
+// Theme variables
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-tertiary: #e9ecef;
+  --text-primary: #000000;
+  --text-secondary: #333333;
+  --text-tertiary: #666666;
+  --border-color: #dee2e6;
+  --scrollbar-track: #f1f1f1;
+  --scrollbar-thumb: #888;
+  --scrollbar-thumb-hover: #555;
+}
+
+.dark {
+  --bg-primary: #08070b;
+  --bg-secondary: #1a1a1f;
+  --bg-tertiary: #2d2d35;
+  --text-primary: #ffffff;
+  --text-secondary: #e0e0e0;
+  --text-tertiary: #a0a0a0;
+  --border-color: #3a3a44;
+  --scrollbar-track: #1a1a1f;
+  --scrollbar-thumb: #555;
+  --scrollbar-thumb-hover: #777;
+}
 @mixin mobiles {
   // iPhone 5/SE
   @media only screen and (max-device-width: 320px) {
@@ -41,8 +68,9 @@ body {
   font-family: "Varela Round", sans-serif;
   font-weight: 400;
   font-style: normal;
-  color: $primary-text-color;
-  background-color: #08070b;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 code {
@@ -84,15 +112,15 @@ code {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #f1f1f1;
+  background-color: var(--scrollbar-track);
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #888;
+  background-color: var(--scrollbar-thumb);
   border-radius: 5px;
 }
 
 /* Hover effect on the scrollbar thumb */
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #555;
+  background-color: var(--scrollbar-thumb-hover);
 }
