@@ -65,7 +65,7 @@ const Blog = () => {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row gap-8 items-start">
             {/* Left Sidebar */}
-            <div className="lg:order-1 w-full lg:w-64 lg:sticky lg:top-24 lg:self-start">
+            <div className="lg:order-1 w-full lg:w-80 lg:sticky lg:top-24 lg:self-start">
               <BlogSidebar
                 selectedCategory={selectedCategory || undefined}
                 onCategoryChange={setSelectedCategory}
