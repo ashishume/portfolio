@@ -1,7 +1,7 @@
 import { titleToSlug } from "./utils";
 import { parseFrontmatter } from "./frontmatter";
 import {
-  fetchBlogFileList,
+  fetchBlogMetadata,
   fetchBlogContent,
 } from "./Services/GitHubBlogService";
 
@@ -20,46 +20,36 @@ export interface IBlog {
 let blogPostsCache: IBlog[] | null = null;
 let blogPostsPromise: Promise<IBlog[]> | null = null;
 
+// Cache for parsed blog content (after frontmatter removal)
+// Key: slug, Value: parsed markdown content
+const blogContentCache = new Map<string, string>();
+
 /**
- * Fetch blog posts metadata from GitHub
- * This function fetches the list of markdown files and extracts frontmatter
+ * Fetch blog posts metadata from GitHub metadata.json
+ * This is much more efficient - only 1 API call instead of N+1 calls
  */
 async function fetchBlogPostsMetadata(): Promise<IBlog[]> {
   try {
-    const files = await fetchBlogFileList();
+    // Fetch metadata.json - single API call for all blog metadata
+    const metadata = await fetchBlogMetadata();
 
-    // Fetch content for each file to extract frontmatter
-    const postsPromises = files.map(async (file, index) => {
-      try {
-        const content = await fetchBlogContent(file.name);
-        const { data } = parseFrontmatter(content);
-
-        // Extract category from filename or use frontmatter
-        // Assuming all files are in frontend category, but can be overridden in frontmatter
-        const category = data.category || "frontend";
-
-        // Extract filename for slug if title is not provided
-        const filename = file.name.replace(".md", "");
-        const slug = data.slug || titleToSlug(data.title || filename);
+    // Convert metadata.json structure to IBlog array
+    const posts: IBlog[] = Object.entries(metadata).map(
+      ([filename, data]: [string, any], index) => {
+        // Extract filename without .md extension for fallback
+        const filenameWithoutExt = filename.replace(".md", "");
 
         return {
           id: data.id || String(index + 1),
-          title: data.title || filename,
-          slug: slug,
+          title: data.title || filenameWithoutExt,
+          slug: data.slug || titleToSlug(data.title || filenameWithoutExt),
           date: data.date || new Date().toISOString().split("T")[0],
           excerpt: data.excerpt || "",
           // Content is NOT stored here - loaded on demand via loadBlogContent
-          category: category,
-          filePath: file.name, // Store GitHub filename for lazy loading
+          category: data.category || "frontend",
+          filePath: filename, // Store GitHub filename for lazy loading
         } as IBlog;
-      } catch (error) {
-        console.error(`Error processing file ${file.name}:`, error);
-        return null;
       }
-    });
-
-    const posts = (await Promise.all(postsPromises)).filter(
-      (post): post is IBlog => post !== null
     );
 
     // Sort by date (newest first)
@@ -67,7 +57,7 @@ async function fetchBlogPostsMetadata(): Promise<IBlog[]> {
       (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
     );
   } catch (error) {
-    console.error("Error fetching blog posts:", error);
+    console.error("Error fetching blog posts metadata:", error);
     return [];
   }
 }
@@ -108,9 +98,15 @@ export const blogPosts: IBlog[] = [];
 /**
  * Lazy load markdown content for a specific blog post from GitHub
  * This function loads the content on-demand from GitHub raw content URL
+ * Results are cached to avoid repetitive API calls and re-parsing
  */
 export async function loadBlogContent(slug: string): Promise<string | null> {
   try {
+    // Check cache first
+    if (blogContentCache.has(slug)) {
+      return blogContentCache.get(slug)!;
+    }
+
     // Get blog posts if not already cached
     const posts = await getBlogPosts();
     const blog = posts.find((post) => post.slug === slug);
@@ -119,14 +115,26 @@ export async function loadBlogContent(slug: string): Promise<string | null> {
       return null;
     }
 
-    // Fetch content from GitHub raw URL
+    // Fetch content from GitHub raw URL (this is also cached in GitHubBlogService)
     const rawContent = await fetchBlogContent(blog.filePath);
     const { content: markdownContent } = parseFrontmatter(rawContent);
-    return markdownContent.trim();
+    const parsedContent = markdownContent.trim();
+
+    // Cache the parsed content
+    blogContentCache.set(slug, parsedContent);
+
+    return parsedContent;
   } catch (error) {
     console.error(`Failed to load blog content for ${slug}:`, error);
     return null;
   }
+}
+
+/**
+ * Clear blog content cache (useful for testing or forcing refresh)
+ */
+export function clearBlogContentCache(): void {
+  blogContentCache.clear();
 }
 
 /**
