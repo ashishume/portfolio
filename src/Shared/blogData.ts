@@ -3,7 +3,6 @@ import { parseFrontmatter } from "./frontmatter";
 import {
   fetchBlogFileList,
   fetchBlogContent,
-  getRawContentUrl,
 } from "./Services/GitHubBlogService";
 
 export interface IBlog {
@@ -141,9 +140,7 @@ export async function getCategories(): Promise<string[]> {
 /**
  * Get posts by category
  */
-export async function getPostsByCategory(
-  category: string
-): Promise<IBlog[]> {
+export async function getPostsByCategory(category: string): Promise<IBlog[]> {
   const posts = await getBlogPosts();
   return posts.filter((post) => post.category === category);
 }

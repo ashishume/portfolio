@@ -1,6 +1,6 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import { useBlogPosts } from "../../Shared/hooks/useBlogPosts";
-import { getCategories, getPostsByCategory } from "../../Shared/blogData";
+import { getCategories } from "../../Shared/blogData";
 import { useState, useEffect } from "react";
 
 interface BlogSidebarProps {
@@ -8,7 +8,10 @@ interface BlogSidebarProps {
   onCategoryChange?: (category: string | null) => void;
 }
 
-const BlogSidebar = ({ selectedCategory, onCategoryChange }: BlogSidebarProps) => {
+const BlogSidebar = ({
+  selectedCategory,
+  onCategoryChange,
+}: BlogSidebarProps) => {
   const navigate = useNavigate();
   const location = useLocation();
   const { blogPosts } = useBlogPosts();
@@ -80,12 +83,17 @@ const BlogSidebar = ({ selectedCategory, onCategoryChange }: BlogSidebarProps) =
           {/* Categories */}
           <div className="space-y-2">
             {categories.map((category) => {
-              const categoryPosts = blogPosts.filter((post) => post.category === category);
+              const categoryPosts = blogPosts.filter(
+                (post) => post.category === category
+              );
               const isExpanded = expandedCategories.has(category);
               const isSelected = selectedCategory === category;
 
               return (
-                <div key={category} className="border-b dark:border-gray-700 border-gray-200 last:border-b-0 pb-2 last:pb-0">
+                <div
+                  key={category}
+                  className="border-b dark:border-gray-700 border-gray-200 last:border-b-0 pb-2 last:pb-0"
+                >
                   <button
                     onClick={() => {
                       toggleCategory(category);
@@ -154,4 +162,3 @@ const BlogSidebar = ({ selectedCategory, onCategoryChange }: BlogSidebarProps) =
 };
 
 export default BlogSidebar;
-
