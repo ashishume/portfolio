@@ -3,20 +3,20 @@ import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import Layout from "../../Layout/layout";
 import { blogPosts, IBlog } from "../../Shared/blogData";
-import { getRelatedPosts } from "../../Shared/blogUtils";
+// import { getRelatedPosts } from "../../Shared/blogUtils";
 import BlogSidebar from "./BlogSidebar";
 
 const BlogDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const [blog, setBlog] = useState<IBlog | null>(null);
-  const [relatedPosts, setRelatedPosts] = useState<IBlog[]>([]);
+  // const [relatedPosts, setRelatedPosts] = useState<IBlog[]>([]);
 
   useEffect(() => {
     const foundBlog = blogPosts.find((post) => post.slug === slug);
     if (foundBlog) {
       setBlog(foundBlog);
-      setRelatedPosts(getRelatedPosts(foundBlog, blogPosts, 3));
+      // setRelatedPosts(getRelatedPosts(foundBlog, blogPosts, 3));
     }
   }, [slug]);
 
