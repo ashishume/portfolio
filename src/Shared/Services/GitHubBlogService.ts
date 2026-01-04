@@ -3,10 +3,31 @@
  * Fetches markdown blog files from GitHub repository
  */
 
-const GITHUB_OWNER = "ashishume";
-const GITHUB_REPO = "Front-end-Javascript-Interview-Topics";
-const GITHUB_BRANCH = "master";
-const BLOG_PATH = "frontend-blog-content/frontend";
+// Blog source configuration
+export interface BlogSource {
+  owner: string;
+  repo: string;
+  branch: string;
+  path: string;
+  category: string;
+}
+
+const BLOG_SOURCES: Record<string, BlogSource> = {
+  frontend: {
+    owner: "ashishume",
+    repo: "Front-end-Javascript-Interview-Topics",
+    branch: "master",
+    path: "frontend-blog-content/frontend",
+    category: "frontend",
+  },
+  backend: {
+    owner: "ashishume",
+    repo: "backend-engineering-by-ashish",
+    branch: "main",
+    path: "backend-notes",
+    category: "backend",
+  },
+};
 
 // Cache for API responses - key: URL, value: Promise<string | Record<string, any>>
 const apiCache = new Map<string, Promise<string | Record<string, any>>>();
@@ -26,15 +47,31 @@ export interface GitHubFile {
 /**
  * Get the raw content URL for a markdown file
  */
-export function getRawContentUrl(filename: string): string {
-  return `https://raw.githubusercontent.com/${GITHUB_OWNER}/${GITHUB_REPO}/${GITHUB_BRANCH}/${BLOG_PATH}/${filename}`;
+export function getRawContentUrl(filename: string, source: BlogSource): string {
+  return `https://raw.githubusercontent.com/${source.owner}/${source.repo}/${source.branch}/${source.path}/${filename}`;
 }
 
 /**
  * Get the raw content URL for metadata.json
  */
-export function getMetadataUrl(): string {
-  return `https://raw.githubusercontent.com/${GITHUB_OWNER}/${GITHUB_REPO}/${GITHUB_BRANCH}/${BLOG_PATH}/metadata.json`;
+export function getMetadataUrl(source: BlogSource): string {
+  return `https://raw.githubusercontent.com/${source.owner}/${source.repo}/${source.branch}/${source.path}/metadata.json`;
+}
+
+/**
+ * Get blog source configuration
+ */
+export function getBlogSource(category: string): BlogSource {
+  return (
+    BLOG_SOURCES[category.toLowerCase()] || BLOG_SOURCES.frontend // Default to frontend
+  );
+}
+
+/**
+ * Get all blog sources
+ */
+export function getAllBlogSources(): BlogSource[] {
+  return Object.values(BLOG_SOURCES);
 }
 
 /**
@@ -42,8 +79,10 @@ export function getMetadataUrl(): string {
  * This is much more efficient than fetching all markdown files
  * Results are cached to avoid repetitive API calls
  */
-export async function fetchBlogMetadata(): Promise<Record<string, any>> {
-  const url = getMetadataUrl();
+export async function fetchBlogMetadata(
+  source: BlogSource
+): Promise<Record<string, any>> {
+  const url = getMetadataUrl(source);
 
   // Check cache first
   if (apiCache.has(url)) {
@@ -67,7 +106,10 @@ export async function fetchBlogMetadata(): Promise<Record<string, any>> {
     } catch (error) {
       // Remove from cache on error so it can be retried
       apiCache.delete(url);
-      console.error("Error fetching blog metadata:", error);
+      console.error(
+        `Error fetching blog metadata for ${source.category}:`,
+        error
+      );
       throw error;
     }
   })();
@@ -80,10 +122,13 @@ export async function fetchBlogMetadata(): Promise<Record<string, any>> {
 
 /**
  * Fetch list of markdown files from GitHub
+ * Note: This is not used when metadata.json is available, but kept for backward compatibility
  */
-export async function fetchBlogFileList(): Promise<GitHubFile[]> {
+export async function fetchBlogFileList(
+  source: BlogSource
+): Promise<GitHubFile[]> {
   try {
-    const url = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${BLOG_PATH}`;
+    const url = `https://api.github.com/repos/${source.owner}/${source.repo}/contents/${source.path}`;
     const response = await fetch(url);
 
     if (!response.ok) {
@@ -97,7 +142,10 @@ export async function fetchBlogFileList(): Promise<GitHubFile[]> {
       (file) => file.type === "file" && file.name.endsWith(".md")
     );
   } catch (error) {
-    console.error("Error fetching blog file list:", error);
+    console.error(
+      `Error fetching blog file list for ${source.category}:`,
+      error
+    );
     throw error;
   }
 }
@@ -106,8 +154,11 @@ export async function fetchBlogFileList(): Promise<GitHubFile[]> {
  * Fetch raw markdown content from GitHub
  * Results are cached to avoid repetitive API calls for the same file
  */
-export async function fetchBlogContent(filename: string): Promise<string> {
-  const url = getRawContentUrl(filename);
+export async function fetchBlogContent(
+  filename: string,
+  source: BlogSource
+): Promise<string> {
+  const url = getRawContentUrl(filename, source);
 
   // Check cache first
   if (apiCache.has(url)) {
@@ -128,7 +179,10 @@ export async function fetchBlogContent(filename: string): Promise<string> {
     } catch (error) {
       // Remove from cache on error so it can be retried
       apiCache.delete(url);
-      console.error(`Error fetching blog content for ${filename}:`, error);
+      console.error(
+        `Error fetching blog content for ${filename} from ${source.category}:`,
+        error
+      );
       throw error;
     }
   })();
