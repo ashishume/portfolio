@@ -63,9 +63,9 @@ const Blog = () => {
     <Layout>
       <div className="min-h-screen dark:bg-gradient-to-br dark:from-slate-900 dark:via-gray-800 dark:to-slate-900 bg-gradient-to-br from-gray-50 via-white to-gray-100 py-16 px-6 md:px-16 lg:px-24">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col lg:flex-row gap-8">
+          <div className="flex flex-col lg:flex-row gap-8 items-start">
             {/* Left Sidebar */}
-            <div className="lg:order-1">
+            <div className="lg:order-1 w-full lg:w-auto">
               <BlogSidebar
                 selectedCategory={selectedCategory || undefined}
                 onCategoryChange={setSelectedCategory}

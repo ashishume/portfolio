@@ -51,7 +51,7 @@ const BlogSidebar = ({
 
   return (
     <aside className="w-full lg:w-64 flex-shrink-0">
-      <div className="sticky top-24">
+      <div className="sticky top-24 max-h-[calc(100vh-8rem)] overflow-y-auto">
         <div className="dark:bg-gray-800/80 bg-white rounded-lg p-6 dark:border-gray-700 border-gray-200">
           <h2 className="text-xl font-bold dark:text-white text-gray-900 mb-6">
             Categories
