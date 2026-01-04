@@ -15,6 +15,9 @@ declare global {
   }
 }
 
+// Store the tracking ID after initialization
+let gaTrackingId: string | null = null;
+
 /**
  * Initialize Google Analytics
  */
@@ -23,6 +26,9 @@ export const initGA = (trackingId: string) => {
     console.warn("Google Analytics tracking ID is not set");
     return;
   }
+
+  // Store tracking ID for use in other functions
+  gaTrackingId = trackingId;
 
   // Load the Google Analytics script
   const script1 = document.createElement("script");
@@ -47,9 +53,13 @@ export const initGA = (trackingId: string) => {
  * Track page view
  */
 export const trackPageView = (path: string, title?: string) => {
-  const trackingId = import.meta.env.VITE_GA_TRACKING_ID;
+  // Use the stored tracking ID from initialization
+  const trackingId = gaTrackingId || import.meta.env.VITE_GA_TRACKING_ID;
 
   if (!trackingId || !window.gtag) {
+    if (!trackingId) {
+      console.warn("Google Analytics tracking ID is not set");
+    }
     return;
   }
 
