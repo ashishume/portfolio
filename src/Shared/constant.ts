@@ -18,12 +18,14 @@ const Home = lazy(() => import("../Pages/Home"));
 const Projects = lazy(() => import("../Pages/Projects"));
 const About = lazy(() => import("../Pages/About"));
 const Skills = lazy(() => import("../Pages/Skills"));
+const Blog = lazy(() => import("../Pages/Blog"));
 
 export const NavItems: INavbar[] = [
   { label: "Home", route: "/", Element: Home },
   { label: "Skills", route: "/skills", Element: Skills },
   { label: "Projects", route: "/projects", Element: Projects },
   { label: "About", route: "/about", Element: About },
+  { label: "Blog", route: "/blog", Element: Blog },
   { label: "Contact", route: "/contact", Element: ContactMe },
 ];
 
