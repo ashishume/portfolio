@@ -46,12 +46,12 @@ const Blog = () => {
 
             {/* Main Content */}
             <div className="flex-1 lg:order-2">
-              <div className="text-center mb-12">
+              {/* <div className="text-center mb-12">
                 <h1 className="text-4xl md:text-5xl font-bold dark:text-white text-gray-900 mb-4">
                   Blog
                 </h1>
                 <div className="h-1 w-16 bg-blue-500 mx-auto"></div>
-              </div>
+              </div> */}
 
               {/* Search Bar */}
               <div className="mb-8">
