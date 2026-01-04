@@ -2,14 +2,17 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import Layout from "../../Layout/layout";
-import { blogPosts, IBlog } from "../../Shared/blogData";
+import { blogPosts, IBlog, loadBlogContent } from "../../Shared/blogData";
 // import { getRelatedPosts } from "../../Shared/blogUtils";
 import BlogSidebar from "./BlogSidebar";
+import Spinner from "../../Components/Spinner";
 
 const BlogDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const [blog, setBlog] = useState<IBlog | null>(null);
+  const [content, setContent] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(true);
   // const [relatedPosts, setRelatedPosts] = useState<IBlog[]>([]);
 
   useEffect(() => {
@@ -17,6 +20,23 @@ const BlogDetail = () => {
     if (foundBlog) {
       setBlog(foundBlog);
       // setRelatedPosts(getRelatedPosts(foundBlog, blogPosts, 3));
+
+      // Load content on demand
+      setLoading(true);
+      loadBlogContent(slug!)
+        .then((loadedContent) => {
+          if (loadedContent) {
+            setContent(loadedContent);
+          }
+        })
+        .catch((error) => {
+          console.error("Failed to load blog content:", error);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
+    } else {
+      setLoading(false);
     }
   }, [slug]);
 
@@ -34,6 +54,18 @@ const BlogDetail = () => {
             >
               Back to Blog
             </button>
+          </div>
+        </div>
+      </Layout>
+    );
+  }
+
+  if (loading) {
+    return (
+      <Layout>
+        <div className="min-h-screen dark:bg-gradient-to-br dark:from-slate-900 dark:via-gray-800 dark:to-slate-900 bg-gradient-to-br from-gray-50 via-white to-gray-100 py-16 px-6 md:px-16 lg:px-24">
+          <div className="max-w-4xl mx-auto flex justify-center items-center min-h-[60vh]">
+            <Spinner />
           </div>
         </div>
       </Layout>
@@ -151,7 +183,7 @@ const BlogDetail = () => {
                       ),
                     }}
                   >
-                    {blog.content}
+                    {content}
                   </ReactMarkdown>
                 </div>
               </article>

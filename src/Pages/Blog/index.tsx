@@ -23,8 +23,7 @@ const Blog = () => {
       posts = posts.filter(
         (post) =>
           post.title.toLowerCase().includes(query) ||
-          post.excerpt.toLowerCase().includes(query) ||
-          post.content.toLowerCase().includes(query)
+          post.excerpt.toLowerCase().includes(query)
       );
     }
 

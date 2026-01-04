@@ -15,9 +15,9 @@ export const getRelatedPosts = (
     return [];
   }
 
-  // Extract words from current blog title and content
+  // Extract words from current blog title and content (if available)
   const currentWords = new Set(
-    (currentBlog.title + " " + currentBlog.content)
+    (currentBlog.title + " " + (currentBlog.content || ""))
       .toLowerCase()
       .split(/\s+/)
       .filter((word) => word.length > 3) // Filter out short words
@@ -49,4 +49,3 @@ export const getRelatedPosts = (
     .slice(0, limit)
     .map((item) => item.post);
 };
-
