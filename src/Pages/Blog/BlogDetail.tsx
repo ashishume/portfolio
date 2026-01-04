@@ -4,6 +4,7 @@ import ReactMarkdown from "react-markdown";
 import Layout from "../../Layout/layout";
 import { blogPosts, IBlog } from "../../Shared/blogData";
 import { getRelatedPosts } from "../../Shared/blogUtils";
+import BlogSidebar from "./BlogSidebar";
 
 const BlogDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -44,8 +45,13 @@ const BlogDetail = () => {
       <div className="min-h-screen dark:bg-gradient-to-br dark:from-slate-900 dark:via-gray-800 dark:to-slate-900  to-gray-100 py-16 px-6 md:px-16 lg:px-24">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row gap-8">
+            {/* Left Sidebar - Categories */}
+            <div className="lg:order-1">
+              <BlogSidebar selectedCategory={blog.category} />
+            </div>
+
             {/* Main Content */}
-            <div className="flex-1 lg:max-w-3xl">
+            <div className="flex-1 lg:max-w-3xl lg:order-2">
               <button
                 onClick={() => navigate("/blog")}
                 className="mb-6 text-blue-600 dark:text-blue-400 hover:underline font-medium"
@@ -54,6 +60,11 @@ const BlogDetail = () => {
               </button>
 
               <article className="dark:bg-gray-800/80 bg-white rounded-lg p-8 dark:border-gray-700 border-gray-200">
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="px-3 py-1 text-sm font-medium rounded dark:bg-blue-600/20 bg-blue-100 dark:text-blue-400 text-blue-700 capitalize">
+                    {blog.category}
+                  </span>
+                </div>
                 <h1 className="text-4xl md:text-5xl font-bold dark:text-white text-gray-900 mb-4">
                   {blog.title}
                 </h1>
@@ -146,9 +157,9 @@ const BlogDetail = () => {
               </article>
             </div>
 
-            {/* Sidebar */}
-            {relatedPosts.length > 0 && (
-              <aside className="lg:w-80 flex-shrink-0">
+            {/* Right Sidebar - Related Posts */}
+            {/* {relatedPosts.length > 0 && (
+              <aside className="lg:w-80 flex-shrink-0 lg:order-3">
                 <div className="sticky top-24">
                   <div className="dark:bg-gray-800/80 bg-white rounded-lg p-6 dark:border-gray-700 border-gray-200">
                     <h2 className="text-2xl font-bold dark:text-white text-gray-900 mb-6">
@@ -161,6 +172,11 @@ const BlogDetail = () => {
                           onClick={() => navigate(`/blog/${post.slug}`)}
                           className="cursor-pointer group"
                         >
+                          <div className="flex items-center gap-2 mb-1">
+                            <span className="px-2 py-0.5 text-xs font-medium rounded dark:bg-blue-600/20 bg-blue-100 dark:text-blue-400 text-blue-700 capitalize">
+                              {post.category}
+                            </span>
+                          </div>
                           <h3 className="text-lg font-semibold dark:text-white text-gray-900 mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                             {post.title}
                           </h3>
@@ -179,7 +195,7 @@ const BlogDetail = () => {
                   </div>
                 </div>
               </aside>
-            )}
+            )} */}
           </div>
         </div>
       </div>
