@@ -1,13 +1,15 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useMemo } from "react";
 import Layout from "../../Layout/layout";
-import { blogPosts } from "../../Shared/blogData";
+import { useBlogPosts } from "../../Shared/hooks/useBlogPosts";
 import BlogSidebar from "./BlogSidebar";
+import Spinner from "../../Components/Spinner";
 
 const Blog = () => {
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const { blogPosts, loading, error } = useBlogPosts();
 
   const filteredPosts = useMemo(() => {
     let posts = blogPosts;
@@ -28,7 +30,34 @@ const Blog = () => {
     }
 
     return posts;
-  }, [searchQuery, selectedCategory]);
+  }, [searchQuery, selectedCategory, blogPosts]);
+
+  if (loading) {
+    return (
+      <Layout>
+        <div className="min-h-screen dark:bg-gradient-to-br dark:from-slate-900 dark:via-gray-800 dark:to-slate-900 bg-gradient-to-br from-gray-50 via-white to-gray-100 py-16 px-6 md:px-16 lg:px-24">
+          <div className="max-w-7xl mx-auto flex justify-center items-center min-h-[60vh]">
+            <Spinner />
+          </div>
+        </div>
+      </Layout>
+    );
+  }
+
+  if (error) {
+    return (
+      <Layout>
+        <div className="min-h-screen dark:bg-gradient-to-br dark:from-slate-900 dark:via-gray-800 dark:to-slate-900 bg-gradient-to-br from-gray-50 via-white to-gray-100 py-16 px-6 md:px-16 lg:px-24">
+          <div className="max-w-7xl mx-auto text-center py-16">
+            <h1 className="text-2xl font-bold dark:text-white text-gray-900 mb-4">
+              Failed to load blog posts
+            </h1>
+            <p className="text-gray-600 dark:text-gray-400">{error.message}</p>
+          </div>
+        </div>
+      </Layout>
+    );
+  }
 
   return (
     <Layout>

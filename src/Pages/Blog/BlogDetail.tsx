@@ -2,7 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import Layout from "../../Layout/layout";
-import { blogPosts, IBlog, loadBlogContent } from "../../Shared/blogData";
+import { IBlog, loadBlogContent, getBlogPosts } from "../../Shared/blogData";
 // import { getRelatedPosts } from "../../Shared/blogUtils";
 import BlogSidebar from "./BlogSidebar";
 import Spinner from "../../Components/Spinner";
@@ -16,28 +16,30 @@ const BlogDetail = () => {
   // const [relatedPosts, setRelatedPosts] = useState<IBlog[]>([]);
 
   useEffect(() => {
-    const foundBlog = blogPosts.find((post) => post.slug === slug);
-    if (foundBlog) {
-      setBlog(foundBlog);
-      // setRelatedPosts(getRelatedPosts(foundBlog, blogPosts, 3));
-
-      // Load content on demand
+    async function loadBlog() {
       setLoading(true);
-      loadBlogContent(slug!)
-        .then((loadedContent) => {
+      try {
+        const posts = await getBlogPosts();
+        const foundBlog = posts.find((post) => post.slug === slug);
+
+        if (foundBlog) {
+          setBlog(foundBlog);
+          // setRelatedPosts(getRelatedPosts(foundBlog, posts, 3));
+
+          // Load content on demand
+          const loadedContent = await loadBlogContent(slug!);
           if (loadedContent) {
             setContent(loadedContent);
           }
-        })
-        .catch((error) => {
-          console.error("Failed to load blog content:", error);
-        })
-        .finally(() => {
-          setLoading(false);
-        });
-    } else {
-      setLoading(false);
+        }
+      } catch (error) {
+        console.error("Failed to load blog:", error);
+      } finally {
+        setLoading(false);
+      }
     }
+
+    loadBlog();
   }, [slug]);
 
   if (!blog) {

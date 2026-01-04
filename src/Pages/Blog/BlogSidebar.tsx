@@ -1,6 +1,7 @@
 import { useNavigate, useLocation } from "react-router-dom";
-import { blogPosts, categories, getPostsByCategory } from "../../Shared/blogData";
-import { useState } from "react";
+import { useBlogPosts } from "../../Shared/hooks/useBlogPosts";
+import { getCategories, getPostsByCategory } from "../../Shared/blogData";
+import { useState, useEffect } from "react";
 
 interface BlogSidebarProps {
   selectedCategory?: string;
@@ -10,9 +11,15 @@ interface BlogSidebarProps {
 const BlogSidebar = ({ selectedCategory, onCategoryChange }: BlogSidebarProps) => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { blogPosts } = useBlogPosts();
+  const [categories, setCategories] = useState<string[]>([]);
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(
     new Set(selectedCategory ? [selectedCategory] : [])
   );
+
+  useEffect(() => {
+    getCategories().then(setCategories);
+  }, [blogPosts]);
 
   const toggleCategory = (category: string) => {
     const newExpanded = new Set(expandedCategories);
@@ -73,7 +80,7 @@ const BlogSidebar = ({ selectedCategory, onCategoryChange }: BlogSidebarProps) =
           {/* Categories */}
           <div className="space-y-2">
             {categories.map((category) => {
-              const posts = getPostsByCategory(category);
+              const categoryPosts = blogPosts.filter((post) => post.category === category);
               const isExpanded = expandedCategories.has(category);
               const isSelected = selectedCategory === category;
 
@@ -94,7 +101,7 @@ const BlogSidebar = ({ selectedCategory, onCategoryChange }: BlogSidebarProps) =
                       <span>{capitalizeFirst(category)}</span>
                       <div className="flex items-center gap-2">
                         <span className="text-sm dark:text-gray-400 text-gray-500">
-                          ({posts.length})
+                          ({categoryPosts.length})
                         </span>
                         <svg
                           className={`w-4 h-4 transition-transform ${
@@ -118,7 +125,7 @@ const BlogSidebar = ({ selectedCategory, onCategoryChange }: BlogSidebarProps) =
                   {/* Posts in category */}
                   {isExpanded && (
                     <div className="mt-2 ml-4 space-y-1">
-                      {posts.map((post) => (
+                      {categoryPosts.map((post) => (
                         <button
                           key={post.id}
                           onClick={(e) => {
