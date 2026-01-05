@@ -1,4 +1,5 @@
 // Google Analytics utility functions
+// Note: Google Analytics is initialized in index.html head section
 
 declare global {
   interface Window {
@@ -15,55 +16,18 @@ declare global {
   }
 }
 
-// Store the tracking ID after initialization
-let gaTrackingId: string | null = null;
-
-/**
- * Initialize Google Analytics
- */
-export const initGA = (trackingId: string) => {
-  if (!trackingId) {
-    console.warn("Google Analytics tracking ID is not set");
-    return;
-  }
-
-  // Store tracking ID for use in other functions
-  gaTrackingId = trackingId;
-
-  // Load the Google Analytics script
-  const script1 = document.createElement("script");
-  script1.async = true;
-  script1.src = `https://www.googletagmanager.com/gtag/js?id=${trackingId}`;
-  document.head.appendChild(script1);
-
-  // Initialize dataLayer and gtag function
-  window.dataLayer = window.dataLayer || [];
-  function gtag(...args: any[]) {
-    window.dataLayer.push(args);
-  }
-  window.gtag = gtag as any;
-
-  gtag("js", new Date());
-  gtag("config", trackingId, {
-    page_path: window.location.pathname,
-  });
-};
+// Store the tracking ID (from index.html)
+const GA_TRACKING_ID = "G-PL27FYTMST";
 
 /**
  * Track page view
  */
 export const trackPageView = (path: string, title?: string) => {
-  // Use the stored tracking ID from initialization
-  const trackingId = gaTrackingId || import.meta.env.VITE_GA_TRACKING_ID;
-
-  if (!trackingId || !window.gtag) {
-    if (!trackingId) {
-      console.warn("Google Analytics tracking ID is not set");
-    }
+  if (!window.gtag) {
     return;
   }
 
-  window.gtag("config", trackingId, {
+  window.gtag("config", GA_TRACKING_ID, {
     page_path: path,
     page_title: title || document.title,
   });
