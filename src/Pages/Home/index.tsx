@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Layout from "../../Layout/layout";
 import TypingEffect from "../../Shared/Services/TypingEffect";
 import { SocialIcons, workExperience } from "../../Shared/constant";
-import profile from "../../../public/profile.jpg";
+import profile from "../../../public/profile.png";
 import TimelineView from "../About/TimelineView";
 
 const Home = () => {
@@ -33,7 +33,7 @@ const Home = () => {
             <div className="w-full lg:w-3/5 space-y-6">
               <div className="relative">
                 <div className="inline-block bg-blue-500/20 px-4 py-1 rounded-full text-blue-400 text-sm font-medium mb-4">
-                  Web & Mobile Developer
+                  Full Stack Developer
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold dark:text-white text-gray-900 leading-tight">
                   <TypingEffect text="Hi, I'm Ashish Debnath" />
@@ -73,10 +73,10 @@ const Home = () => {
                   Explore Projects
                 </button>
                 <button
-                  onClick={() => navigate("/skills")}
+                  onClick={() => navigate("/blog")}
                   className="px-6 py-3 bg-transparent dark:hover:bg-gray-800 hover:bg-gray-200 dark:text-gray-300 text-gray-700 border dark:border-gray-700 border-gray-300 dark:hover:border-gray-600 hover:border-gray-400 font-medium rounded-lg transition-all duration-300 transform hover:-translate-y-1"
                 >
-                  View Skills
+                  Read Blogs
                 </button>
               </div>
             </div>

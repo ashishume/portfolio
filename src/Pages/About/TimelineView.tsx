@@ -34,9 +34,20 @@ export default function TimelineView({
           <h3 className="text-xl md:text-2xl font-bold dark:text-white text-gray-900 mb-2">
             {job.position}
           </h3>
-          <h4 className="text-lg md:text-xl text-blue-400 mb-2">
-            {job.company}
-          </h4>
+          <div
+            className={`flex items-center gap-3 mb-2 ${
+              index % 2 !== 0 ? "md:justify-end" : ""
+            }`}
+          >
+            {job.logo && (
+              <img
+                src={job.logo}
+                alt={`${job.company} logo`}
+                className="w-8 h-8 object-contain rounded"
+              />
+            )}
+            <h4 className="text-lg md:text-xl text-blue-400">{job.company}</h4>
+          </div>
           <div
             className={`flex items-center mb-3 dark:text-gray-400 text-gray-600 text-sm ${
               index % 2 !== 0 ? "md:justify-end" : ""

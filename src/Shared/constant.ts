@@ -14,6 +14,11 @@ import auction from "../../public/auctions.png";
 import pairlyCode from "../../public/pairly-code.png";
 import fastAPI from "../../public/fast_api.avif";
 
+// Company logos
+import contentstackLogo from "../../public/contenstack.webp";
+import sorocoLogo from "../../public/soroco.svg";
+import nineleapsLogo from "../../public/nineleaps.svg";
+
 const Home = lazy(() => import("../Pages/Home"));
 const Projects = lazy(() => import("../Pages/Projects"));
 const About = lazy(() => import("../Pages/About"));
@@ -198,7 +203,7 @@ export const workExperience = [
       "Zustand",
       "REST APIs",
     ],
-    logo: "/company-logos/contentstack.png",
+    logo: contentstackLogo,
   },
   {
     id: 2,
@@ -226,7 +231,7 @@ export const workExperience = [
       "Design Systems",
       "Docker",
     ],
-    logo: "/company-logos/soroco.png",
+    logo: sorocoLogo,
   },
   {
     id: 3,
@@ -247,7 +252,7 @@ export const workExperience = [
       "Agile Methodology",
       "Problem Solving",
     ],
-    logo: "/company-logos/nineleaps.png",
+    logo: nineleapsLogo,
   },
   {
     id: 4,
@@ -267,7 +272,7 @@ export const workExperience = [
       "Code Refactoring",
       "Performance Optimization",
     ],
-    logo: "/company-logos/nineleaps.png",
+    logo: nineleapsLogo,
   },
   {
     id: 5,
@@ -288,7 +293,7 @@ export const workExperience = [
       "Agile Methodology",
       "Learning & Development",
     ],
-    logo: "/company-logos/nineleaps.png",
+    logo: nineleapsLogo,
   },
   {
     id: 6,
@@ -303,7 +308,7 @@ export const workExperience = [
       "Worked on frontend and backend development tasks",
     ],
     skills: ["Web Development", "Frontend Development", "Backend Development"],
-    logo: "/company-logos/netmax.png",
+    logo: undefined,
   },
 ];
 

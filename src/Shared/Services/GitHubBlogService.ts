@@ -108,6 +108,7 @@ export async function fetchBlogMetadata(
           excerpt: string;
           slug: string;
           title: string;
+          tags: string[];
         };
       } = await response.json();
 
