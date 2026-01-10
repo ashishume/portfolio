@@ -77,22 +77,22 @@ const BlogSidebar = ({
     <aside className="w-full flex-shrink-0">
       <div
         ref={scrollContainerRef}
-        className="lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto"
+        className="max-h-[60vh] lg:max-h-[calc(100vh-8rem)] overflow-y-auto"
       >
-        <div className="dark:bg-gray-800/80 bg-white rounded-lg p-4 dark:border-gray-700 border-gray-200">
-          <h2 className="text-xl font-bold dark:text-white text-gray-900 mb-6">
+        <div className="dark:bg-gray-800/80 bg-white rounded-lg p-3 sm:p-4 dark:border-gray-700 border-gray-200">
+          <h2 className="text-lg sm:text-xl font-bold dark:text-white text-gray-900 mb-4 sm:mb-6">
             Categories
           </h2>
 
           {/* All Posts */}
-          <div className="mb-4">
+          <div className="mb-3 sm:mb-4">
             <button
               onClick={() => {
                 if (onCategoryChange) {
                   onCategoryChange(null);
                 }
               }}
-              className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
+              className={`w-full text-left px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg transition-colors text-sm sm:text-base ${
                 !selectedCategory
                   ? "dark:bg-blue-600/20 bg-blue-100 dark:text-blue-400 text-blue-700 font-medium"
                   : "dark:text-gray-300 text-gray-700 hover:dark:bg-gray-700/50 hover:bg-gray-100"
@@ -100,7 +100,7 @@ const BlogSidebar = ({
             >
               <div className="flex items-center justify-between gap-2 min-w-0">
                 <span className="truncate min-w-0">All Posts</span>
-                <span className="text-sm dark:text-gray-400 text-gray-500 flex-shrink-0">
+                <span className="text-xs sm:text-sm dark:text-gray-400 text-gray-500 flex-shrink-0">
                   ({blogPosts.length})
                 </span>
               </div>
@@ -108,7 +108,7 @@ const BlogSidebar = ({
           </div>
 
           {/* Categories */}
-          <div className="space-y-2">
+          <div className="space-y-1.5 sm:space-y-2">
             {categories.map((category) => {
               const categoryPosts = blogPosts.filter(
                 (post) => post.category === category
@@ -119,14 +119,14 @@ const BlogSidebar = ({
               return (
                 <div
                   key={category}
-                  className="border-b dark:border-gray-700 border-gray-200 last:border-b-0 pb-2 last:pb-0"
+                  className="border-b dark:border-gray-700 border-gray-200 last:border-b-0 pb-1.5 sm:pb-2 last:pb-0"
                 >
                   <button
                     onClick={() => {
                       toggleCategory(category);
                       handleCategoryClick(category);
                     }}
-                    className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
+                    className={`w-full text-left px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg transition-colors text-sm sm:text-base ${
                       isSelected
                         ? "dark:bg-blue-600/20 bg-blue-100 dark:text-blue-400 text-blue-700 font-medium"
                         : "dark:text-gray-300 text-gray-700 hover:dark:bg-gray-700/50 hover:bg-gray-100"
@@ -136,12 +136,12 @@ const BlogSidebar = ({
                       <span className="truncate min-w-0">
                         {capitalizeFirst(category)}
                       </span>
-                      <div className="flex items-center gap-2 flex-shrink-0">
-                        <span className="text-sm dark:text-gray-400 text-gray-500">
+                      <div className="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
+                        <span className="text-xs sm:text-sm dark:text-gray-400 text-gray-500">
                           ({categoryPosts.length})
                         </span>
                         <svg
-                          className={`w-4 h-4 transition-transform ${
+                          className={`w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform ${
                             isExpanded ? "rotate-90" : ""
                           }`}
                           fill="none"
@@ -161,7 +161,7 @@ const BlogSidebar = ({
 
                   {/* Posts in category */}
                   {isExpanded && (
-                    <div className="mt-2 ml-4 space-y-1">
+                    <div className="mt-1.5 sm:mt-2 ml-2 sm:ml-4 space-y-0.5 sm:space-y-1">
                       {categoryPosts.map((post) => (
                         <button
                           key={post.id}
@@ -169,7 +169,7 @@ const BlogSidebar = ({
                             e.stopPropagation();
                             handlePostClick(post.slug);
                           }}
-                          className={`w-full text-left px-4 py-1.5 rounded text-sm transition-colors truncate ${
+                          className={`w-full text-left px-3 sm:px-4 py-1 sm:py-1.5 rounded text-xs sm:text-sm transition-colors truncate ${
                             location.pathname === `/blog/${post.slug}`
                               ? "dark:bg-blue-600/30 bg-blue-50 dark:text-blue-300 text-blue-600 font-medium"
                               : "dark:text-gray-400 text-gray-600 hover:dark:bg-gray-700/30 hover:bg-gray-50"

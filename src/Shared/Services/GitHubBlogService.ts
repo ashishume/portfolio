@@ -101,8 +101,28 @@ export async function fetchBlogMetadata(
         );
       }
 
-      const metadata = await response.json();
-      return metadata;
+      const metadata: {
+        [key: string]: {
+          date: string;
+          category: string;
+          excerpt: string;
+          slug: string;
+          title: string;
+        };
+      } = await response.json();
+
+      // Sort entries by date (most recent first) and rebuild the object
+      const sortedEntries = Object.entries(metadata).sort(([, a], [, b]) => {
+        return new Date(b.date).getTime() - new Date(a.date).getTime();
+      });
+
+      const sortedMetadata: typeof metadata = {};
+      for (const [key, value] of sortedEntries) {
+        value.date = new Date(value.date).toISOString();
+        sortedMetadata[key] = value;
+      }
+
+      return sortedMetadata;
     } catch (error) {
       // Remove from cache on error so it can be retried
       apiCache.delete(url);
