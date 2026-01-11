@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useMemo } from "react";
+import Fuse from "fuse.js";
 import Layout from "../../Layout/layout";
 import { useBlogPosts } from "../../Shared/hooks/useBlogPosts";
 import BlogSidebar from "./BlogSidebar";
@@ -11,26 +12,49 @@ const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const { blogPosts, loading, error } = useBlogPosts();
 
+  // Configure Fuse.js for fuzzy search
+  const fuse = useMemo(() => {
+    return new Fuse(blogPosts, {
+      keys: [
+        { name: "title", weight: 0.7 },
+        { name: "excerpt", weight: 0.3 },
+      ],
+      threshold: 0.4, // 0 = exact match, 1 = match anything
+      ignoreLocation: true, // Search entire string, not just beginning
+      minMatchCharLength: 2,
+    });
+  }, [blogPosts]);
+
   const filteredPosts = useMemo(() => {
     let posts = blogPosts;
 
-    // Filter by category
+    // Filter by category first
     if (selectedCategory && selectedCategory !== "all") {
       posts = posts.filter((post) => post.category === selectedCategory);
     }
 
-    // Filter by search query
+    // Apply fuzzy search
     if (searchQuery.trim()) {
-      const query = searchQuery.toLowerCase();
-      posts = posts.filter(
-        (post) =>
-          post.title.toLowerCase().includes(query) ||
-          post.excerpt.toLowerCase().includes(query)
-      );
+      if (selectedCategory && selectedCategory !== "all") {
+        // If category is selected, create a new Fuse instance with filtered posts
+        const categoryFuse = new Fuse(posts, {
+          keys: [
+            { name: "title", weight: 0.7 },
+            { name: "excerpt", weight: 0.3 },
+          ],
+          threshold: 0.4,
+          ignoreLocation: true,
+          minMatchCharLength: 2,
+        });
+        posts = categoryFuse.search(searchQuery).map((result) => result.item);
+      } else {
+        // Use the main fuse instance for all posts
+        posts = fuse.search(searchQuery).map((result) => result.item);
+      }
     }
 
     return posts;
-  }, [searchQuery, selectedCategory, blogPosts]);
+  }, [searchQuery, selectedCategory, blogPosts, fuse]);
 
   if (loading) {
     return (
