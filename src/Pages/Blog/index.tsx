@@ -59,7 +59,7 @@ const Blog = () => {
   if (loading) {
     return (
       <Layout>
-        <div className="min-h-screen dark:bg-gradient-to-br dark:from-slate-900 dark:via-gray-800 dark:to-slate-900 bg-gradient-to-br from-gray-50 via-white to-gray-100 py-16 px-6 md:px-16 lg:px-24">
+        <div className="min-h-screen dark:bg-gradient-to-br dark:from-slate-900 dark:via-gray-800 dark:to-slate-900 bg-gradient-to-br from-gray-50 via-white to-gray-100 pt-20 sm:pt-24 lg:pt-28 pb-16 px-6 md:px-16 lg:px-24">
           <div className="max-w-7xl mx-auto flex justify-center items-center min-h-[60vh]">
             <Spinner />
           </div>
@@ -71,7 +71,7 @@ const Blog = () => {
   if (error) {
     return (
       <Layout>
-        <div className="min-h-screen dark:bg-gradient-to-br dark:from-slate-900 dark:via-gray-800 dark:to-slate-900 bg-gradient-to-br from-gray-50 via-white to-gray-100 py-16 px-6 md:px-16 lg:px-24">
+        <div className="min-h-screen dark:bg-gradient-to-br dark:from-slate-900 dark:via-gray-800 dark:to-slate-900 bg-gradient-to-br from-gray-50 via-white to-gray-100 pt-20 sm:pt-24 lg:pt-28 pb-16 px-6 md:px-16 lg:px-24">
           <div className="max-w-7xl mx-auto text-center py-16">
             <h1 className="text-2xl font-bold dark:text-white text-gray-900 mb-4">
               Failed to load blog posts
@@ -85,7 +85,7 @@ const Blog = () => {
 
   return (
     <Layout>
-      <div className="min-h-screen dark:bg-gradient-to-br dark:from-slate-900 dark:via-gray-800 dark:to-slate-900 bg-gradient-to-br from-gray-50 via-white to-gray-100 py-16 px-6 md:px-16 lg:px-24">
+      <div className="min-h-screen dark:bg-gradient-to-br dark:from-slate-900 dark:via-gray-800 dark:to-slate-900 bg-gradient-to-br from-gray-50 via-white to-gray-100 pt-20 sm:pt-24 lg:pt-28 pb-16 px-6 md:px-16 lg:px-24">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row gap-8 items-start">
             {/* Left Sidebar */}

@@ -46,7 +46,7 @@ const BlogDetail = () => {
   if (!blog) {
     return (
       <Layout>
-        <div className="min-h-screen dark:bg-gradient-to-br dark:from-slate-900 dark:via-gray-800 dark:to-slate-900 bg-gradient-to-br from-gray-50 via-white to-gray-100 py-16 px-6 md:px-16 lg:px-24">
+        <div className="min-h-screen dark:bg-gradient-to-br dark:from-slate-900 dark:via-gray-800 dark:to-slate-900 bg-gradient-to-br from-gray-50 via-white to-gray-100 pt-20 sm:pt-24 lg:pt-28 pb-16 px-6 md:px-16 lg:px-24">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-3xl font-bold dark:text-white text-gray-900 mb-4">
               Blog Not Found
@@ -66,7 +66,7 @@ const BlogDetail = () => {
   if (loading) {
     return (
       <Layout>
-        <div className="min-h-screen dark:bg-gradient-to-br dark:from-slate-900 dark:via-gray-800 dark:to-slate-900 bg-gradient-to-br from-gray-50 via-white to-gray-100 py-16 px-6 md:px-16 lg:px-24">
+        <div className="min-h-screen dark:bg-gradient-to-br dark:from-slate-900 dark:via-gray-800 dark:to-slate-900 bg-gradient-to-br from-gray-50 via-white to-gray-100 pt-20 sm:pt-24 lg:pt-28 pb-16 px-6 md:px-16 lg:px-24">
           <div className="max-w-4xl mx-auto flex justify-center items-center min-h-[60vh]">
             <Spinner />
           </div>
@@ -77,7 +77,7 @@ const BlogDetail = () => {
 
   return (
     <Layout>
-      <div className="min-h-screen dark:bg-gradient-to-br dark:from-slate-900 dark:via-gray-800 dark:to-slate-900 to-gray-100 py-8 sm:py-12 lg:py-16 px-4 sm:px-6 md:px-16 lg:px-24">
+      <div className="min-h-screen dark:bg-gradient-to-br dark:from-slate-900 dark:via-gray-800 dark:to-slate-900 to-gray-100 pt-20 sm:pt-24 lg:pt-28 pb-8 sm:pb-12 lg:pb-16 px-4 sm:px-6 md:px-16 lg:px-24">
         <div className="max-w-7xl mx-auto">
           {/* Mobile Header with Back Button and Categories Toggle */}
           <div className="flex items-center justify-between mb-4 lg:hidden">
