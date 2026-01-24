@@ -90,10 +90,20 @@ async function fetchBlogPostsMetadata(): Promise<IBlog[]> {
     // Flatten and merge all posts
     const allPosts = allPostsArrays.flat();
 
-    // Sort by date (newest first)
-    return allPosts.sort(
-      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    // Separate posts by sourceCategory (frontend/backend)
+    const frontendPosts = allPosts.filter(
+      (post) => post.sourceCategory === "frontend"
     );
+    const backendPosts = allPosts.filter(
+      (post) => post.sourceCategory === "backend"
+    );
+
+    // Sort each category alphabetically by title
+    frontendPosts.sort((a, b) => a.title.localeCompare(b.title));
+    backendPosts.sort((a, b) => a.title.localeCompare(b.title));
+
+    // Combine: frontend first, then backend
+    return [...frontendPosts, ...backendPosts];
   } catch (error) {
     console.error("Error fetching blog posts metadata:", error);
     return [];
