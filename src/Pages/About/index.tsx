@@ -14,12 +14,11 @@ const AboutMe = () => {
 
   return (
     <Layout>
-      <div className="min-h-screen dark:bg-gradient-to-br dark:from-slate-900 dark:via-gray-800 dark:to-slate-900 bg-gradient-to-br from-gray-50 via-white to-gray-100 py-16 px-6 md:px-16 lg:px-24">
-        <div
-          className={`max-w-7xl mx-auto transition-all duration-1000 ${
-            isVisible ? "opacity-100" : "opacity-0"
-          }`}
-        >
+      <div
+        className={`max-w-7xl mx-auto transition-all duration-1000 ${
+          isVisible ? "opacity-100" : "opacity-0"
+        }`}
+      >
           {/* Header Section */}
           <div className="text-center mb-16">
             <div className="inline-block bg-blue-500/20 px-4 py-1 rounded-full text-blue-400 text-sm font-medium mb-4">
@@ -34,7 +33,7 @@ const AboutMe = () => {
               {
                 Math.floor(
                   (new Date().getTime() - new Date("1997-10-11").getTime()) /
-                    (365.25 * 24 * 60 * 60 * 1000)
+                  (365.25 * 24 * 60 * 60 * 1000)
                 ) as number
               }{" "}
               year old senior software engineer specializing in full stack
@@ -58,7 +57,6 @@ const AboutMe = () => {
             </p>
           </div>
         </div>
-      </div>
     </Layout>
   );
 };

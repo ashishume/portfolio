@@ -69,12 +69,11 @@ const ContactMe: React.FC = () => {
 
   return (
     <Layout>
-      <div className="min-h-screen dark:bg-gradient-to-br dark:from-slate-900 dark:via-gray-800 dark:to-slate-900 bg-gradient-to-br from-gray-50 via-white to-gray-100 py-16 px-6 md:px-16 lg:px-24">
-        <div
-          className={`max-w-7xl mx-auto transition-all duration-1000 ${
-            isVisible ? "opacity-100" : "opacity-0"
-          }`}
-        >
+      <div
+        className={`max-w-7xl mx-auto transition-all duration-1000 ${
+          isVisible ? "opacity-100" : "opacity-0"
+        }`}
+      >
           {/* Header Section */}
           <div className="text-center mb-16">
             <div className="inline-block bg-blue-500/20 px-4 py-1 rounded-full text-blue-400 text-sm font-medium mb-4">
@@ -94,7 +93,7 @@ const ContactMe: React.FC = () => {
           <div className="flex flex-col lg:flex-row justify-between gap-12 mt-10">
             {/* Left side - contact info */}
             <div className="w-full lg:w-2/5 space-y-8">
-              <div className="dark:bg-slate-800/80 bg-white/80 p-6 rounded-lg shadow-lg border-l-4 border-blue-500">
+              <div className="backdrop-blur-md bg-white/10 dark:bg-white/5 p-6 rounded-lg shadow-lg border border-white/20 dark:border-white/10 border-l-4 border-l-blue-500/50">
                 <h3 className="text-2xl font-bold dark:text-white text-gray-900 mb-6">
                   Contact Information
                 </h3>
@@ -156,7 +155,7 @@ const ContactMe: React.FC = () => {
 
             {/* Right side - form */}
             <div className="w-full lg:w-3/5">
-              <div className="dark:bg-slate-800/80 bg-white/80 p-8 rounded-lg shadow-lg border-l-4 border-blue-500">
+              <div className="backdrop-blur-md bg-white/10 dark:bg-white/5 p-8 rounded-lg shadow-lg border border-white/20 dark:border-white/10 border-l-4 border-l-blue-500/50">
                 <form ref={formRef} onSubmit={handleSubmit}>
                   <div className="mb-6">
                     <label
@@ -171,7 +170,7 @@ const ContactMe: React.FC = () => {
                       name="from_name"
                       value={formData.from_name}
                       onChange={handleChange}
-                      className="w-full p-3 rounded-lg dark:bg-slate-700/80 bg-gray-100 dark:text-white text-gray-900 border dark:border-gray-700 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                      className="w-full p-3 rounded-lg backdrop-blur-md bg-white/10 dark:bg-white/5 dark:text-white text-gray-900 border border-white/20 dark:border-white/10 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all"
                       required
                     />
                   </div>
@@ -189,7 +188,7 @@ const ContactMe: React.FC = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full p-3 rounded-lg dark:bg-slate-700/80 bg-gray-100 dark:text-white text-gray-900 border dark:border-gray-700 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                      className="w-full p-3 rounded-lg backdrop-blur-md bg-white/10 dark:bg-white/5 dark:text-white text-gray-900 border border-white/20 dark:border-white/10 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all"
                       required
                     />
                   </div>
@@ -206,7 +205,7 @@ const ContactMe: React.FC = () => {
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      className="w-full p-3 h-40 rounded-lg dark:bg-slate-700/80 bg-gray-100 dark:text-white text-gray-900 border dark:border-gray-700 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                      className="w-full p-3 h-40 rounded-lg backdrop-blur-md bg-white/10 dark:bg-white/5 dark:text-white text-gray-900 border border-white/20 dark:border-white/10 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all"
                       required
                     ></textarea>
                   </div>
@@ -230,7 +229,6 @@ const ContactMe: React.FC = () => {
             </div>
           </div>
         </div>
-      </div>
 
       {isSnackbarOpen && (
         <Snackbar message="Message sent successfully! I'll get back to you soon." />

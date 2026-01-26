@@ -1,10 +1,20 @@
 import Navbar from "../Components/Navbar";
+import { ReactNode } from "react";
 
-const Layout = ({ children }: any) => {
+interface LayoutProps {
+  children: ReactNode;
+}
+
+const Layout = ({ children }: LayoutProps) => {
   return (
-    <div style={{}}>
+    <div
+      className="min-h-screen"
+      style={{ backgroundColor: "var(--bg-primary)" }}
+    >
       <Navbar />
-      {children}
+      <div className="py-16 px-6 md:px-16 lg:px-24">
+        {children}
+      </div>
     </div>
   );
 };

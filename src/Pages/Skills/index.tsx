@@ -35,12 +35,11 @@ const Skills = () => {
 
   return (
     <Layout>
-      <div className="min-h-screen dark:bg-gradient-to-br dark:from-slate-900 dark:via-gray-800 dark:to-slate-900 bg-gradient-to-br from-gray-50 via-white to-gray-100 py-16 px-6 md:px-16 lg:px-24">
-        <div
-          className={`max-w-7xl mx-auto transition-all duration-1000 ${
-            isVisible ? "opacity-100" : "opacity-0"
-          }`}
-        >
+      <div
+        className={`max-w-7xl mx-auto transition-all duration-1000 ${
+          isVisible ? "opacity-100" : "opacity-0"
+        }`}
+      >
           {/* Header Section */}
           <div className="text-center mb-16">
             <div className="inline-block bg-blue-500/20 px-4 py-1 rounded-full text-blue-400 text-sm font-medium mb-4">
@@ -66,7 +65,7 @@ const Skills = () => {
                 return (
                   <div
                     key={index}
-                    className={`dark:bg-gray-900/70 bg-white/70 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg border dark:border-gray-800 border-gray-200 hover:border-blue-500/30 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-blue-500/10`}
+                    className={`backdrop-blur-md bg-white/10 dark:bg-white/5 rounded-xl overflow-hidden shadow-lg border border-white/20 dark:border-white/10 hover:border-blue-500/30 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-blue-500/10`}
                     style={{
                       animationDelay: `${index * 0.1}s`,
                       animation: "fadeIn 0.5s ease-out forwards",
@@ -101,7 +100,7 @@ const Skills = () => {
           {/* Bottom section with call to action */}
           {skillData && (
             <div className="mt-20 text-center">
-              <div className="dark:bg-blue-500/10 bg-blue-100/50 backdrop-blur-sm border dark:border-blue-500/20 border-blue-300/50 rounded-xl p-8 max-w-3xl mx-auto">
+              <div className="backdrop-blur-md bg-white/10 dark:bg-white/5 border border-white/20 dark:border-white/10 rounded-xl p-8 max-w-3xl mx-auto">
                 <h3 className="text-2xl font-semibold dark:text-white text-gray-900 mb-4">
                   Want to see my skills in action?
                 </h3>
@@ -119,7 +118,6 @@ const Skills = () => {
             </div>
           )}
         </div>
-      </div>
     </Layout>
   );
 };

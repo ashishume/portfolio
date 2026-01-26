@@ -79,7 +79,7 @@ const BlogSidebar = ({
         ref={scrollContainerRef}
         className="max-h-[60vh] lg:max-h-[calc(100vh-8rem)] overflow-y-auto"
       >
-        <div className="dark:bg-gray-800/80 bg-white rounded-lg p-3 sm:p-4 dark:border-gray-700 border-gray-200">
+        <div className="backdrop-blur-md bg-white/10 dark:bg-white/5 rounded-lg p-3 sm:p-4 border border-white/20 dark:border-white/10">
           <h2 className="text-lg sm:text-xl font-bold dark:text-white text-gray-900 mb-4 sm:mb-6">
             Categories
           </h2>

@@ -27,7 +27,7 @@ export default function TimelineView({
         }`}
       >
         <div
-          className={`dark:bg-slate-800/80 bg-white/80 p-4 md:p-6 rounded-lg shadow-lg border-l-4 border-blue-500 h-full transform hover:scale-105 transition-transform duration-300 ${
+          className={`backdrop-blur-md bg-white/10 dark:bg-white/5 p-4 md:p-6 rounded-lg shadow-lg border border-white/20 dark:border-white/10 border-l-4 border-l-blue-500/50 h-full transform hover:scale-105 transition-transform duration-300 ${
             index % 2 === 0 ? "md:ml-auto md:mr-4" : "md:mr-auto md:ml-4"
           }`}
         >

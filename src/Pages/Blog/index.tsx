@@ -59,10 +59,8 @@ const Blog = () => {
   if (loading) {
     return (
       <Layout>
-        <div className="min-h-screen dark:bg-gradient-to-br dark:from-slate-900 dark:via-gray-800 dark:to-slate-900 bg-gradient-to-br from-gray-50 via-white to-gray-100 pt-20 sm:pt-24 lg:pt-28 pb-16 px-6 md:px-16 lg:px-24">
-          <div className="max-w-7xl mx-auto flex justify-center items-center min-h-[60vh]">
-            <Spinner />
-          </div>
+        <div className="max-w-7xl mx-auto flex justify-center items-center min-h-[60vh]">
+          <Spinner />
         </div>
       </Layout>
     );
@@ -71,13 +69,11 @@ const Blog = () => {
   if (error) {
     return (
       <Layout>
-        <div className="min-h-screen dark:bg-gradient-to-br dark:from-slate-900 dark:via-gray-800 dark:to-slate-900 bg-gradient-to-br from-gray-50 via-white to-gray-100 pt-20 sm:pt-24 lg:pt-28 pb-16 px-6 md:px-16 lg:px-24">
-          <div className="max-w-7xl mx-auto text-center py-16">
-            <h1 className="text-2xl font-bold dark:text-white text-gray-900 mb-4">
-              Failed to load blog posts
-            </h1>
-            <p className="text-gray-600 dark:text-gray-400">{error.message}</p>
-          </div>
+        <div className="max-w-7xl mx-auto text-center py-16">
+          <h1 className="text-2xl font-bold dark:text-white text-gray-900 mb-4">
+            Failed to load blog posts
+          </h1>
+          <p className="text-gray-600 dark:text-gray-400">{error.message}</p>
         </div>
       </Layout>
     );
@@ -85,8 +81,7 @@ const Blog = () => {
 
   return (
     <Layout>
-      <div className="min-h-screen dark:bg-gradient-to-br dark:from-slate-900 dark:via-gray-800 dark:to-slate-900 bg-gradient-to-br from-gray-50 via-white to-gray-100 pt-20 sm:pt-24 lg:pt-28 pb-16 px-6 md:px-16 lg:px-24">
-        <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto pt-4 sm:pt-8 lg:pt-12">
           <div className="flex flex-col lg:flex-row gap-8 items-start">
             {/* Left Sidebar */}
             <div className="lg:order-1 w-full lg:w-80 lg:sticky lg:top-24 lg:self-start">
@@ -113,7 +108,7 @@ const Blog = () => {
                     placeholder="Search blogs..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full px-4 py-3 pl-10 dark:bg-gray-800/80 bg-white dark:text-white text-gray-900 border dark:border-gray-700 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 pl-10 backdrop-blur-md bg-white/10 dark:bg-white/5 dark:text-white text-gray-900 border border-white/20 dark:border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all"
                   />
                   <svg
                     className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 dark:text-gray-400 text-gray-500"
@@ -152,7 +147,7 @@ const Blog = () => {
                     <div
                       key={post.id}
                       onClick={() => navigate(`/blog/${post.slug}`)}
-                      className="dark:bg-gray-800/80 bg-white rounded-lg p-6 hover:shadow-md transition-all duration-300 cursor-pointer transform border dark:border-gray-700 border-gray-200"
+                      className="backdrop-blur-md bg-white/10 dark:bg-white/5 rounded-lg p-6 hover:shadow-md transition-all duration-300 cursor-pointer transform border border-white/20 dark:border-white/10 hover:border-blue-500/30"
                     >
                       <div className="flex items-center gap-2 mb-2">
                         <span className="px-2 py-1 text-xs font-medium rounded dark:bg-blue-600/20 bg-blue-100 dark:text-blue-400 text-blue-700 capitalize">
@@ -190,7 +185,6 @@ const Blog = () => {
             </div>
           </div>
         </div>
-      </div>
     </Layout>
   );
 };

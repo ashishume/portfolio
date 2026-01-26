@@ -46,18 +46,16 @@ const BlogDetail = () => {
   if (!blog) {
     return (
       <Layout>
-        <div className="min-h-screen dark:bg-gradient-to-br dark:from-slate-900 dark:via-gray-800 dark:to-slate-900 bg-gradient-to-br from-gray-50 via-white to-gray-100 pt-20 sm:pt-24 lg:pt-28 pb-16 px-6 md:px-16 lg:px-24">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-3xl font-bold dark:text-white text-gray-900 mb-4">
-              Blog Not Found
-            </h1>
-            <button
-              onClick={() => navigate("/blog")}
-              className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-300"
-            >
-              Back to Blog
-            </button>
-          </div>
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-3xl font-bold dark:text-white text-gray-900 mb-4">
+            Blog Not Found
+          </h1>
+          <button
+            onClick={() => navigate("/blog")}
+            className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-300"
+          >
+            Back to Blog
+          </button>
         </div>
       </Layout>
     );
@@ -66,10 +64,8 @@ const BlogDetail = () => {
   if (loading) {
     return (
       <Layout>
-        <div className="min-h-screen dark:bg-gradient-to-br dark:from-slate-900 dark:via-gray-800 dark:to-slate-900 bg-gradient-to-br from-gray-50 via-white to-gray-100 pt-20 sm:pt-24 lg:pt-28 pb-16 px-6 md:px-16 lg:px-24">
-          <div className="max-w-4xl mx-auto flex justify-center items-center min-h-[60vh]">
-            <Spinner />
-          </div>
+        <div className="max-w-4xl mx-auto flex justify-center items-center min-h-[60vh]">
+          <Spinner />
         </div>
       </Layout>
     );
@@ -77,8 +73,7 @@ const BlogDetail = () => {
 
   return (
     <Layout>
-      <div className="min-h-screen dark:bg-gradient-to-br dark:from-slate-900 dark:via-gray-800 dark:to-slate-900 to-gray-100 pt-20 sm:pt-24 lg:pt-28 pb-8 sm:pb-12 lg:pb-16 px-4 sm:px-6 md:px-16 lg:px-24">
-        <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto pt-4 sm:pt-8 lg:pt-12 pb-8 sm:pb-12 lg:pb-16">
           {/* Mobile Header with Back Button and Categories Toggle */}
           <div className="flex items-center justify-between mb-4 lg:hidden">
             <button
@@ -89,7 +84,7 @@ const BlogDetail = () => {
             </button>
             <button
               onClick={() => setSidebarOpen(!sidebarOpen)}
-              className="flex items-center gap-2 px-3 py-2 rounded-lg dark:bg-gray-800/80 bg-white dark:text-gray-300 text-gray-700 border dark:border-gray-700 border-gray-200 text-sm font-medium"
+              className="flex items-center gap-2 px-3 py-2 rounded-lg backdrop-blur-md bg-white/10 dark:bg-white/5 dark:text-gray-300 text-gray-700 border border-white/20 dark:border-white/10 text-sm font-medium hover:bg-white/20 dark:hover:bg-white/10 transition-all"
             >
               <svg
                 className="w-4 h-4"
@@ -111,7 +106,7 @@ const BlogDetail = () => {
           {/* Mobile Sidebar Drawer */}
           {sidebarOpen && (
             <div className="lg:hidden mb-4">
-              <div className="dark:bg-gray-800/95 bg-white/95 backdrop-blur-sm rounded-lg border dark:border-gray-700 border-gray-200 overflow-hidden">
+              <div className="backdrop-blur-md bg-white/10 dark:bg-white/5 rounded-lg border border-white/20 dark:border-white/10 overflow-hidden">
                 <BlogSidebar selectedCategory={blog.category} />
               </div>
             </div>
@@ -133,7 +128,7 @@ const BlogDetail = () => {
                 ← Back to Blog
               </button>
 
-              <article className="dark:bg-gray-800/80 bg-white rounded-lg p-4 sm:p-6 lg:p-8 dark:border-gray-700 border-gray-200">
+              <article className="backdrop-blur-md bg-white/10 dark:bg-white/5 rounded-lg p-4 sm:p-6 lg:p-8 border border-white/20 dark:border-white/10">
                 <div className="flex items-center gap-2 mb-3 sm:mb-4">
                   <span className="px-2 sm:px-3 py-1 text-xs sm:text-sm font-medium rounded dark:bg-blue-600/20 bg-blue-100 dark:text-blue-400 text-blue-700 capitalize">
                     {blog.category}
@@ -304,7 +299,6 @@ const BlogDetail = () => {
             )} */}
           </div>
         </div>
-      </div>
     </Layout>
   );
 };
