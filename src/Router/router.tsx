@@ -5,6 +5,8 @@ import { NavItems } from "../Shared/constant";
 import { usePageTracking } from "../Shared/hooks/usePageTracking";
 
 const BlogDetail = lazy(() => import("../Pages/Blog/BlogDetail"));
+const PrivacyPolicy = lazy(() => import("../Pages/PrivacyPolicy"));
+const TermsOfService = lazy(() => import("../Pages/TermsOfService"));
 
 const RouterContent = () => {
   // Track page views on route changes
@@ -30,6 +32,22 @@ const RouterContent = () => {
         element={
           <Suspense fallback={<Spinner />}>
             <BlogDetail />
+          </Suspense>
+        }
+      />
+      <Route
+        path="/privacy-policy"
+        element={
+          <Suspense fallback={<Spinner />}>
+            <PrivacyPolicy />
+          </Suspense>
+        }
+      />
+      <Route
+        path="/terms-of-service"
+        element={
+          <Suspense fallback={<Spinner />}>
+            <TermsOfService />
           </Suspense>
         }
       />
