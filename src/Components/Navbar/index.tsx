@@ -57,11 +57,10 @@ const Navbar: React.FC = () => {
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? "dark:bg-gray-900/95 bg-white/95 backdrop-blur-md shadow-lg"
-          : "bg-transparent"
-      }`}
+      className={`fixed w-full z-50 transition-all duration-300 ${scrolled
+        ? "dark:bg-gray-900/95 bg-white/95 backdrop-blur-md shadow-lg"
+        : "bg-transparent"
+        }`}
     >
       <div className="container mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
@@ -82,16 +81,25 @@ const Navbar: React.FC = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-4">
+            {/* Buy Me a Coffee - left of Home */}
+            <a
+              href="https://buymeacoffee.com/aaashish"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center rounded-lg overflow-hidden hover:opacity-90 transition-opacity duration-300 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2 dark:focus:ring-offset-gray-900 flex-shrink-0"
+              aria-label="Buy me a coffee"
+            >
+              <img src="/buymeacoffee-button.png" alt="Buy me a coffee" className="h-9 object-contain rounded-lg" />
+            </a>
             <ul className="flex space-x-1">
               {NavItems.map(({ label, route }, index) => (
                 <li key={label}>
                   <a
                     onClick={() => handleNavItem(route)}
-                    className={`relative px-4 py-2 rounded-md font-medium cursor-pointer transition-all duration-300 inline-block text-sm ${
-                      activeItemIndex === index
-                        ? "dark:text-white text-gray-900"
-                        : "dark:text-gray-400 dark:hover:text-gray-200 text-gray-600 hover:text-gray-900"
-                    }`}
+                    className={`relative px-4 py-2 rounded-md font-medium cursor-pointer transition-all duration-300 inline-block text-sm ${activeItemIndex === index
+                      ? "dark:text-white text-gray-900"
+                      : "dark:text-gray-400 dark:hover:text-gray-200 text-gray-600 hover:text-gray-900"
+                      }`}
                   >
                     {label.toUpperCase()}
                     {activeItemIndex === index && (
@@ -101,7 +109,6 @@ const Navbar: React.FC = () => {
                 </li>
               ))}
             </ul>
-            
             {/* Theme Toggle Button */}
             <button
               onClick={toggleTheme}
@@ -114,8 +121,17 @@ const Navbar: React.FC = () => {
             </button>
           </div>
 
-          {/* Mobile Menu Button and Theme Toggle */}
+          {/* Mobile Menu Button, Buy Me a Coffee, and Theme Toggle */}
           <div className="md:hidden flex items-center space-x-2">
+            <a
+              href="https://buymeacoffee.com/aaashish"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center rounded-lg overflow-hidden hover:opacity-90 transition-opacity duration-300 focus:outline-none"
+              aria-label="Buy me a coffee"
+            >
+              <img src="/buymeacoffee.png" alt="Buy me a coffee" className="h-8 w-8 object-contain rounded" />
+            </a>
             <button
               onClick={toggleTheme}
               className="p-2 rounded-lg dark:bg-gray-800/70 bg-gray-200/70 hover:dark:bg-gray-700/70 hover:bg-gray-300/70 transition-colors duration-300 focus:outline-none"
@@ -138,9 +154,8 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Navigation */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          isMenuOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
-        }`}
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${isMenuOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
+          }`}
       >
         <div className="dark:bg-gray-900/95 bg-white/95 backdrop-blur-md border-t dark:border-gray-800 border-gray-200 px-4 py-2 shadow-lg">
           <ul className="space-y-2 pb-3 pt-2">
@@ -148,19 +163,28 @@ const Navbar: React.FC = () => {
               <li key={label}>
                 <a
                   onClick={() => handleNavItem(route)}
-                  className={`block px-3 py-2 rounded-md transition-all duration-200 ${
-                    activeItemIndex === index
-                      ? "dark:bg-gray-800 bg-gray-200 dark:text-white text-gray-900 font-medium"
-                      : "dark:text-gray-400 dark:hover:text-white text-gray-600 hover:text-gray-900 dark:hover:bg-gray-800/40 hover:bg-gray-200/40"
-                  }`}
+                  className={`block px-3 py-2 rounded-md transition-all duration-200 ${activeItemIndex === index
+                    ? "dark:bg-gray-800 bg-gray-200 dark:text-white text-gray-900 font-medium"
+                    : "dark:text-gray-400 dark:hover:text-white text-gray-600 hover:text-gray-900 dark:hover:bg-gray-800/40 hover:bg-gray-200/40"
+                    }`}
                 >
                   <div className="flex items-center">
-                    {/* You can add icons here for each nav item */}
                     <span className="ml-3">{label.toUpperCase()}</span>
                   </div>
                 </a>
               </li>
             ))}
+            <li>
+              <a
+                href="https://buymeacoffee.com/aaashish"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-3 py-2 rounded-md transition-all duration-200 dark:text-gray-400 dark:hover:text-white text-gray-600 hover:text-gray-900 dark:hover:bg-gray-800/40 hover:bg-gray-200/40"
+              >
+                <img src="/buymeacoffee.png" alt="" className="h-6 w-6 object-contain rounded flex-shrink-0" />
+                <span className="ml-3">BUY ME A COFFEE</span>
+              </a>
+            </li>
           </ul>
         </div>
       </div>
