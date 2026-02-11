@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Open in Axpo Tracker</title>
+
+    <!-- OG tags for WhatsApp / social media link previews -->
+    <meta property="og:title" content="Axpo Tracker" />
+    <meta
+      property="og:description"
+      content="Tap to open in the Axpo Tracker app"
+    />
+    <meta property="og:image" content="/logo.jpg" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Axpo Tracker" />
+    <meta
+      name="twitter:description"
+      content="Tap to open in the Axpo Tracker app"
+    />
+    <meta name="twitter:image" content="/logo.jpg" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+          Arial, sans-serif;
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        color: #f8fafc;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 24px;
+        padding: 40px 32px;
+        max-width: 400px;
+        width: 100%;
+        text-align: center;
+      }
+
+      .icon {
+        width: 80px;
+        height: 80px;
+        border-radius: 20px;
+        margin: 0 auto 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 40px;
+        background: linear-gradient(135deg, #14b8a6, #0d9488);
+        box-shadow: 0 8px 32px rgba(20, 184, 166, 0.3);
+      }
+
+      h1 {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+
+      .subtitle {
+        font-size: 15px;
+        color: #94a3b8;
+        margin-bottom: 8px;
+        line-height: 1.5;
+      }
+
+      .detail {
+        font-size: 13px;
+        color: #64748b;
+        margin-bottom: 32px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+        padding: 16px 24px;
+        border-radius: 14px;
+        font-size: 17px;
+        font-weight: 600;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        transition:
+          transform 0.15s,
+          box-shadow 0.15s;
+      }
+
+      .btn:active {
+        transform: scale(0.97);
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, #14b8a6, #0d9488);
+        color: #fff;
+        box-shadow: 0 4px 20px rgba(20, 184, 166, 0.4);
+        margin-bottom: 12px;
+      }
+
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.08);
+        color: #cbd5e1;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .spinner {
+        width: 24px;
+        height: 24px;
+        border: 3px solid rgba(255, 255, 255, 0.15);
+        border-top-color: #fff;
+        border-radius: 50%;
+        animation: spin 0.7s linear infinite;
+        margin: 0 auto 16px;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .status {
+        font-size: 14px;
+        color: #94a3b8;
+        margin-bottom: 24px;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .footer {
+        margin-top: 32px;
+        font-size: 12px;
+        color: #475569;
+      }
+
+      .footer a {
+        color: #14b8a6;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="icon" id="pageIcon">💰</div>
+      <h1 id="pageTitle">Axpo Tracker</h1>
+      <p class="subtitle" id="pageSubtitle">Opening in app...</p>
+      <p class="detail" id="pageDetail"></p>
+
+      <!-- Loading state (shown first) -->
+      <div id="loadingState">
+        <div class="spinner"></div>
+        <p class="status">Redirecting to Axpo Tracker...</p>
+      </div>
+
+      <!-- Fallback state (shown if app didn't open) -->
+      <div id="fallbackState" class="hidden">
+        <a id="openAppBtn" class="btn btn-primary" href="#"> Open in App </a>
+        <a id="webAppBtn" class="btn btn-secondary" href="/">
+          Open Web Version
+        </a>
+      </div>
+
+      <p class="footer">Powered by <a href="/">Axpo Tracker</a></p>
+    </div>
+
+    <script>
+      (function () {
+        var SCHEME = "axpo-expense";
+
+        // Parse the URL path: /open/splitter/{id} or /open/lend/{id}
+        var path = window.location.pathname.replace(/^\/open\/?/, "");
+        var segments = path.split("/").filter(Boolean);
+        var type = segments[0]; // 'splitter' or 'lend'
+        var id = segments[1]; // the actual ID
+
+        // Build the deep link URL
+        var deepLink = SCHEME + "://" + type + "/" + id;
+
+        // Update page content based on type
+        var icon = document.getElementById("pageIcon");
+        var title = document.getElementById("pageTitle");
+        var subtitle = document.getElementById("pageSubtitle");
+        var detail = document.getElementById("pageDetail");
+        var openBtn = document.getElementById("openAppBtn");
+        var webBtn = document.getElementById("webAppBtn");
+
+        if (type === "splitter") {
+          icon.textContent = "👥";
+          title.textContent = "Split Group";
+          subtitle.textContent = "Someone shared an expense group with you";
+          detail.textContent = "Tap below to view the group in Axpo Tracker";
+          webBtn.href = "/";
+        } else if (type === "lend") {
+          icon.textContent = "💰";
+          title.textContent = "Loan Details";
+          subtitle.textContent = "Someone shared loan details with you";
+          detail.textContent = "Tap below to view the loan in Axpo Tracker";
+          webBtn.href = "/";
+        } else {
+          // Unknown type – just go to home
+          window.location.href = "/";
+          return;
+        }
+
+        openBtn.href = deepLink;
+
+        // Try to auto-open the app
+        var appOpened = false;
+
+        // Method 1: Use an iframe (works on many Android browsers)
+        var iframe = document.createElement("iframe");
+        iframe.style.display = "none";
+        iframe.src = deepLink;
+        document.body.appendChild(iframe);
+
+        // Method 2: Also try window.location (works on iOS Safari)
+        setTimeout(function () {
+          window.location.href = deepLink;
+        }, 100);
+
+        // Listen for visibility change – if page goes hidden, app opened
+        document.addEventListener("visibilitychange", function () {
+          if (document.hidden) {
+            appOpened = true;
+          }
+        });
+
+        // After a timeout, show the fallback
+        setTimeout(function () {
+          if (!appOpened) {
+            document.getElementById("loadingState").classList.add("hidden");
+            document.getElementById("fallbackState").classList.remove("hidden");
+            subtitle.textContent = "App not detected";
+            detail.textContent = "Install Axpo Tracker or open the web version";
+          }
+        }, 2500);
+
+        // Cleanup iframe
+        setTimeout(function () {
+          if (iframe.parentNode) {
+            iframe.parentNode.removeChild(iframe);
+          }
+        }, 5000);
+      })();
+    </script>
+  </body>
+</html>
