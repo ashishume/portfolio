@@ -1,835 +1,835 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ashishdebnath.com</loc>
+    <loc>https://ashishdebnath.in</loc>
     <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog</loc>
+    <loc>https://ashishdebnath.in/blog</loc>
     <lastmod>2026-04-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/skills</loc>
+    <loc>https://ashishdebnath.in/skills</loc>
     <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/projects</loc>
+    <loc>https://ashishdebnath.in/projects</loc>
     <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/about</loc>
+    <loc>https://ashishdebnath.in/about</loc>
     <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/contact</loc>
+    <loc>https://ashishdebnath.in/contact</loc>
     <lastmod>2026-04-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/privacy-policy</loc>
+    <loc>https://ashishdebnath.in/privacy-policy</loc>
     <lastmod>2026-04-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/terms-of-service</loc>
+    <loc>https://ashishdebnath.in/terms-of-service</loc>
     <lastmod>2026-04-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/promises</loc>
+    <loc>https://ashishdebnath.in/blog/promises</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/event-loop</loc>
+    <loc>https://ashishdebnath.in/blog/event-loop</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/hoisting</loc>
+    <loc>https://ashishdebnath.in/blog/hoisting</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/closures</loc>
+    <loc>https://ashishdebnath.in/blog/closures</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/var-let-const-scope</loc>
+    <loc>https://ashishdebnath.in/blog/var-let-const-scope</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/execution-context</loc>
+    <loc>https://ashishdebnath.in/blog/execution-context</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/prototype</loc>
+    <loc>https://ashishdebnath.in/blog/prototype</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/async-await-vs-promises</loc>
+    <loc>https://ashishdebnath.in/blog/async-await-vs-promises</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/debouncing-throttling</loc>
+    <loc>https://ashishdebnath.in/blog/debouncing-throttling</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/call-bind-apply</loc>
+    <loc>https://ashishdebnath.in/blog/call-bind-apply</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/inheritance</loc>
+    <loc>https://ashishdebnath.in/blog/inheritance</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/proxy</loc>
+    <loc>https://ashishdebnath.in/blog/proxy</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/symbols</loc>
+    <loc>https://ashishdebnath.in/blog/symbols</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/map-set-weakmap-weakset</loc>
+    <loc>https://ashishdebnath.in/blog/map-set-weakmap-weakset</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/currying</loc>
+    <loc>https://ashishdebnath.in/blog/currying</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/generator-functions</loc>
+    <loc>https://ashishdebnath.in/blog/generator-functions</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/shallow-deep-copy</loc>
+    <loc>https://ashishdebnath.in/blog/shallow-deep-copy</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/intersection-observer</loc>
+    <loc>https://ashishdebnath.in/blog/intersection-observer</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/web-workers</loc>
+    <loc>https://ashishdebnath.in/blog/web-workers</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/service-workers</loc>
+    <loc>https://ashishdebnath.in/blog/service-workers</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/session-localstorage-cookies</loc>
+    <loc>https://ashishdebnath.in/blog/session-localstorage-cookies</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/spread-rest</loc>
+    <loc>https://ashishdebnath.in/blog/spread-rest</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/type-conversion-coercion</loc>
+    <loc>https://ashishdebnath.in/blog/type-conversion-coercion</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/temporal-dead-zone</loc>
+    <loc>https://ashishdebnath.in/blog/temporal-dead-zone</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/for-in-for-of</loc>
+    <loc>https://ashishdebnath.in/blog/for-in-for-of</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/domcontentloaded</loc>
+    <loc>https://ashishdebnath.in/blog/domcontentloaded</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/event-emitter</loc>
+    <loc>https://ashishdebnath.in/blog/event-emitter</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/pass-by-value-reference</loc>
+    <loc>https://ashishdebnath.in/blog/pass-by-value-reference</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/function-statement-expression</loc>
+    <loc>https://ashishdebnath.in/blog/function-statement-expression</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/resize-observer</loc>
+    <loc>https://ashishdebnath.in/blog/resize-observer</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/mutation-observer</loc>
+    <loc>https://ashishdebnath.in/blog/mutation-observer</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/weakref</loc>
+    <loc>https://ashishdebnath.in/blog/weakref</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/es6-modules</loc>
+    <loc>https://ashishdebnath.in/blog/es6-modules</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/history-api</loc>
+    <loc>https://ashishdebnath.in/blog/history-api</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/postmessage-api</loc>
+    <loc>https://ashishdebnath.in/blog/postmessage-api</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/prefetch-preload-preconnect</loc>
+    <loc>https://ashishdebnath.in/blog/prefetch-preload-preconnect</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/tree-shaking</loc>
+    <loc>https://ashishdebnath.in/blog/tree-shaking</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/how-browser-renders-page</loc>
+    <loc>https://ashishdebnath.in/blog/how-browser-renders-page</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/shadow-dom</loc>
+    <loc>https://ashishdebnath.in/blog/shadow-dom</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/promise-chaining</loc>
+    <loc>https://ashishdebnath.in/blog/promise-chaining</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/pipe-and-compose</loc>
+    <loc>https://ashishdebnath.in/blog/pipe-and-compose</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/flatten-object</loc>
+    <loc>https://ashishdebnath.in/blog/flatten-object</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/foreach-vs-map</loc>
+    <loc>https://ashishdebnath.in/blog/foreach-vs-map</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/object-property-descriptors</loc>
+    <loc>https://ashishdebnath.in/blog/object-property-descriptors</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/observables-vs-promises</loc>
+    <loc>https://ashishdebnath.in/blog/observables-vs-promises</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/publisher-subscriber-pattern</loc>
+    <loc>https://ashishdebnath.in/blog/publisher-subscriber-pattern</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/module-pattern</loc>
+    <loc>https://ashishdebnath.in/blog/module-pattern</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/function-chaining</loc>
+    <loc>https://ashishdebnath.in/blog/function-chaining</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/lru-cache</loc>
+    <loc>https://ashishdebnath.in/blog/lru-cache</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/offline-first-app</loc>
+    <loc>https://ashishdebnath.in/blog/offline-first-app</loc>
     <lastmod>2026-01-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/react-virtual-list</loc>
+    <loc>https://ashishdebnath.in/blog/react-virtual-list</loc>
     <lastmod>2026-01-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/abort-controller</loc>
+    <loc>https://ashishdebnath.in/blog/abort-controller</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/callbacks</loc>
+    <loc>https://ashishdebnath.in/blog/callbacks</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/callback-hell</loc>
+    <loc>https://ashishdebnath.in/blog/callback-hell</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/arrow-vs-normal-function</loc>
+    <loc>https://ashishdebnath.in/blog/arrow-vs-normal-function</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/memoization</loc>
+    <loc>https://ashishdebnath.in/blog/memoization</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/circuit-breaker</loc>
+    <loc>https://ashishdebnath.in/blog/circuit-breaker</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/event-delegation</loc>
+    <loc>https://ashishdebnath.in/blog/event-delegation</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/fetch-with-timeout</loc>
+    <loc>https://ashishdebnath.in/blog/fetch-with-timeout</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/recursive-functions</loc>
+    <loc>https://ashishdebnath.in/blog/recursive-functions</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/two-way-binding</loc>
+    <loc>https://ashishdebnath.in/blog/two-way-binding</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/map-async-limit</loc>
+    <loc>https://ashishdebnath.in/blog/map-async-limit</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/promise-with-limit</loc>
+    <loc>https://ashishdebnath.in/blog/promise-with-limit</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/throttle-promises</loc>
+    <loc>https://ashishdebnath.in/blog/throttle-promises</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/fetch-interceptor</loc>
+    <loc>https://ashishdebnath.in/blog/fetch-interceptor</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/flatten-array-nth-level</loc>
+    <loc>https://ashishdebnath.in/blog/flatten-array-nth-level</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/retry-with-limit</loc>
+    <loc>https://ashishdebnath.in/blog/retry-with-limit</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/custom-cookie</loc>
+    <loc>https://ashishdebnath.in/blog/custom-cookie</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/sort-array-objects</loc>
+    <loc>https://ashishdebnath.in/blog/sort-array-objects</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/negative-array-indexes</loc>
+    <loc>https://ashishdebnath.in/blog/negative-array-indexes</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/cache-with-time-limit</loc>
+    <loc>https://ashishdebnath.in/blog/cache-with-time-limit</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/execute-tasks-series-parallel-race</loc>
+    <loc>https://ashishdebnath.in/blog/execute-tasks-series-parallel-race</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/function-call-limit</loc>
+    <loc>https://ashishdebnath.in/blog/function-call-limit</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/function-call-only-twice</loc>
+    <loc>https://ashishdebnath.in/blog/function-call-only-twice</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/array-groupby</loc>
+    <loc>https://ashishdebnath.in/blog/array-groupby</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/invert-object-key-value</loc>
+    <loc>https://ashishdebnath.in/blog/invert-object-key-value</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/debounce-with-cancel</loc>
+    <loc>https://ashishdebnath.in/blog/debounce-with-cancel</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/caching-api-calls</loc>
+    <loc>https://ashishdebnath.in/blog/caching-api-calls</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/canvas-api</loc>
+    <loc>https://ashishdebnath.in/blog/canvas-api</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/drag-and-drop-api</loc>
+    <loc>https://ashishdebnath.in/blog/drag-and-drop-api</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/css-flexbox</loc>
+    <loc>https://ashishdebnath.in/blog/css-flexbox</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/lodash-deepclone</loc>
+    <loc>https://ashishdebnath.in/blog/lodash-deepclone</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/lodash-get</loc>
+    <loc>https://ashishdebnath.in/blog/lodash-get</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/lodash-has</loc>
+    <loc>https://ashishdebnath.in/blog/lodash-has</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/lodash-isequal</loc>
+    <loc>https://ashishdebnath.in/blog/lodash-isequal</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/lodash-pick</loc>
+    <loc>https://ashishdebnath.in/blog/lodash-pick</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/lodash-once</loc>
+    <loc>https://ashishdebnath.in/blog/lodash-once</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/getelementbyid-polyfill</loc>
+    <loc>https://ashishdebnath.in/blog/getelementbyid-polyfill</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/api-call-cancel-after-timeout</loc>
+    <loc>https://ashishdebnath.in/blog/api-call-cancel-after-timeout</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/web-accessibility</loc>
+    <loc>https://ashishdebnath.in/blog/web-accessibility</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/async-and-defer-scripts</loc>
+    <loc>https://ashishdebnath.in/blog/async-and-defer-scripts</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/authentication-vs-authorization</loc>
+    <loc>https://ashishdebnath.in/blog/authentication-vs-authorization</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/basic-plugin-in-js</loc>
+    <loc>https://ashishdebnath.in/blog/basic-plugin-in-js</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/event-capturing</loc>
+    <loc>https://ashishdebnath.in/blog/event-capturing</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/getelementsbyclassname-polyfill</loc>
+    <loc>https://ashishdebnath.in/blog/getelementsbyclassname-polyfill</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/lodash-insert-set</loc>
+    <loc>https://ashishdebnath.in/blog/lodash-insert-set</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/map-async</loc>
+    <loc>https://ashishdebnath.in/blog/map-async</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/object-assign-polyfill</loc>
+    <loc>https://ashishdebnath.in/blog/object-assign-polyfill</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/core-web-vitals</loc>
+    <loc>https://ashishdebnath.in/blog/core-web-vitals</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/critical-rendering-path</loc>
+    <loc>https://ashishdebnath.in/blog/critical-rendering-path</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/css-media-queries</loc>
+    <loc>https://ashishdebnath.in/blog/css-media-queries</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/css-selector-priorities</loc>
+    <loc>https://ashishdebnath.in/blog/css-selector-priorities</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/css-grid</loc>
+    <loc>https://ashishdebnath.in/blog/css-grid</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/serialize-dom-to-json</loc>
+    <loc>https://ashishdebnath.in/blog/serialize-dom-to-json</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/deserialize-json-to-dom</loc>
+    <loc>https://ashishdebnath.in/blog/deserialize-json-to-dom</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/highlight-word</loc>
+    <loc>https://ashishdebnath.in/blog/highlight-word</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/nested-to-flat-object</loc>
+    <loc>https://ashishdebnath.in/blog/nested-to-flat-object</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/react-fiber</loc>
+    <loc>https://ashishdebnath.in/blog/react-fiber</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/microfrontend-architecture</loc>
+    <loc>https://ashishdebnath.in/blog/microfrontend-architecture</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/web-page-optimization</loc>
+    <loc>https://ashishdebnath.in/blog/web-page-optimization</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/types-of-testing</loc>
+    <loc>https://ashishdebnath.in/blog/types-of-testing</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/webpack</loc>
+    <loc>https://ashishdebnath.in/blog/webpack</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/react-redux-polyfill</loc>
+    <loc>https://ashishdebnath.in/blog/react-redux-polyfill</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/prototype-inheritance-polyfill</loc>
+    <loc>https://ashishdebnath.in/blog/prototype-inheritance-polyfill</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/routing-table-crud</loc>
+    <loc>https://ashishdebnath.in/blog/routing-table-crud</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/event-streaming-with-limit</loc>
+    <loc>https://ashishdebnath.in/blog/event-streaming-with-limit</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/throttler-queue-multiple-clicks</loc>
+    <loc>https://ashishdebnath.in/blog/throttler-queue-multiple-clicks</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/k-most-appearing-words-dom</loc>
+    <loc>https://ashishdebnath.in/blog/k-most-appearing-words-dom</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/react-classnames-aggregator</loc>
+    <loc>https://ashishdebnath.in/blog/react-classnames-aggregator</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/convert-suffix-to-key-value</loc>
+    <loc>https://ashishdebnath.in/blog/convert-suffix-to-key-value</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/custom-dom-implementation</loc>
+    <loc>https://ashishdebnath.in/blog/custom-dom-implementation</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/object-property-descriptors-detailed</loc>
+    <loc>https://ashishdebnath.in/blog/object-property-descriptors-detailed</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/replace-key-value-nested-object</loc>
+    <loc>https://ashishdebnath.in/blog/replace-key-value-nested-object</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/throttler-with-multiple-clicks</loc>
+    <loc>https://ashishdebnath.in/blog/throttler-with-multiple-clicks</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/alternatives-to-redux</loc>
+    <loc>https://ashishdebnath.in/blog/alternatives-to-redux</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/angular-lifecycle-methods</loc>
+    <loc>https://ashishdebnath.in/blog/angular-lifecycle-methods</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/crdts-vs-ots</loc>
+    <loc>https://ashishdebnath.in/blog/crdts-vs-ots</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/event-sourcing</loc>
+    <loc>https://ashishdebnath.in/blog/event-sourcing</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/idempotency</loc>
+    <loc>https://ashishdebnath.in/blog/idempotency</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/saga-pattern</loc>
+    <loc>https://ashishdebnath.in/blog/saga-pattern</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashishdebnath.com/blog/postgres-as-fuzzy-search</loc>
+    <loc>https://ashishdebnath.in/blog/postgres-as-fuzzy-search</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

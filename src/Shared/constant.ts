@@ -337,7 +337,7 @@ export const ProjectData: IProjectCard[] = [
     description: "This is a react app to split the expenses between friends",
     image:
       "https://github.com/ashishume/expense-splitter/blob/main/public/logo.jpg?raw=true",
-    uri: "https://axpo.ashishdebnath.com",
+    uri: "https://expense.axpocreation.com/",
   },
   {
     key: 10,

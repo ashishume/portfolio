@@ -6,7 +6,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = join(__dirname, "..");
 
 const siteUrl = normalizeSiteUrl(
-  process.env.SITE_URL || process.env.VITE_SITE_URL || "https://ashishdebnath.com"
+  process.env.SITE_URL || process.env.VITE_SITE_URL || "https://ashishdebnath.in"
 );
 
 const staticRoutes = [
