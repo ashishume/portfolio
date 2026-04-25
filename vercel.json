@@ -1,9 +1,16 @@
 {
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist/client",
+  "functions": {
+    "api/ssr.js": {
+      "includeFiles": "dist/**"
+    }
+  },
   "rewrites": [
     {
       "source": "/open/:path*",
       "destination": "/open.html"
     },
-    { "source": "/(.*)", "destination": "/" }
+    { "source": "/(.*)", "destination": "/api/ssr" }
   ]
 }

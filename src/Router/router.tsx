@@ -1,14 +1,11 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Suspense, lazy } from "react";
-import Spinner from "../Components/Spinner";
 import { NavItems } from "../Shared/constant";
 import { usePageTracking } from "../Shared/hooks/usePageTracking";
+import BlogDetail from "../Pages/Blog/BlogDetail";
+import PrivacyPolicy from "../Pages/PrivacyPolicy";
+import TermsOfService from "../Pages/TermsOfService";
 
-const BlogDetail = lazy(() => import("../Pages/Blog/BlogDetail"));
-const PrivacyPolicy = lazy(() => import("../Pages/PrivacyPolicy"));
-const TermsOfService = lazy(() => import("../Pages/TermsOfService"));
-
-const RouterContent = () => {
+export const RouterContent = () => {
   // Track page views on route changes
   usePageTracking();
 
@@ -19,38 +16,13 @@ const RouterContent = () => {
           <Route
             key={label}
             path={route}
-            element={
-              <Suspense fallback={<Spinner />}>
-                <Element />
-              </Suspense>
-            }
+            element={<Element />}
           />
         );
       })}
-      <Route
-        path="/blog/:slug"
-        element={
-          <Suspense fallback={<Spinner />}>
-            <BlogDetail />
-          </Suspense>
-        }
-      />
-      <Route
-        path="/privacy-policy"
-        element={
-          <Suspense fallback={<Spinner />}>
-            <PrivacyPolicy />
-          </Suspense>
-        }
-      />
-      <Route
-        path="/terms-of-service"
-        element={
-          <Suspense fallback={<Spinner />}>
-            <TermsOfService />
-          </Suspense>
-        }
-      />
+      <Route path="/blog/:slug" element={<BlogDetail />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+      <Route path="/terms-of-service" element={<TermsOfService />} />
     </Routes>
   );
 };

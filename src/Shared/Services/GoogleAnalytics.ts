@@ -9,10 +9,10 @@ declare global {
       config?: {
         page_path?: string;
         page_title?: string;
-        [key: string]: any;
+        [key: string]: unknown;
       }
     ) => void;
-    dataLayer: any[];
+    dataLayer: unknown[];
   }
 }
 

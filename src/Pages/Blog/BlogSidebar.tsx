@@ -1,7 +1,6 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import { useBlogPosts } from "../../Shared/hooks/useBlogPosts";
-import { getCategories } from "../../Shared/blogData";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 
 interface BlogSidebarProps {
   selectedCategory?: string;
@@ -15,16 +14,15 @@ const BlogSidebar = ({
   const navigate = useNavigate();
   const location = useLocation();
   const { blogPosts } = useBlogPosts();
-  const [categories, setCategories] = useState<string[]>([]);
+  const categories = useMemo(
+    () => Array.from(new Set(blogPosts.map((post) => post.category))).sort(),
+    [blogPosts]
+  );
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(
     new Set(selectedCategory ? [selectedCategory] : [])
   );
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const savedScrollPositionRef = useRef<number>(0);
-
-  useEffect(() => {
-    getCategories().then(setCategories);
-  }, [blogPosts]);
 
   // Restore scroll position after DOM updates
   useEffect(() => {

@@ -18,13 +18,18 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/public/portfolio-logo.webp" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ashish Debnath | Portfolio | Blog</title>
+    <title><!--ssr-title-->Ashish Debnath | Portfolio | Blog</title>
+    <meta
+      name="description"
+      content="<!--ssr-description-->Ashish Debnath portfolio and technical blog"
+    />
+    <!--ssr-head-->
     <meta name="google-adsense-account" content="ca-pub-3743383597691737">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3743383597691737"
      crossorigin="anonymous"></script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="/src/entry-client.tsx"></script>
   </body>
 </html>

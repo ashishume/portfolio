@@ -1,10 +1,21 @@
 import style from "./style.module.scss";
-const SkillsCard = ({ items, label }: any): any => {
+
+interface SkillItem {
+  key: number;
+  label: string;
+}
+
+interface SkillsCardProps {
+  items: SkillItem[];
+  label: string;
+}
+
+const SkillsCard = ({ items, label }: SkillsCardProps) => {
   return (
     <div className={style.container}>
       <h2>{label}</h2>
       <div className={style.content}>
-        {items.map(({ key, label }: any) => {
+        {items.map(({ key, label }) => {
           return (
             <div className={style.item} key={key}>
               {label}

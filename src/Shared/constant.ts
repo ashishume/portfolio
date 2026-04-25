@@ -1,8 +1,12 @@
-import { lazy } from "react";
 import { SVGs } from "./icons";
 import { INavbar, ISkills, ISocialIcons } from "./models";
 import ContactMe from "../Pages/Contact";
 import { IProjectCard } from "./models";
+import Home from "../Pages/Home";
+import Projects from "../Pages/Projects";
+import About from "../Pages/About";
+import Skills from "../Pages/Skills";
+import Blog from "../Pages/Blog";
 import ecommerce from "../../public/ecommerce.webp";
 import interview from "../../public/interview.webp";
 import ielts from "../../public/ielts.webp";
@@ -18,12 +22,6 @@ import fastAPI from "../../public/fast_api.avif";
 import contentstackLogo from "../../public/contenstack.webp";
 import sorocoLogo from "../../public/soroco.svg";
 import nineleapsLogo from "../../public/nineleaps.svg";
-
-const Home = lazy(() => import("../Pages/Home"));
-const Projects = lazy(() => import("../Pages/Projects"));
-const About = lazy(() => import("../Pages/About"));
-const Skills = lazy(() => import("../Pages/Skills"));
-const Blog = lazy(() => import("../Pages/Blog"));
 
 export const NavItems: INavbar[] = [
   { label: "Home", route: "/", Element: Home },

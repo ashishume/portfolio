@@ -1,4 +1,4 @@
-type ComponentType = React.ComponentType<any>;
+type ComponentType = React.ComponentType<Record<string, never>>;
 
 export interface INavbar {
   label: string;

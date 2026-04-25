@@ -12,6 +12,16 @@ export interface BlogSource {
   category: string;
 }
 
+export interface BlogMetadataEntry {
+  id?: string;
+  date: string;
+  category: string;
+  excerpt: string;
+  slug: string;
+  title: string;
+  tags?: string[];
+}
+
 const BLOG_SOURCES: Record<string, BlogSource> = {
   frontend: {
     owner: "ashishume",
@@ -29,8 +39,19 @@ const BLOG_SOURCES: Record<string, BlogSource> = {
   },
 };
 
-// Cache for API responses - key: URL, value: Promise<string | Record<string, any>>
-const apiCache = new Map<string, Promise<string | Record<string, any>>>();
+const CACHE_TTL_MS = 10 * 60 * 1000;
+
+interface CacheEntry<T> {
+  value?: T;
+  expiresAt: number;
+  promise?: Promise<T>;
+}
+
+// Cache for API responses - key: URL, value: cached response + single-flight promise
+const apiCache = new Map<
+  string,
+  CacheEntry<string | Record<string, BlogMetadataEntry>>
+>();
 
 export interface GitHubFile {
   name: string;
@@ -74,6 +95,53 @@ export function getAllBlogSources(): BlogSource[] {
   return Object.values(BLOG_SOURCES);
 }
 
+async function getCachedResponse<
+  T extends string | Record<string, BlogMetadataEntry>
+>(
+  url: string,
+  fetcher: () => Promise<T>
+): Promise<T> {
+  const now = Date.now();
+  const cached = apiCache.get(url) as CacheEntry<T> | undefined;
+
+  if (cached?.value !== undefined && cached.expiresAt > now) {
+    return cached.value;
+  }
+
+  if (cached?.promise) {
+    return cached.promise;
+  }
+
+  const fetchPromise = fetcher()
+    .then((value) => {
+      apiCache.set(url, {
+        value,
+        expiresAt: Date.now() + CACHE_TTL_MS,
+      });
+      return value;
+    })
+    .catch((error) => {
+      if (cached?.value !== undefined) {
+        apiCache.set(url, {
+          value: cached.value,
+          expiresAt: Date.now() + CACHE_TTL_MS,
+        });
+        return cached.value;
+      }
+
+      apiCache.delete(url);
+      throw error;
+    });
+
+  apiCache.set(url, {
+    value: cached?.value,
+    expiresAt: cached?.expiresAt || 0,
+    promise: fetchPromise,
+  });
+
+  return fetchPromise;
+}
+
 /**
  * Fetch blog metadata from metadata.json file
  * This is much more efficient than fetching all markdown files
@@ -81,17 +149,10 @@ export function getAllBlogSources(): BlogSource[] {
  */
 export async function fetchBlogMetadata(
   source: BlogSource
-): Promise<Record<string, any>> {
+): Promise<Record<string, BlogMetadataEntry>> {
   const url = getMetadataUrl(source);
 
-  // Check cache first
-  if (apiCache.has(url)) {
-    const cached = await apiCache.get(url)!;
-    return cached as Record<string, any>;
-  }
-
-  // Fetch and cache the result
-  const fetchPromise = (async () => {
+  return getCachedResponse(url, async () => {
     try {
       const response = await fetch(url);
 
@@ -101,16 +162,8 @@ export async function fetchBlogMetadata(
         );
       }
 
-      const metadata: {
-        [key: string]: {
-          date: string;
-          category: string;
-          excerpt: string;
-          slug: string;
-          title: string;
-          tags: string[];
-        };
-      } = await response.json();
+      const metadata: Record<string, BlogMetadataEntry> =
+        await response.json();
 
       // Sort entries by date (most recent first) and rebuild the object
       const sortedEntries = Object.entries(metadata).sort(([, a], [, b]) => {
@@ -125,20 +178,13 @@ export async function fetchBlogMetadata(
 
       return sortedMetadata;
     } catch (error) {
-      // Remove from cache on error so it can be retried
-      apiCache.delete(url);
       console.error(
         `Error fetching blog metadata for ${source.category}:`,
         error
       );
       throw error;
     }
-  })();
-
-  // Store the promise in cache (not the result) to handle concurrent requests
-  apiCache.set(url, fetchPromise);
-
-  return fetchPromise as Promise<Record<string, any>>;
+  });
 }
 
 /**
@@ -181,14 +227,7 @@ export async function fetchBlogContent(
 ): Promise<string> {
   const url = getRawContentUrl(filename, source);
 
-  // Check cache first
-  if (apiCache.has(url)) {
-    const cached = await apiCache.get(url)!;
-    return cached as string;
-  }
-
-  // Fetch and cache the result
-  const fetchPromise = (async () => {
+  return getCachedResponse(url, async () => {
     try {
       const response = await fetch(url);
 
@@ -198,20 +237,13 @@ export async function fetchBlogContent(
 
       return await response.text();
     } catch (error) {
-      // Remove from cache on error so it can be retried
-      apiCache.delete(url);
       console.error(
         `Error fetching blog content for ${filename} from ${source.category}:`,
         error
       );
       throw error;
     }
-  })();
-
-  // Store the promise in cache (not the result) to handle concurrent requests
-  apiCache.set(url, fetchPromise);
-
-  return fetchPromise;
+  });
 }
 
 /**

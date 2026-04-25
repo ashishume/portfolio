@@ -1,22 +1,62 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type HTMLAttributes } from "react";
 import ReactMarkdown from "react-markdown";
 import Layout from "../../Layout/layout";
 import { IBlog, loadBlogContent, getBlogPosts } from "../../Shared/blogData";
 // import { getRelatedPosts } from "../../Shared/blogUtils";
 import BlogSidebar from "./BlogSidebar";
 import Spinner from "../../Components/Spinner";
+import { useSsrData } from "../../Shared/SsrDataContext";
+
+const hasOwn = (value: object, key: string) =>
+  Object.prototype.hasOwnProperty.call(value, key);
+const emptyContentBySlug: Record<string, string | null> = {};
 
 const BlogDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
-  const [blog, setBlog] = useState<IBlog | null>(null);
-  const [content, setContent] = useState<string>("");
-  const [loading, setLoading] = useState<boolean>(true);
+  const ssrData = useSsrData();
+  const ssrBlog = ssrData.blogPosts?.find((post) => post.slug === slug) || null;
+  const ssrContentBySlug = ssrData.blogContentBySlug || emptyContentBySlug;
+  const hasSsrContent = slug ? hasOwn(ssrContentBySlug, slug) : false;
+  const [blog, setBlog] = useState<IBlog | null>(ssrBlog);
+  const [content, setContent] = useState<string>(
+    slug && typeof ssrContentBySlug[slug] === "string"
+      ? ssrContentBySlug[slug] || ""
+      : ""
+  );
+  const [loading, setLoading] = useState<boolean>(
+    () => !ssrData.blogPosts || Boolean(ssrBlog && !hasSsrContent)
+  );
   const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
   // const [relatedPosts, setRelatedPosts] = useState<IBlog[]>([]);
 
   useEffect(() => {
+    if (!slug) {
+      setBlog(null);
+      setContent("");
+      setLoading(false);
+      return;
+    }
+
+    if (ssrData.blogPosts) {
+      const foundBlog = ssrData.blogPosts.find((post) => post.slug === slug);
+      setBlog(foundBlog || null);
+
+      if (!foundBlog) {
+        setContent("");
+        setLoading(false);
+        return;
+      }
+
+      if (hasOwn(ssrContentBySlug, slug)) {
+        const ssrContent = ssrContentBySlug[slug];
+        setContent(typeof ssrContent === "string" ? ssrContent : "");
+        setLoading(false);
+        return;
+      }
+    }
+
     async function loadBlog() {
       setLoading(true);
       try {
@@ -41,7 +81,17 @@ const BlogDetail = () => {
     }
 
     loadBlog();
-  }, [slug]);
+  }, [slug, ssrData.blogPosts, ssrContentBySlug]);
+
+  if (loading) {
+    return (
+      <Layout>
+        <div className="max-w-4xl mx-auto flex justify-center items-center min-h-[60vh]">
+          <Spinner />
+        </div>
+      </Layout>
+    );
+  }
 
   if (!blog) {
     return (
@@ -56,16 +106,6 @@ const BlogDetail = () => {
           >
             Back to Blog
           </button>
-        </div>
-      </Layout>
-    );
-  }
-
-  if (loading) {
-    return (
-      <Layout>
-        <div className="max-w-4xl mx-auto flex justify-center items-center min-h-[60vh]">
-          <Spinner />
         </div>
       </Layout>
     );
@@ -148,31 +188,36 @@ const BlogDetail = () => {
                 <div className="prose prose-sm sm:prose-base lg:prose-lg dark:prose-invert max-w-none">
                   <ReactMarkdown
                     components={{
-                      h1: ({ node, ...props }) => (
+                      h1: ({ ...props }) => (
                         <h1
                           className="text-xl sm:text-2xl lg:text-3xl font-bold dark:text-white text-gray-900 mt-6 sm:mt-8 mb-3 sm:mb-4"
                           {...props}
                         />
                       ),
-                      h2: ({ node, ...props }) => (
+                      h2: ({ ...props }) => (
                         <h2
                           className="text-lg sm:text-xl lg:text-2xl font-bold dark:text-white text-gray-900 mt-5 sm:mt-6 mb-2 sm:mb-3"
                           {...props}
                         />
                       ),
-                      h3: ({ node, ...props }) => (
+                      h3: ({ ...props }) => (
                         <h3
                           className="text-base sm:text-lg lg:text-xl font-bold dark:text-white text-gray-900 mt-3 sm:mt-4 mb-2"
                           {...props}
                         />
                       ),
-                      p: ({ node, ...props }) => (
+                      p: ({ ...props }) => (
                         <p
                           className="dark:text-gray-300 text-gray-700 mb-3 sm:mb-4 leading-relaxed text-sm sm:text-base"
                           {...props}
                         />
                       ),
-                      code: ({ node, inline, ...props }: any) => {
+                      code: ({
+                        inline,
+                        ...props
+                      }: HTMLAttributes<HTMLElement> & {
+                        inline?: boolean;
+                      }) => {
                         if (inline) {
                           return (
                             <code
@@ -188,49 +233,49 @@ const BlogDetail = () => {
                           />
                         );
                       },
-                      pre: ({ node, ...props }) => (
+                      pre: ({ ...props }) => (
                         <pre
                           className="dark:bg-gray-900 bg-gray-100 p-3 sm:p-4 rounded-lg overflow-x-auto mb-3 sm:mb-4 text-xs sm:text-sm max-w-full"
                           {...props}
                         />
                       ),
-                      ul: ({ node, ...props }) => (
+                      ul: ({ ...props }) => (
                         <ul
                           className="list-disc list-outside ml-4 sm:ml-5 dark:text-gray-300 text-gray-700 mb-3 sm:mb-4 space-y-1.5 sm:space-y-2 text-sm sm:text-base"
                           {...props}
                         />
                       ),
-                      ol: ({ node, ...props }) => (
+                      ol: ({ ...props }) => (
                         <ol
                           className="list-decimal list-outside ml-4 sm:ml-5 dark:text-gray-300 text-gray-700 mb-3 sm:mb-4 space-y-1.5 sm:space-y-2 text-sm sm:text-base"
                           {...props}
                         />
                       ),
-                      li: ({ node, ...props }) => (
+                      li: ({ ...props }) => (
                         <li
                           className="dark:text-gray-300 text-gray-700 text-sm sm:text-base"
                           {...props}
                         />
                       ),
-                      blockquote: ({ node, ...props }) => (
+                      blockquote: ({ ...props }) => (
                         <blockquote
                           className="border-l-4 border-blue-500 dark:bg-gray-700/50 bg-gray-100 pl-3 sm:pl-4 py-2 my-3 sm:my-4 italic dark:text-gray-300 text-gray-700 text-sm sm:text-base"
                           {...props}
                         />
                       ),
-                      a: ({ node, ...props }) => (
+                      a: ({ ...props }) => (
                         <a
                           className="text-blue-600 dark:text-blue-400 hover:underline break-words"
                           {...props}
                         />
                       ),
-                      img: ({ node, ...props }) => (
+                      img: ({ ...props }) => (
                         <img
                           className="max-w-full h-auto rounded-lg my-3 sm:my-4"
                           {...props}
                         />
                       ),
-                      table: ({ node, ...props }) => (
+                      table: ({ ...props }) => (
                         <div className="overflow-x-auto mb-3 sm:mb-4 -mx-4 sm:mx-0">
                           <table
                             className="min-w-full divide-y divide-gray-200 dark:divide-gray-700 text-xs sm:text-sm"
@@ -238,13 +283,13 @@ const BlogDetail = () => {
                           />
                         </div>
                       ),
-                      th: ({ node, ...props }) => (
+                      th: ({ ...props }) => (
                         <th
                           className="px-3 sm:px-4 py-2 text-left font-semibold dark:bg-gray-800 bg-gray-100 dark:text-white text-gray-900"
                           {...props}
                         />
                       ),
-                      td: ({ node, ...props }) => (
+                      td: ({ ...props }) => (
                         <td
                           className="px-3 sm:px-4 py-2 dark:text-gray-300 text-gray-700 border-b dark:border-gray-700 border-gray-200"
                           {...props}

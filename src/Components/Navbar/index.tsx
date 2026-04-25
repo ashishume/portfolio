@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { SVGs } from "../../Shared/icons";
 import { NavItems } from "../../Shared/constant";
 import { INavbar } from "../../Shared/models";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useTheme } from "../../Context/ThemeContext";
 
 const Navbar: React.FC = () => {
@@ -10,7 +10,7 @@ const Navbar: React.FC = () => {
   const [activeItemIndex, setActiveItemIndex] = useState<number | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
-  const { pathname } = location;
+  const { pathname } = useLocation();
   const { theme, toggleTheme } = useTheme();
 
   // Handle scroll effect for transparent to solid navbar

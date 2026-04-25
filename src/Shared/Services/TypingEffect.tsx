@@ -9,7 +9,7 @@ const TypingEffect = ({ text }: { text: string }) => {
   const [showCursor, setShowCursor] = useState(true); // State to toggle cursor visibility
 
   useEffect(() => {
-    let timeout: any;
+    let timeout: ReturnType<typeof setTimeout>;
 
     if (currentIndex <= text.length - 1) {
       timeout = setTimeout(() => {
@@ -23,7 +23,7 @@ const TypingEffect = ({ text }: { text: string }) => {
     }
 
     return () => clearTimeout(timeout);
-  }, [currentIndex, speed, infinite, text]);
+  }, [currentIndex, text]);
 
   useEffect(() => {
     // Toggle cursor visibility every 500ms

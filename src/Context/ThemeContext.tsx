@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import React, {
   createContext,
   useContext,
@@ -29,6 +30,10 @@ interface ThemeProviderProps {
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof window === "undefined") {
+      return "dark";
+    }
+
     // Check localStorage first, default to dark
     const savedTheme = localStorage.getItem("theme") as Theme;
     if (savedTheme) {
