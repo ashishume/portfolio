@@ -1,5 +1,5 @@
-import { useNavigate } from "react-router-dom";
-import { useState, useMemo } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import { useEffect, useState, useMemo } from "react";
 import Fuse from "fuse.js";
 import Layout from "../../Layout/layout";
 import { useBlogPosts } from "../../Shared/hooks/useBlogPosts";
@@ -8,9 +8,19 @@ import Spinner from "../../Components/Spinner";
 
 const Blog = () => {
   const navigate = useNavigate();
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchQuery, setSearchQuery] = useState(
+    () => searchParams.get("q") || ""
+  );
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const { blogPosts, loading, error } = useBlogPosts();
+
+  useEffect(() => {
+    const queryParam = searchParams.get("q") || "";
+    setSearchQuery((currentQuery) =>
+      currentQuery === queryParam ? currentQuery : queryParam
+    );
+  }, [searchParams]);
 
   // Configure Fuse.js for fuzzy search
   const fuse = useMemo(() => {
@@ -107,7 +117,20 @@ const Blog = () => {
                     type="text"
                     placeholder="Search blogs..."
                     value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
+                    onChange={(event) => {
+                      const nextQuery = event.target.value;
+                      const nextParams = new URLSearchParams(searchParams);
+
+                      setSearchQuery(nextQuery);
+
+                      if (nextQuery.trim()) {
+                        nextParams.set("q", nextQuery);
+                      } else {
+                        nextParams.delete("q");
+                      }
+
+                      setSearchParams(nextParams, { replace: true });
+                    }}
                     className="w-full px-4 py-3 pl-10 backdrop-blur-md bg-white/10 dark:bg-white/5 dark:text-white text-gray-900 border border-white/20 dark:border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all"
                   />
                   <svg

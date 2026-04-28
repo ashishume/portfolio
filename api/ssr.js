@@ -34,6 +34,115 @@ function getSiteOrigin(req) {
   return `${proto}://${host}`;
 }
 
+const primaryNavItems = [
+  { name: "Home", path: "/" },
+  { name: "Blog", path: "/blog" },
+  { name: "Skills", path: "/skills" },
+  { name: "Projects", path: "/projects" },
+  { name: "About", path: "/about" },
+  { name: "Contact", path: "/contact" },
+];
+
+function buildSiteUrl(siteOrigin, path) {
+  return `${siteOrigin}${path.startsWith("/") ? path : `/${path}`}`;
+}
+
+function buildStructuredData(ssrData, siteOrigin, canonicalUrl) {
+  const seo = ssrData.seo || {};
+  const personId = `${siteOrigin}/#person`;
+  const websiteId = `${siteOrigin}/#website`;
+  const navigationId = `${siteOrigin}/#site-navigation`;
+  const graph = [
+    {
+      "@type": "Person",
+      "@id": personId,
+      name: "Ashish Debnath",
+      url: siteOrigin,
+      sameAs: [
+        "https://github.com/ashishume",
+        "https://www.linkedin.com/in/ashishume",
+        "https://twitter.com/ashishume",
+        "https://leetcode.com/ashishume/",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": websiteId,
+      url: `${siteOrigin}/`,
+      name: "Ashish Debnath",
+      alternateName: "Ashish Debnath Portfolio",
+      description: "Ashish Debnath portfolio and technical blog",
+      publisher: {
+        "@id": personId,
+      },
+      potentialAction: {
+        "@type": "SearchAction",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate: `${siteOrigin}/blog?q={search_term_string}`,
+        },
+        "query-input": "required name=search_term_string",
+      },
+    },
+    {
+      "@type": "ItemList",
+      "@id": navigationId,
+      name: "Primary navigation",
+      itemListElement: primaryNavItems.map((item, index) => ({
+        "@type": "SiteNavigationElement",
+        position: index + 1,
+        name: item.name,
+        url: buildSiteUrl(siteOrigin, item.path),
+      })),
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${canonicalUrl}#webpage`,
+      url: canonicalUrl,
+      name: seo.title || "Ashish Debnath | Portfolio | Blog",
+      description: seo.description || "Ashish Debnath portfolio and technical blog",
+      isPartOf: {
+        "@id": websiteId,
+      },
+      about: {
+        "@id": personId,
+      },
+    },
+  ];
+
+  if (seo.type === "article") {
+    const blog = ssrData.blogPosts?.find(
+      (post) => `/blog/${post.slug}` === seo.canonicalPath
+    );
+
+    if (blog) {
+      graph.push({
+        "@type": "BlogPosting",
+        "@id": `${canonicalUrl}#blog-posting`,
+        headline: blog.title,
+        description: blog.excerpt,
+        datePublished: blog.date,
+        dateModified: blog.date,
+        url: canonicalUrl,
+        mainEntityOfPage: {
+          "@id": `${canonicalUrl}#webpage`,
+        },
+        author: {
+          "@id": personId,
+        },
+        publisher: {
+          "@id": personId,
+        },
+      });
+    }
+  }
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": graph,
+  };
+}
+
 function renderHead(ssrData, req) {
   const seo = ssrData.seo || {};
   const siteOrigin = getSiteOrigin(req);
@@ -55,6 +164,9 @@ function renderHead(ssrData, req) {
       `<meta property="og:url" content="${escapeHtml(canonicalUrl)}" />`,
       `<meta property="og:type" content="${type}" />`,
       `<meta name="twitter:card" content="summary_large_image" />`,
+      `<script type="application/ld+json">${safeJson(
+        buildStructuredData(ssrData, siteOrigin, canonicalUrl)
+      )}</script>`,
     ].join("\n    "),
   };
 }
