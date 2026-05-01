@@ -17,6 +17,7 @@ import trello from "../../public/trello.png";
 import auction from "../../public/auctions.png";
 import pairlyCode from "../../public/pairly-code.png";
 import fastAPI from "../../public/fast_api.avif";
+import axpoLogo from '../../public/axpo_logo.webp'
 
 // Company logos
 import contentstackLogo from "../../public/contenstack.webp";
@@ -312,12 +313,20 @@ export const workExperience = [
 
 export const ProjectData: IProjectCard[] = [
   {
+    key: 14,
+    title: "Workflow Builder",
+    techStack: "VueJS, Zustand",
+    description: "This is a vue app to create workflow to create N8N flows (theoretically)",
+    image: "https://cdn-icons-png.flaticon.com/512/1574/1574572.png",
+    uri: "https://workflow-vert.vercel.app/",
+  },
+  {
     key: 13,
     title: "Fast API backend system design",
     techStack: "FastAPI, Python",
     description: "This is a backend system design for a fast API application.",
     image: fastAPI,
-    uri: "https://github.com/ashishume/fastapi-learning",
+    uri: "https://github.com/ashishume/backend-engineering-by-ashish",
   },
   {
     key: 12,
@@ -332,10 +341,10 @@ export const ProjectData: IProjectCard[] = [
     key: 11,
     title: "Axpo expense splitter",
     techStack: "React, Firebase, Typescript",
-    description: "This is a react app to split the expenses between friends",
+    description: "This is a react native app to split the expenses between friends",
     image:
-      "https://github.com/ashishume/expense-splitter/blob/main/public/logo.jpg?raw=true",
-    uri: "https://expense.axpocreation.com/",
+    axpoLogo,
+    uri: "https://www.axpocreation.com/expense-tracker-app",
   },
   {
     key: 10,

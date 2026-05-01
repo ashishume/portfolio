@@ -8,12 +8,22 @@ import { SVGs } from "../../Shared/icons";
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [filter, setFilter] = useState("all");
+  const [techStack, setTechstack] = useState<any[]>([]);
 
   useEffect(() => {
     // Animate in elements with a slight delay
     const timer = setTimeout(() => {
       setIsVisible(true);
     }, 100);
+
+    console.log(ProjectData);
+
+    const set = new Set();
+    ProjectData.map(({ techStack }) =>
+      techStack.split(",").map((tech) => set.add(tech.trim())),
+    );
+
+    setTechstack((prev) => [...prev, ...set]);
 
     return () => clearTimeout(timer);
   }, []);
@@ -27,7 +37,9 @@ const Projects = () => {
             project.techStack &&
             project.techStack
               .split(",")
-              .some((tech) => tech.toLowerCase().includes(filter.toLowerCase()))
+              .some((tech) =>
+                tech.toLowerCase().includes(filter.toLowerCase()),
+              ),
         );
 
   return (
@@ -37,119 +49,112 @@ const Projects = () => {
           isVisible ? "opacity-100" : "opacity-0"
         }`}
       >
-          {/* Header Section */}
-          <div className="text-center mb-16">
-            <div className="inline-block bg-blue-500/20 px-4 py-1 rounded-full text-blue-400 text-sm font-medium mb-4">
-              My Portfolio
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold dark:text-white text-gray-900">
-              PROJECTS
-            </h1>
-            <div className="h-1 w-20 bg-blue-500 mx-auto mt-6"></div>
-            <p className="dark:text-gray-300 text-gray-700 mt-6 max-w-2xl mx-auto">
-              A showcase of my work, personal projects, and contributions that
-              demonstrate my skills and passion for development.
-            </p>
+        {/* Header Section */}
+        <div className="text-center mb-16">
+          <div className="inline-block bg-blue-500/20 px-4 py-1 rounded-full text-blue-400 text-sm font-medium mb-4">
+            My Portfolio
           </div>
+          <h1 className="text-4xl md:text-5xl font-bold dark:text-white text-gray-900">
+            PROJECTS
+          </h1>
+          <div className="h-1 w-20 bg-blue-500 mx-auto mt-6"></div>
+          <p className="dark:text-gray-300 text-gray-700 mt-6 max-w-2xl mx-auto">
+            A showcase of my work, personal projects, and contributions that
+            demonstrate my skills and passion for development.
+          </p>
+        </div>
 
-          {/* Optional Filter Buttons */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
+        {/* Optional Filter Buttons */}
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
+          <button
+            onClick={() => setFilter("all")}
+            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+              filter === "all"
+                ? "bg-blue-600 text-white"
+                : "dark:bg-gray-800/70 bg-gray-200/70 dark:text-gray-300 text-gray-700 dark:hover:bg-gray-700/70 hover:bg-gray-300/70"
+            }`}
+          >
+            All Projects
+          </button>
+          {/* Add more filter buttons based on your common tech stack */}
+          {techStack.map((tech) => (
             <button
-              onClick={() => setFilter("all")}
+              key={tech}
+              onClick={() => setFilter(tech)}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
-                filter === "all"
+                filter === tech
                   ? "bg-blue-600 text-white"
                   : "dark:bg-gray-800/70 bg-gray-200/70 dark:text-gray-300 text-gray-700 dark:hover:bg-gray-700/70 hover:bg-gray-300/70"
               }`}
             >
-              All Projects
+              {tech}
             </button>
-            {/* Add more filter buttons based on your common tech stack */}
-            {["React", "Node", "Web", "Python"].map((tech) => (
-              <button
-                key={tech}
-                onClick={() => setFilter(tech)}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
-                  filter === tech
-                    ? "bg-blue-600 text-white"
-                    : "dark:bg-gray-800/70 bg-gray-200/70 dark:text-gray-300 text-gray-700 dark:hover:bg-gray-700/70 hover:bg-gray-300/70"
-                }`}
-              >
-                {tech}
-              </button>
-            ))}
-          </div>
+          ))}
+        </div>
 
-          {/* Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-12">
-            {filteredProjects.map(
-              (
-                {
-                  title,
-                  description,
-                  uri,
-                  image,
-                  key,
-                  techStack,
-                }: IProjectCard,
-                index
-              ) => (
-                <div
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-12">
+          {filteredProjects.map(
+            (
+              { title, description, uri, image, key, techStack }: IProjectCard,
+              index,
+            ) => (
+              <div
+                key={key}
+                className="transform transition-all duration-500"
+                style={{
+                  animationDelay: `${index * 0.1}s`,
+                  animation: "fadeIn 0.6s ease-out forwards",
+                  opacity: 0,
+                }}
+              >
+                <ProjectCard
                   key={key}
-                  className="transform transition-all duration-500"
-                  style={{
-                    animationDelay: `${index * 0.1}s`,
-                    animation: "fadeIn 0.6s ease-out forwards",
-                    opacity: 0,
-                  }}
-                >
-                  <ProjectCard
-                    key={key}
-                    techStack={techStack}
-                    title={title}
-                    description={description}
-                    uri={uri}
-                    image={image}
-                  />
-                </div>
-              )
-            )}
-          </div>
-
-          {/* Empty State */}
-          {filteredProjects.length === 0 && (
-            <div className="text-center py-16">
-              <div className="inline-block p-4 rounded-full bg-blue-500/10 mb-4">
-                {SVGs().Lightbulb}
+                  techStack={techStack}
+                  title={title}
+                  description={description}
+                  uri={uri}
+                  image={image}
+                />
               </div>
-              <h3 className="text-2xl font-semibold dark:text-white text-gray-900 mb-2">
-                No projects found
-              </h3>
-              <p className="dark:text-gray-400 text-gray-600">
-                Try changing your filter or check back later for new projects.
-              </p>
-            </div>
+            ),
           )}
+        </div>
 
-          {/* Contact CTA Section */}
-          <div className="mt-24 text-center">
-            <div className="dark:bg-gradient-to-r dark:from-blue-900/30 dark:to-purple-900/30 bg-gradient-to-r from-blue-100/50 to-purple-100/50 backdrop-blur-sm border dark:border-blue-500/20 border-blue-300/50 rounded-xl p-8 max-w-4xl mx-auto">
-              <h3 className="text-2xl font-semibold dark:text-white text-gray-900 mb-4">
-                Interested in working together?
-              </h3>
-              <p className="dark:text-gray-300 text-gray-700 mb-6">
-                I'm always open to discussing product design work or partnership
-                opportunities.
-              </p>
-              <button
-                onClick={() => (window.location.href = "/contact")}
-                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-blue-500/30"
-              >
-                Get In Touch
-              </button>
+        {/* Empty State */}
+        {filteredProjects.length === 0 && (
+          <div className="text-center py-16">
+            <div className="inline-block p-4 rounded-full bg-blue-500/10 mb-4">
+              {SVGs().Lightbulb}
             </div>
+            <h3 className="text-2xl font-semibold dark:text-white text-gray-900 mb-2">
+              No projects found
+            </h3>
+            <p className="dark:text-gray-400 text-gray-600">
+              Try changing your filter or check back later for new projects.
+            </p>
+          </div>
+        )}
+
+        {/* Contact CTA Section */}
+        <div className="mt-24 text-center">
+          <div className="dark:bg-gradient-to-r dark:from-blue-900/30 dark:to-purple-900/30 bg-gradient-to-r from-blue-100/50 to-purple-100/50 backdrop-blur-sm border dark:border-blue-500/20 border-blue-300/50 rounded-xl p-8 max-w-4xl mx-auto">
+            <h3 className="text-2xl font-semibold dark:text-white text-gray-900 mb-4">
+              Interested in working together?
+            </h3>
+            <p className="dark:text-gray-300 text-gray-700 mb-6">
+              I'm always open to discussing product design work or partnership
+              opportunities.
+            </p>
+            <button
+              onClick={() => (window.location.href = "/contact")}
+              className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-blue-500/30"
+            >
+              Get In Touch
+            </button>
           </div>
         </div>
+      </div>
     </Layout>
   );
 };
