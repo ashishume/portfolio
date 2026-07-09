@@ -18,6 +18,8 @@ import auction from "../../public/auctions.png";
 import pairlyCode from "../../public/pairly-code.png";
 import fastAPI from "../../public/fast_api.avif";
 import axpoLogo from '../../public/axpo_logo.webp'
+import digicertLogo from '../../public/digicert.png'
+import routewareLogo from '../../public/routeware.jpeg'
 
 // Company logos
 import contentstackLogo from "../../public/contenstack.webp";
@@ -177,10 +179,43 @@ export const SKILLS: ISkills = {
 
 export const workExperience = [
   {
+    id: 7,
+    company: "DigiCert",
+    position: "Senior Software Engineer",
+    duration: "Jul 2026 - Present",
+    location: "Bengaluru, Karnataka, India",
+    description:
+      "Working on secure AI agent initiatives for digital security products, with a focus on confidential computing, model protection, and encrypted AI workflows.",
+    highlights: [
+      "Built AI agent workflows for digital security use cases, including secure automation and policy-aware orchestration",
+      "Designed confidential VM-based execution paths to isolate sensitive model and workload processing",
+      "Implemented encryption and decryption flows for model artifacts and sensitive inference assets",
+      "Collaborated on secure-by-design patterns for identity, secrets, and key-handling in AI systems",
+      "Improved trust boundaries across model serving, agent communication, and protected data pipelines",
+    ],
+    logo: digicertLogo,
+  },
+  {
+    id: 8,
+    company: "Routeware, Inc.",
+    position: "Senior Software Engineer",
+    duration: "May 2026 - Jul 2026",
+    location: "Austin, Texas, United States",
+    description:
+      "Developed and enhanced the Procurements module in Routeware Recyclist (Program Tracker), enabling efficient management of procurement workflows and records.",
+    highlights: [
+      "Built and refined procurement workflows to improve operational visibility and record management",
+      "Enhanced product functionality for internal teams handling route and procurement tracking",
+      "Collaborated across product and engineering to deliver reliable module updates on a tight timeline",
+    ],
+    logo: routewareLogo,
+  },
+  
+  {
     id: 1,
     company: "Contentstack",
     position: "Senior Software Engineer – I",
-    duration: "Oct 2024 - Present",
+    duration: "Oct 2024 - May 2026",
     location: "Bengaluru, Karnataka, India",
     description:
       "Part of Contentstack Labs, contributing to Compose AI, an AI-powered editor inspired by Notion. Working on modular system design, agentic AI workflows, and component libraries for next-gen content platforms.",
